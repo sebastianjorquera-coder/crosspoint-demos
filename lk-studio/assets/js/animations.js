@@ -9,13 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicializar AOS
   if (window.AOS) {
     window.AOS.init({
-      duration: 700,
+      duration: 600,
       offset: 80,
       easing: 'ease-out-cubic',
       once: true,
       disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
     });
   }
+
+  // Lucide icons: render inicial del DOM estático (los iconos dentro de x-for se
+  // re-renderean desde app.js init() después del $nextTick de Alpine).
+  if (window.lucide) window.lucide.createIcons();
 
   // Smooth scroll para anchors internos
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -29,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // FAB inicia oculto (lo hará visible bindScroll() en app.js al pasar 200px)
+  // FAB inicia oculto (lo hará visible bindScroll() en app.js al pasar 220px)
   const fab = document.getElementById('fab-wsp');
   if (fab) {
     fab.style.transition = 'opacity 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1)';
@@ -39,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Refresh AOS cuando window.load completa (asegura que las animaciones cuenten con el layout final)
+// Último resort: refresh AOS y Lucide cuando window.load completa
 window.addEventListener('load', () => {
   if (window.AOS) window.AOS.refresh();
+  if (window.lucide) window.lucide.createIcons();
 });

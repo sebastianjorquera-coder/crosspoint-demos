@@ -42,9 +42,11 @@ function dashboard() {
       // Sticky header on scroll
       this.bindScroll();
 
-      // Refresh AOS después de pintar
+      // Refresh AOS y Lucide después de pintar
       this.$nextTick(() => {
         if (window.AOS) window.AOS.refresh();
+        // Re-procesar iconos Lucide ahora que Alpine ya pintó los x-for
+        if (window.lucide) window.lucide.createIcons();
       });
     },
 
@@ -119,15 +121,14 @@ function dashboard() {
 
       const pct = this.data.estado_general?.pe_pct_alcanzado || 0;
       const champagne = '#C8A96E';
-      const champagneDark = '#A6884F';
       const trackColor = 'rgba(14, 14, 16, 0.06)';
 
-      // Color según pct
+      // Color según pct (paleta v3.6 desaturada)
       let color = champagne;
-      if (pct >= 1) color = '#3D7C5A'; // verde
+      if (pct >= 1) color = '#2E6B4D';        // verde sobrio
       else if (pct >= 0.7) color = champagne;
-      else if (pct >= 0.4) color = '#D4A028';
-      else color = '#C0392B';
+      else if (pct >= 0.4) color = '#B8881C'; // ámbar sobrio
+      else color = '#B23A2F';                  // rojo sobrio
 
       const ctx = canvas.getContext('2d');
       this.gaugeChart = new Chart(ctx, {

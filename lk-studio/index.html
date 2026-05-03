@@ -5,34 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0E0E10" />
 
-  <title>Diagnóstico financiero — LK Studio</title>
-  <meta name="description" content="La radiografía financiera del salón. Qué te deja plata. Qué te la come. Y cuánto vale arreglarlo." />
+  <title>Diagnóstico financiero · LK Studio</title>
+  <meta name="description" content="Diagnóstico financiero LK Studio · análisis del período mayo 2026. Estado de resultados, márgenes por línea de servicio, punto de equilibrio y plan de acción priorizado." />
 
-  <!-- Open Graph (WhatsApp / LinkedIn / Twitter preview) -->
+  <!-- Open Graph / WhatsApp / LinkedIn / Twitter preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Diagnóstico financiero — LK Studio" />
-  <meta property="og:description" content="La radiografía financiera de tu salón. Qué te deja plata. Qué te la come. Y cuánto vale arreglarlo." />
+  <meta property="og:title" content="Diagnóstico financiero · LK Studio · mayo 2026" />
+  <meta property="og:description" content="Análisis de rentabilidad por línea de servicio, costos fijos, punto de equilibrio y plan de acción priorizado." />
   <meta property="og:image" content="./assets/img/og-lk-studio.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="es_CL" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Diagnóstico financiero — LK Studio" />
-  <meta name="twitter:description" content="La radiografía financiera de tu salón." />
+  <meta name="twitter:title" content="Diagnóstico financiero · LK Studio · mayo 2026" />
+  <meta name="twitter:description" content="Análisis financiero del período mayo 2026 con plan de acción priorizado." />
   <meta name="twitter:image" content="./assets/img/og-lk-studio.png" />
 
-  <!-- Favicon emoji (placeholder, ligero) -->
+  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 font-style=%22italic%22 font-family=%22Georgia%22>L</text></svg>" />
 
-  <!-- Fonts: Cormorant Garamond (display) + Manrope (body) -->
+  <!-- Fonts: Manrope (body/UI/numbers) + Cormorant Garamond italic (3 anclas) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
   />
 
-  <!-- Tailwind CSS (CDN) — solo para utilidades de layout y spacing residuales -->
+  <!-- Tailwind CSS (CDN) — utilidades de layout residuales -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -45,17 +45,16 @@
           colors: {
             lk: {
               noir: '#0E0E10',
-              'noir-soft': '#1A1A1F',
+              ivory: '#FBF8F3',
+              paper: '#FFFFFF',
               champagne: '#C8A96E',
               'champagne-dark': '#A6884F',
               'champagne-light': '#E2CDA0',
-              rose: '#D9B5A0',
-              nude: '#EFE5DA',
-              ivory: '#FBF8F3',
-              bordeaux: '#7B2D26',
-              rojo: '#C0392B',
-              ambar: '#D4A028',
-              verde: '#3D7C5A'
+              gray500: '#6B6B72',
+              gray200: '#E5E3DF',
+              rojo: '#B23A2F',
+              ambar: '#B8881C',
+              verde: '#2E6B4D'
             }
           }
         }
@@ -66,464 +65,14 @@
   <!-- AOS — animaciones on-scroll -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
-  <!-- Theme propio -->
+  <!-- Theme propio v3.6 -->
   <link rel="stylesheet" href="./assets/css/theme.css" />
-</head>
 
-<body x-data="dashboard()" x-init="init()" x-cloak>
+  <!-- Lucide Icons (CDN) — reemplaza emoji, look ejecutivo -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Banner DEMO sticky -->
-  <div class="lk-banner-demo" x-text="data.hero?.demo_banner || 'DEMO · cifras ilustrativas'"></div>
-
-  <!-- Sticky header (visible al scroll) -->
-  <header class="lk-sticky-header" :class="{ 'is-visible': stickyVisible }">
-    <a href="#hero" class="lk-sticky-wordmark" x-text="data.hero?.wordmark || 'LK Studio'"></a>
-    <a :href="'https://wa.me/' + (data.meta?.consultor_whatsapp || '+56978837430').replace(/[^0-9]/g, '') + '?text=' + encodeURIComponent('Hola, vi el demo del diagnóstico de LK Studio y quiero conversar')"
-       class="lk-sticky-cta" target="_blank" rel="noopener">
-      <svg class="lk-fab-icon" style="width:18px;height:18px" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
-      </svg>
-      WhatsApp
-    </a>
-  </header>
-
-  <!-- ============================================ -->
-  <!-- 1. HERO — La radiografía financiera           -->
-  <!-- ============================================ -->
-  <section id="hero" class="lk-hero">
-    <div class="lk-wordmark" data-aos="fade-down" data-aos-duration="800">
-      <div class="lk-wordmark-main" x-text="data.hero?.wordmark || 'LK Studio'"></div>
-      <div class="lk-wordmark-divider"></div>
-      <div class="lk-wordmark-sub" x-text="data.hero?.wordmark_sub || ''"></div>
-    </div>
-
-    <h1 class="lk-hero-headline" data-aos="fade-up" data-aos-delay="200" x-text="data.hero?.headline || 'La radiografía financiera de tu salón.'"></h1>
-
-    <p class="lk-hero-subhead" data-aos="fade-up" data-aos-delay="400" x-text="data.hero?.subhead || ''"></p>
-
-    <div class="lk-hero-kpis" data-aos="fade-up" data-aos-delay="600">
-      <div class="lk-hero-kpi">
-        <div class="lk-hero-kpi-label" x-text="data.hero?.kpi_strip_label || ''"></div>
-      </div>
-      <div class="lk-hero-kpi">
-        <div class="lk-hero-kpi-label" x-text="data.hero?.kpi_strip_facturado_label || 'Facturado'"></div>
-        <div class="lk-hero-kpi-value" x-text="formatCLP(data.hero?.kpi_strip_facturado_valor)"></div>
-      </div>
-      <div class="lk-hero-kpi">
-        <div class="lk-hero-kpi-label" x-text="data.hero?.kpi_strip_utilidad_label || 'Utilidad real'"></div>
-        <div class="lk-hero-kpi-value" x-text="formatCLP(data.hero?.kpi_strip_utilidad_valor)"></div>
-      </div>
-    </div>
-
-    <div style="text-align:center" data-aos="fade-up" data-aos-delay="800">
-      <a :href="'https://wa.me/' + (data.meta?.consultor_whatsapp || '+56978837430').replace(/[^0-9]/g, '') + '?text=' + encodeURIComponent('Hola, vi el demo de LK Studio y quiero el diagnóstico con mis números reales.')"
-         class="lk-btn-primary" target="_blank" rel="noopener">
-        <span x-text="data.hero?.cta_primary || 'Quiero este diagnóstico con mis números reales'"></span>
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
-
-    <a href="#tres-luces" class="lk-scroll-arrow">
-      <span x-text="data.hero?.cta_scroll || 'Recorre tu negocio'"></span>
-      <span aria-hidden="true">↓</span>
-    </a>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- 2. TRES LUCES — Semáforo emocional XL         -->
-  <!-- ============================================ -->
-  <section id="tres-luces" class="lk-section lk-section-noir">
-    <div class="max-w-6xl mx-auto">
-      <div data-aos="fade-up">
-        <div class="lk-eyebrow">Estado · Mayo 2026</div>
-        <h2 class="lk-section-title" x-text="data.tres_luces?.section_title || 'El estado de tu salón en 3 luces.'"></h2>
-        <p class="lk-section-intro" x-text="data.tres_luces?.section_intro || ''"></p>
-      </div>
-
-      <div class="lk-tres-luces">
-        <template x-for="(luz, idx) in (data.tres_luces?.luces || [])" :key="idx">
-          <div class="lk-luz-card" :class="'lk-luz-' + luz.color"
-               data-aos="fade-up" :data-aos-delay="100 + (idx * 100)">
-            <div class="lk-luz-etiqueta" x-text="luz.etiqueta"></div>
-            <div class="lk-luz-titulo" x-text="luz.titulo"></div>
-            <div class="lk-luz-metrica" x-text="luz.metrica_principal"></div>
-            <p class="lk-luz-detalle" x-text="luz.detalle"></p>
-            <div class="lk-luz-accion">
-              <span class="lk-luz-accion-label">Acción</span>
-              <span x-text="luz.accion"></span>
-            </div>
-          </div>
-        </template>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- 3. TUS NÚMEROS — KPI dashboard + gauge        -->
-  <!-- ============================================ -->
-  <section id="numeros" class="lk-section lk-section-ivory">
-    <div class="max-w-6xl mx-auto">
-      <div data-aos="fade-up">
-        <div class="lk-eyebrow">Resumen ejecutivo</div>
-        <h2 class="lk-section-title" x-text="data.estado_general?.section_title || 'Tus números este mes.'"></h2>
-        <p class="lk-section-intro" x-text="data.estado_general?.section_intro || ''"></p>
-      </div>
-
-      <div class="lk-kpi-grid">
-        <template x-for="(kpi, idx) in (data.kpis || [])" :key="kpi.id">
-          <div class="lk-kpi-card" :class="'lk-kpi-card-' + kpi.color_borde"
-               data-aos="fade-up" :data-aos-delay="100 + (idx * 80)">
-            <div class="lk-kpi-label" x-text="kpi.label"></div>
-            <div class="lk-kpi-value" x-text="formatValue(kpi.valor, kpi.formato)"></div>
-            <div class="lk-kpi-trend" :class="'lk-kpi-trend-' + kpi.trend">
-              <span x-show="kpi.trend === 'up'" aria-hidden="true">▲</span>
-              <span x-show="kpi.trend === 'down'" aria-hidden="true">▼</span>
-              <span x-show="kpi.trend === 'flat'" aria-hidden="true">→</span>
-              <span x-text="kpi.trend_texto"></span>
-            </div>
-          </div>
-        </template>
-      </div>
-
-      <!-- Gauge + mensaje -->
-      <div class="lk-gauge-block" data-aos="fade-up" data-aos-delay="500">
-        <div class="lk-gauge-canvas-wrapper">
-          <canvas id="gauge-pe" width="220" height="220"></canvas>
-          <div class="lk-gauge-pct" x-text="Math.round((data.estado_general?.pe_pct_alcanzado || 0) * 100) + '%'"></div>
-        </div>
-        <div class="lk-gauge-label" x-text="data.estado_general?.gauge_label || ''"></div>
-        <div class="lk-gauge-subtext" x-text="data.estado_general?.gauge_subtext || ''"></div>
-      </div>
-
-      <p class="text-center text-xs text-lk-noir/50 mt-8 italic" x-text="data.estado_general?.footnote || ''"></p>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- 4. RANKING — Héroes y enemigos silenciosos    -->
-  <!-- ============================================ -->
-  <section id="ranking" class="lk-section lk-section-nude">
-    <div class="max-w-6xl mx-auto">
-      <div data-aos="fade-up">
-        <div class="lk-eyebrow">Servicios</div>
-        <h2 class="lk-section-title" x-text="data.ranking_servicios?.section_title || 'Quién te hace ganar plata.'"></h2>
-        <p class="lk-section-intro" x-text="data.ranking_servicios?.section_intro || ''"></p>
-      </div>
-
-      <div class="lk-ranking-grid">
-        <!-- Héroes -->
-        <div class="lk-ranking-col lk-ranking-col-heroes" data-aos="fade-right" data-aos-delay="200">
-          <div class="lk-ranking-col-titulo" x-text="data.ranking_servicios?.heroes_titulo || 'Los que te sostienen'"></div>
-          <p class="lk-ranking-col-intro" x-text="data.ranking_servicios?.heroes_intro || ''"></p>
-          <template x-for="(s, idx) in topServicios()" :key="s.id">
-            <div class="lk-ranking-item">
-              <div class="lk-ranking-item-info">
-                <div class="lk-ranking-item-nombre">
-                  <span x-text="(idx + 1) + '.'"></span>
-                  <span x-text="s.nombre"></span>
-                </div>
-                <div class="lk-ranking-item-meta">
-                  <span x-text="'margen ' + Math.round(s.margen_pct * 100) + '% · ' + s.cantidad_mes + ' al mes'"></span>
-                </div>
-              </div>
-              <div class="lk-ranking-item-valor" x-text="formatCLP(s.contribucion)"></div>
-            </div>
-          </template>
-        </div>
-
-        <!-- Enemigos -->
-        <div class="lk-ranking-col lk-ranking-col-enemigos" data-aos="fade-left" data-aos-delay="200">
-          <div class="lk-ranking-col-titulo" x-text="data.ranking_servicios?.enemigos_titulo || 'Los enemigos silenciosos'"></div>
-          <p class="lk-ranking-col-intro" x-text="data.ranking_servicios?.enemigos_intro || ''"></p>
-          <template x-for="(s, idx) in bottomServicios()" :key="s.id">
-            <div class="lk-ranking-item">
-              <div class="lk-ranking-item-info">
-                <div class="lk-ranking-item-nombre">
-                  <span x-text="(idx + 1) + '.'"></span>
-                  <span x-text="s.nombre"></span>
-                </div>
-                <div class="lk-ranking-item-meta">
-                  <span x-text="'margen ' + Math.round(s.margen_pct * 100) + '% · ' + s.cantidad_mes + ' al mes'"></span>
-                </div>
-              </div>
-              <div class="lk-ranking-item-valor" x-text="formatCLP(s.contribucion)"></div>
-            </div>
-          </template>
-        </div>
-      </div>
-
-      <div class="lk-bottom-line" data-aos="fade-up" data-aos-delay="400" x-text="data.ranking_servicios?.bottom_line || ''"></div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- 5. PRODUCTOS CLOE                              -->
-  <!-- ============================================ -->
-  <section id="productos" class="lk-section lk-section-ivory">
-    <div class="max-w-6xl mx-auto">
-      <div data-aos="fade-up">
-        <div class="lk-eyebrow">Retail · Línea CLOE</div>
-        <h2 class="lk-section-title" x-text="data.productos_resumen?.section_title || 'Productos CLOE.'"></h2>
-        <p class="lk-section-intro" x-text="data.productos_resumen?.section_intro || ''"></p>
-      </div>
-
-      <div class="lk-productos-grid" data-aos="fade-up" data-aos-delay="200">
-        <template x-for="p in (data.productos_cloe || [])" :key="p.id">
-          <div class="lk-producto-row">
-            <div>
-              <div class="lk-producto-nombre" x-text="p.nombre"></div>
-              <div class="lk-producto-meta">
-                <span x-text="'precio ' + formatCLP(p.precio) + ' · margen ' + Math.round(p.margen_pct * 100) + '% · ' + p.ventas_mes + ' u/mes · stock ' + p.stock"></span>
-              </div>
-            </div>
-            <div class="lk-producto-contribucion" x-text="formatCLP(p.contribucion)"></div>
-            <div>
-              <span class="lk-badge" :class="'lk-badge-' + p.estado" x-text="p.estado === 'verde' ? 'OK' : (p.estado === 'amarillo' ? 'Revisar' : 'Liquidar')"></span>
-            </div>
-          </div>
-        </template>
-      </div>
-
-      <div class="lk-stock-dormido" data-aos="fade-up" data-aos-delay="300" x-show="data.productos_resumen?.stock_dormido_titulo">
-        <div class="lk-stock-dormido-titulo" x-text="data.productos_resumen?.stock_dormido_titulo || ''"></div>
-        <div class="lk-stock-dormido-detalle" x-text="data.productos_resumen?.stock_dormido_detalle || ''"></div>
-        <div class="text-sm text-lk-noir/70" x-text="data.productos_resumen?.stock_dormido_accion || ''"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- 6. EQUIPO — Personas                            -->
-  <!-- ============================================ -->
-  <section id="equipo" class="lk-section lk-section-nude">
-    <div class="max-w-6xl mx-auto">
-      <div data-aos="fade-up">
-        <div class="lk-eyebrow">Personas</div>
-        <h2 class="lk-section-title" x-text="data.personas_resumen?.section_title || 'Tu equipo.'"></h2>
-        <p class="lk-section-intro" x-text="data.personas_resumen?.section_intro || ''"></p>
-      </div>
-
-      <div class="lk-personas-grid">
-        <template x-for="(p, idx) in (data.personas || [])" :key="p.id">
-          <div class="lk-persona-card" :class="{ 'lk-persona-card-flagged': p.bandera_legal }"
-               data-aos="fade-up" :data-aos-delay="100 + (idx * 80)">
-            <div class="lk-persona-rol" x-text="p.rol"></div>
-            <div class="lk-persona-modalidad" x-text="p.modalidad"></div>
-
-            <div class="lk-persona-stat">
-              <span class="lk-persona-stat-label">Costo real</span>
-              <span class="lk-persona-stat-valor" x-text="formatCLP(p.costo_real_mensual)"></span>
-            </div>
-            <div class="lk-persona-stat" x-show="p.ventas_generadas > 0">
-              <span class="lk-persona-stat-label">Ventas generadas</span>
-              <span class="lk-persona-stat-valor" x-text="formatCLP(p.ventas_generadas)"></span>
-            </div>
-            <div class="lk-persona-stat" x-show="p.productividad_pct !== null && p.productividad_pct !== undefined">
-              <span class="lk-persona-stat-label">Productividad</span>
-              <span class="lk-persona-stat-valor" :class="p.productividad_pct >= 0.4 ? 'text-lk-verde' : 'text-lk-ambar'" x-text="Math.round((p.productividad_pct || 0) * 100) + '%'"></span>
-            </div>
-
-            <div class="lk-persona-bandera" x-show="p.bandera_legal" x-text="p.bandera_legal"></div>
-          </div>
-        </template>
-      </div>
-
-      <div class="lk-peso-banner" data-aos="fade-up" data-aos-delay="400">
-        <div class="lk-peso-num" x-text="Math.round((data.personas_resumen?.peso_remuneraciones_pct || 0) * 100) + '%'"></div>
-        <div class="lk-peso-mensaje" x-text="data.personas_resumen?.mensaje_peso || ''"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- 7. SIMULADORES                                 -->
-  <!-- ============================================ -->
-  <section id="simuladores" class="lk-section lk-section-noir">
-    <div class="max-w-6xl mx-auto">
-      <div data-aos="fade-up">
-        <div class="lk-eyebrow">Toca y mira el impacto</div>
-        <h2 class="lk-section-title" x-text="data.simuladores?.section_title || 'Mueve los controles. Mira qué pasa.'"></h2>
-        <p class="lk-section-intro" x-text="data.simuladores?.section_intro || ''"></p>
-      </div>
-
-      <!-- Simulador 1: precios -->
-      <div class="lk-sim-block" x-data="simuladorPrecios()" data-aos="fade-up" data-aos-delay="100">
-        <div class="lk-sim-eyebrow">Simulador 01</div>
-        <h3 class="lk-sim-titulo" x-text="data.simulador_precios?.titulo || '¿Y si subo precios?'"></h3>
-        <p class="lk-sim-subtitulo" x-text="data.simulador_precios?.subtitulo || ''"></p>
-
-        <!-- Presets -->
-        <div class="flex gap-2 flex-wrap mb-4">
-          <template x-for="preset in (data.simulador_precios?.presets || [])" :key="preset.label">
-            <button type="button" class="lk-preset-btn"
-                    :class="{ 'lk-preset-btn-active': Math.abs(spPct - preset.valor_pct) < 0.001 }"
-                    @click="spPct = preset.valor_pct">
-              <span x-text="preset.label"></span>
-              <span class="opacity-60 ml-1" x-text="'+' + Math.round(preset.valor_pct * 100) + '%'"></span>
-            </button>
-          </template>
-        </div>
-
-        <!-- Slider -->
-        <div class="flex items-center gap-4 mt-4 mb-2">
-          <span class="text-xs text-lk-champagne-light font-semibold tracking-wider uppercase" style="min-width:64px">
-            <span x-text="(spPct >= 0 ? '+' : '') + Math.round(spPct * 100) + '%'"></span>
-          </span>
-          <input type="range"
-                 class="lk-slider flex-1"
-                 :min="data.simulador_precios?.rango_min_pct ?? -0.10"
-                 :max="data.simulador_precios?.rango_max_pct ?? 0.20"
-                 :step="data.simulador_precios?.step_pct ?? 0.01"
-                 x-model.number="spPct" />
-        </div>
-
-        <!-- Resultados -->
-        <div class="lk-sim-result-grid">
-          <div class="lk-sim-result">
-            <div class="lk-sim-result-label">Margen nuevo</div>
-            <div class="lk-sim-result-valor" x-text="Math.round(spMargenNuevo() * 100) + '%'"></div>
-          </div>
-          <div class="lk-sim-result">
-            <div class="lk-sim-result-label">Δ Utilidad / mes</div>
-            <div class="lk-sim-result-valor" x-text="(spDeltaUtilidad() >= 0 ? '+' : '') + formatCLP(spDeltaUtilidad())"></div>
-          </div>
-          <div class="lk-sim-result">
-            <div class="lk-sim-result-label">PE nuevo</div>
-            <div class="lk-sim-result-valor" x-text="formatCLP(spPENuevo())"></div>
-          </div>
-          <div class="lk-sim-result">
-            <div class="lk-sim-result-label">Servicios afectados</div>
-            <div class="lk-sim-result-valor" x-text="(data.simulador_precios?.servicios_aplicables_ids?.length || 0) + ' / ' + (data.servicios?.length || 0)"></div>
-          </div>
-        </div>
-
-        <p class="lk-sim-supuesto" x-text="data.simulador_precios?.supuesto_elasticidad || ''"></p>
-      </div>
-
-      <!-- Simulador 2: contratación -->
-      <div class="lk-sim-block" x-data="simuladorContratacion()" data-aos="fade-up" data-aos-delay="200" style="margin-top:2rem">
-        <div class="lk-sim-eyebrow">Simulador 02</div>
-        <h3 class="lk-sim-titulo" x-text="data.simulador_contratacion?.titulo || '¿Y si contrato a alguien más?'"></h3>
-        <p class="lk-sim-subtitulo" x-text="data.simulador_contratacion?.subtitulo || ''"></p>
-
-        <table class="lk-sim-tabla">
-          <thead>
-            <tr>
-              <th>Escenario</th>
-              <th>Costo real</th>
-              <th>Venta esperada</th>
-              <th>Δ Utilidad/mes</th>
-              <th>Breakeven</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template x-for="(row, idx) in scRows()" :key="row.id">
-              <tr :class="{ 'is-best': idx === scBestIdx() }">
-                <td x-text="row.label"></td>
-                <td x-text="formatCLP(row.costo_real)"></td>
-                <td x-text="formatCLP(row.venta_esperada)"></td>
-                <td x-text="(row.utilidad_extra >= 0 ? '+' : '') + formatCLP(row.utilidad_extra)"></td>
-                <td x-text="row.meses_breakeven < 99 ? row.meses_breakeven.toFixed(1) + ' meses' : '—'"></td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-
-        <div class="lk-sim-recomendacion" x-text="scRecomendacion()"></div>
-        <p class="lk-sim-supuesto" x-text="data.simulador_contratacion?.supuesto_factor || ''"></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- 8. OPORTUNIDADES — Plan de acción              -->
-  <!-- ============================================ -->
-  <section id="oportunidades" class="lk-section lk-section-ivory">
-    <div class="max-w-5xl mx-auto">
-      <div data-aos="fade-up">
-        <div class="lk-eyebrow">Plan de acción</div>
-        <h2 class="lk-section-title" x-text="data.oportunidades?.section_title || '5 movimientos.'"></h2>
-        <p class="lk-section-intro" x-text="data.oportunidades?.section_intro || ''"></p>
-      </div>
-
-      <div class="lk-oportunidades">
-        <template x-for="(op, idx) in (data.oportunidades?.items || [])" :key="op.id">
-          <div class="lk-oportunidad" data-aos="fade-up" :data-aos-delay="100 + (idx * 80)">
-            <div class="lk-oportunidad-num" x-text="String(op.id).padStart(2, '0')"></div>
-            <div>
-              <div class="lk-oportunidad-titulo" x-text="op.titulo"></div>
-              <div class="lk-oportunidad-detalle" x-text="op.detalle"></div>
-            </div>
-            <div class="lk-oportunidad-delta">
-              <span class="lk-oportunidad-delta-num" x-text="'+' + formatCLP(op.delta_mes)"></span>
-              <span class="lk-oportunidad-esfuerzo" x-text="'Esfuerzo: ' + op.esfuerzo"></span>
-            </div>
-          </div>
-        </template>
-      </div>
-
-      <div class="lk-oportunidades-total" data-aos="fade-up" data-aos-delay="600">
-        <span class="lk-oportunidades-total-num" x-text="'+' + formatCLP(data.oportunidades?.total_potencial)"></span>
-        <div class="lk-oportunidades-total-label" x-text="data.oportunidades?.total_potencial_label || ''"></div>
-        <div class="lk-oportunidades-total-disclaimer" x-text="data.oportunidades?.total_potencial_disclaimer || ''"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- 9. CTA FINAL                                    -->
-  <!-- ============================================ -->
-  <section id="contacto" class="lk-cta-final">
-    <h2 class="lk-cta-headline" data-aos="fade-up" x-text="data.cta_final?.headline || 'Esto es solo una muestra.'"></h2>
-    <p class="lk-cta-headline-2" data-aos="fade-up" data-aos-delay="100" x-text="data.cta_final?.headline_2 || ''"></p>
-    <p class="lk-cta-subhead" data-aos="fade-up" data-aos-delay="200" x-text="data.cta_final?.subhead || ''"></p>
-
-    <div class="lk-cta-buttons" data-aos="fade-up" data-aos-delay="300">
-      <a :href="'https://wa.me/' + (data.meta?.consultor_whatsapp || '+56978837430').replace(/[^0-9]/g, '') + '?text=' + encodeURIComponent('Hola, vi el demo de LK Studio y quiero el diagnóstico real con mis números.')"
-         class="lk-btn-primary lk-btn-whatsapp" target="_blank" rel="noopener">
-        <svg style="width:20px;height:20px" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
-        </svg>
-        <span x-text="data.cta_final?.whatsapp_label || 'Hablemos por WhatsApp'"></span>
-      </a>
-      <a :href="'mailto:' + (data.meta?.consultor_email || 'contacto@safepoint-ehs.com') + '?subject=' + encodeURIComponent('Diagnóstico LK Studio') + '&body=' + encodeURIComponent('Hola, vi el demo y quiero conversar sobre el diagnóstico.')"
-         class="lk-btn-secondary">
-        <span x-text="data.cta_final?.email_label || 'Escribir un correo'"></span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- FOOTER                                          -->
-  <!-- ============================================ -->
-  <footer class="lk-footer">
-    <div class="lk-footer-divider"></div>
-    <span class="lk-footer-powered-label" x-text="data.footer?.powered_by_label || 'Análisis desarrollado por'"></span>
-    <div class="lk-footer-consultor" x-text="data.footer?.consultor_linea_1 || 'Cross Point Consultores'"></div>
-    <div class="lk-footer-lema" x-text="data.footer?.consultor_linea_2 || ''"></div>
-    <div class="lk-footer-contacto">
-      <span x-text="data.footer?.consultor_linea_3 || ''"></span>
-      <span class="mx-2 opacity-40">·</span>
-      <a :href="'tel:' + (data.meta?.consultor_whatsapp || '').replace(/\s/g,'')" class="hover:text-lk-champagne-light" x-text="data.meta?.consultor_whatsapp || ''"></a>
-      <span class="mx-2 opacity-40">·</span>
-      <a :href="'mailto:' + (data.meta?.consultor_email || '')" class="hover:text-lk-champagne-light" x-text="data.meta?.consultor_email || ''"></a>
-    </div>
-    <div class="lk-footer-disclaimer" x-text="data.footer?.demo_disclaimer || ''"></div>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a id="fab-wsp"
-     :href="'https://wa.me/' + (data.meta?.consultor_whatsapp || '+56978837430').replace(/[^0-9]/g, '') + '?text=' + encodeURIComponent('Hola, vi el demo de LK Studio y quiero el diagnóstico real.')"
-     class="lk-fab-wsp" target="_blank" rel="noopener" aria-label="Conversar por WhatsApp">
-    <svg class="lk-fab-icon" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
-    </svg>
-  </a>
-
-  <!-- ============================================ -->
-  <!-- DATA INLINE (sin fetch — cero flash)           -->
-  <!-- ============================================ -->
-  <script type="application/json" id="cliente-data">
+  <!-- Datos del cliente (inline, sin fetch async) -->
+  <script id="cliente-data" type="application/json">
 {
   "meta": {
     "cliente_nombre": "LK Studio",
@@ -540,73 +89,112 @@
     "consultor_whatsapp": "+56 9 7883 7430",
     "consultor_email": "contacto@safepoint-ehs.com",
     "consultor_web": "safepoint-ehs.cl",
-    "consultor_ciudad": "San Miguel, Santiago"
+    "consultor_ciudad": "San Miguel, Santiago",
+    "eyebrow_master": "Período: mayo 2026 · Datos: intake LK Studio · Actualizado: 2026-05-03"
   },
   "branding": {
     "color_noir": "#0E0E10",
     "color_champagne": "#C8A96E",
     "color_champagne_dark": "#A6884F",
-    "color_rose": "#D9B5A0",
-    "color_nude": "#EFE5DA",
     "color_ivory": "#FBF8F3",
-    "color_bordeaux": "#7B2D26",
-    "color_verde": "#3D7C5A",
-    "color_ambar": "#D4A028",
-    "color_rojo": "#C0392B",
+    "color_paper": "#FFFFFF",
+    "color_gray_900": "#1A1A1F",
+    "color_gray_500": "#6B6B72",
+    "color_gray_200": "#E5E3DF",
+    "color_verde": "#2E6B4D",
+    "color_ambar": "#B8881C",
+    "color_rojo": "#B23A2F",
     "tipografia_display": "Cormorant Garamond",
     "tipografia_body": "Manrope"
   },
   "hero": {
     "wordmark": "LK Studio",
     "wordmark_sub": "ESTUDIO DE BELLEZA · MAIPÚ",
-    "headline": "La radiografía financiera de tu salón.",
-    "subhead": "Qué te deja plata. Qué te la come. Y cuánto vale arreglarlo.",
-    "demo_banner": "DEMO · cifras ilustrativas · tu diagnóstico real usa tus números",
+    "eyebrow": "01 · DIAGNÓSTICO FINANCIERO · MAYO 2026",
+    "headline": "Diagnóstico financiero · análisis del período mayo 2026",
+    "subhead": "Estado de resultados, márgenes por línea de servicio, punto de equilibrio y plan de acción priorizado.",
+    "demo_banner": "DEMO · cifras ilustrativas · este formato se replica con sus datos reales tras el intake",
     "kpi_strip_label": "Mayo 2026",
     "kpi_strip_facturado_label": "Facturado",
     "kpi_strip_facturado_valor": 7220000,
-    "kpi_strip_utilidad_label": "Utilidad real",
+    "kpi_strip_utilidad_label": "Utilidad estimada",
     "kpi_strip_utilidad_valor": 2625000,
-    "cta_primary": "Quiero este diagnóstico con mis números reales",
-    "cta_scroll": "Recorre tu negocio"
+    "cta_primary": "Solicitar diagnóstico con datos reales",
+    "cta_scroll": "Recorrer secciones"
   },
-  "tres_luces": {
-    "section_title": "El estado de tu salón en 3 luces.",
-    "section_intro": "Tres números honestos sobre el mes que pasó.",
+  "executive_summary": {
+    "section_title": "Síntesis ejecutiva",
+    "items": [
+      {
+        "icon": "trending-up",
+        "label": "Margen consolidado",
+        "valor": "62,5% · sobre meta (60%)"
+      },
+      {
+        "icon": "target",
+        "label": "Punto de equilibrio",
+        "valor": "Cubierto al día 13 · utilidad estimada $2.625K"
+      },
+      {
+        "icon": "alert-circle",
+        "label": "Concentración",
+        "valor": "Top 3 servicios = 39% facturación"
+      },
+      {
+        "icon": "flag",
+        "label": "Riesgo legal",
+        "valor": "1 modalidad contractual a revisar"
+      }
+    ]
+  },
+  "hallazgos_clave": {
+    "section_title": "Hallazgos clave del período",
+    "section_intro": "Síntesis ejecutiva: una alerta, una precaución y una fortaleza con su impacto cuantificado.",
+    "eyebrow": "02 · HALLAZGOS CLAVE · SÍNTESIS EJECUTIVA",
     "luces": [
       {
         "tipo": "alerta",
         "color": "rojo",
-        "etiqueta": "ALERTA",
-        "titulo": "Bronceado sin sol está agotando margen.",
-        "metrica_principal": "Margen 42%",
-        "detalle": "Es tu servicio con el margen más bajo. Cada bronceado deja $9.240 — la mitad de lo que deja una manicure.",
-        "accion": "Subir precio 15% o evaluar sacarlo del menú."
+        "icon_lucide": "alert-triangle",
+        "etiqueta": "ALERTA · MARGEN BAJO",
+        "titulo": "Bronceado sin sol · margen 42%",
+        "metrica_principal": "42%",
+        "metrica_sublabel": "vs rango sano 50%+",
+        "detalle": "Margen 42% bajo el rango sano. Impacto mensual: $55.440 (6 servicios al mes). Comparativa: Color completo (55%) genera $1.001.000/mes con 28 servicios.",
+        "accion_label": "RECOMENDACIÓN",
+        "accion": "Subir precio +15% o evaluar exclusión del menú."
       },
       {
         "tipo": "precaucion",
         "color": "ambar",
-        "etiqueta": "PRECAUCIÓN",
-        "titulo": "Tu equipo cuesta más de lo que debería.",
-        "metrica_principal": "41% de las ventas",
-        "detalle": "El rango sano de salones medio-altos chilenos es 35-40%. Si la productividad baja, esto aprieta tu utilidad.",
-        "accion": "Revisar productividad por persona y formalizar la modalidad de Manicurista 1."
+        "icon_lucide": "alert-circle",
+        "etiqueta": "PRECAUCIÓN · CAPITAL HUMANO",
+        "titulo": "Peso remuneraciones · 41,2% sobre venta",
+        "metrica_principal": "41,2%",
+        "metrica_sublabel": "rango sano 35-40%",
+        "detalle": "Peso remuneraciones supera el rango sano de salones medio-altos chilenos. Si baja productividad o sube a 50%, margen consolidado se comprime crítico.",
+        "accion_label": "RECOMENDACIÓN",
+        "accion": "Revisar productividad por persona y formalizar modalidad contractual de Manicurista 1 (boleta variable + horario fijo · riesgo legal)."
       },
       {
         "tipo": "fortaleza",
         "color": "verde",
-        "etiqueta": "FORTALEZA",
-        "titulo": "Color completo es tu motor silencioso.",
-        "metrica_principal": "$1.001.000/mes",
-        "detalle": "Margen 55% · 28 servicios al mes · 14% de tu utilidad total. Solito sostiene gran parte del salón.",
-        "accion": "Protegerlo — no descontar, no tercerizar, comunicar valor a las clientas frecuentes."
+        "icon_lucide": "check-circle-2",
+        "etiqueta": "FORTALEZA · MOTOR DE CONTRIBUCIÓN",
+        "titulo": "Color completo · servicio de mayor contribución",
+        "metrica_principal": "$1.001.000",
+        "metrica_sublabel": "contribución mensual",
+        "detalle": "Margen 55% · 28 servicios al mes · 14% de la utilidad total del negocio. Servicio ancla con base de clientas frecuentes.",
+        "accion_label": "RECOMENDACIÓN",
+        "accion": "Proteger el margen — no descontar, no tercerizar, comunicar valor a clientas frecuentes."
       }
     ]
   },
   "kpis": [
     {
       "id": "venta_total",
-      "label": "Facturado este mes",
+      "icon": "banknote",
+      "label": "Facturado",
       "valor": 7220000,
       "formato": "CLP",
       "meta": 6900000,
@@ -616,56 +204,58 @@
     },
     {
       "id": "margen_consolidado",
-      "label": "Margen real",
+      "icon": "percent",
+      "label": "Margen consolidado",
       "valor": 0.625,
       "formato": "PCT",
       "meta": 0.6,
       "trend": "up",
       "trend_texto": "+2,5 pp vs meta",
-      "color_borde": "rose"
+      "color_borde": "champagne"
     },
     {
       "id": "punto_equilibrio",
-      "label": "Necesitas vender",
+      "icon": "target",
+      "label": "Punto de equilibrio",
       "valor": 3017672,
       "formato": "CLP",
       "meta": null,
       "trend": "flat",
       "trend_texto": "Cubierto al día 13",
-      "color_borde": "noir"
+      "color_borde": "champagne"
     },
     {
       "id": "utilidad",
+      "icon": "trending-up",
       "label": "Utilidad estimada",
       "valor": 2625000,
       "formato": "CLP",
       "meta": 2200000,
       "trend": "up",
       "trend_texto": "+19% vs meta",
-      "color_borde": "verde"
+      "color_borde": "champagne"
     }
   ],
   "estado_general": {
-    "section_title": "Tus números este mes.",
-    "section_intro": "Lo esencial en una pantalla.",
+    "eyebrow": "03 · KPIs DEL PERÍODO · COMPARATIVAS VS META",
+    "section_title": "Indicadores del período · mayo 2026",
+    "section_intro": "Cuatro métricas de control. Comparativas vs meta y nivel de cumplimiento del punto de equilibrio.",
     "semaforo": "verde",
-    "titulo": "Negocio sano",
-    "mensaje": "Estás dejando 62,5 centavos de cada peso vendido. Más de tu meta. Bien.",
+    "titulo": "Cumplimiento sobre meta",
+    "mensaje": "Margen consolidado 62,5% sobre meta de 60%. Cobertura de costos fijos al día 13.",
     "pe_pct_alcanzado": 0.87,
     "dias_para_pe": 13,
     "dias_total_mes": 30,
     "gauge_label": "del punto de equilibrio cubierto",
-    "gauge_subtext": "Lo que viene después es utilidad pura.",
-    "footnote": "Cifras ilustrativas. Los rangos del intake se reemplazan tras tu diagnóstico real."
+    "gauge_subtext": "Resto del mes (días 14-30): utilidad neta antes de imprevistos.",
+    "footnote": "Cifras ilustrativas. Los rangos del intake se reemplazan tras el diagnóstico real."
   },
   "ranking_servicios": {
-    "section_title": "Quién te hace ganar plata. Quién te la quita.",
-    "section_intro": "Tus servicios ordenados por lo que dejan al final del mes.",
-    "heroes_titulo": "Los que te sostienen",
-    "heroes_intro": "Concentra atención y no los descuentes.",
-    "enemigos_titulo": "Los enemigos silenciosos",
-    "enemigos_intro": "Margen bajo el rango sano. Subir precio o repensar.",
-    "bottom_line": "Tus 3 servicios héroes generan $2.833.000 al mes — el 39% de tu facturación. Los 3 últimos juntos apenas suman $350.000."
+    "eyebrow": "04 · RANKING DE SERVICIOS · CONTRIBUCIÓN MENSUAL",
+    "section_title": "Ranking de servicios por contribución a utilidad",
+    "section_intro": "Diez servicios ordenados por contribución mensual. Estado según margen vs rango sano del salón.",
+    "bottom_line_label": "INSIGHT",
+    "bottom_line": "Concentración alta en top 3 servicios (39% de facturación). Riesgo: vulnerabilidad si caen. Oportunidad: optimizar el mix actual antes de lanzar nuevos servicios."
   },
   "servicios": [
     {
@@ -679,7 +269,8 @@
       "margen_pct": 0.55,
       "contribucion": 1001000,
       "estado": "verde",
-      "accion": "Tu motor — protegerlo y comunicar valor"
+      "estado_label": "motor",
+      "accion": "Servicio ancla — proteger margen y comunicar valor."
     },
     {
       "id": "mechas",
@@ -692,7 +283,8 @@
       "margen_pct": 0.55,
       "contribucion": 990000,
       "estado": "verde",
-      "accion": "Empujar pack mechas + tratamiento"
+      "estado_label": "motor",
+      "accion": "Empujar pack Mechas + Tratamiento (ver plan acción)."
     },
     {
       "id": "corte_mujer",
@@ -705,7 +297,8 @@
       "margen_pct": 0.78,
       "contribucion": 842400,
       "estado": "verde",
-      "accion": "Servicio ancla — el de mejor margen del salón"
+      "estado_label": "ancla",
+      "accion": "Mayor margen del salón — sostener volumen."
     },
     {
       "id": "manicure",
@@ -718,7 +311,8 @@
       "margen_pct": 0.65,
       "contribucion": 624000,
       "estado": "verde",
-      "accion": "Pack manicure + esmalte CLOE complementa bien"
+      "estado_label": "ancla",
+      "accion": "Pack Manicure + esmalte CLOE complementa bien."
     },
     {
       "id": "pedicure",
@@ -731,7 +325,8 @@
       "margen_pct": 0.63,
       "contribucion": 475000,
       "estado": "verde",
-      "accion": "Mantener — alta rotación"
+      "estado_label": "ancla",
+      "accion": "Mantener — alta rotación."
     },
     {
       "id": "pestanas",
@@ -744,7 +339,8 @@
       "margen_pct": 0.62,
       "contribucion": 390600,
       "estado": "verde",
-      "accion": "Empujar fines de semana"
+      "estado_label": "ancla",
+      "accion": "Empujar fines de semana."
     },
     {
       "id": "maquillaje",
@@ -757,7 +353,8 @@
       "margen_pct": 0.7,
       "contribucion": 252000,
       "estado": "verde",
-      "accion": "Combinar con pestañas — pack novia"
+      "estado_label": "ancla",
+      "accion": "Combinar con pestañas — pack novia."
     },
     {
       "id": "tratamiento_capilar",
@@ -770,7 +367,8 @@
       "margen_pct": 0.5,
       "contribucion": 175000,
       "estado": "amarillo",
-      "accion": "Margen al límite — revisar costo de insumo"
+      "estado_label": "revisar",
+      "accion": "Margen al límite del rango sano — revisar costo de insumo."
     },
     {
       "id": "depilacion",
@@ -783,7 +381,8 @@
       "margen_pct": 0.6,
       "contribucion": 120000,
       "estado": "amarillo",
-      "accion": "Margen bajo el promedio del salón"
+      "estado_label": "revisar",
+      "accion": "Margen bajo el promedio del salón — evaluar precio."
     },
     {
       "id": "bronceado",
@@ -796,7 +395,8 @@
       "margen_pct": 0.42,
       "contribucion": 55440,
       "estado": "rojo",
-      "accion": "El de peor margen — subir precio 15% o sacarlo"
+      "estado_label": "crítico",
+      "accion": "Margen bajo el rango sano — subir precio +15% o excluir del menú."
     }
   ],
   "productos_cloe": [
@@ -810,7 +410,8 @@
       "margen_pct": 0.56,
       "contribucion": 120000,
       "estado": "verde",
-      "accion": "Top vendedor — reponer"
+      "estado_label": "top",
+      "accion": "Top vendedor — reponer."
     },
     {
       "id": "mascarilla_keratina",
@@ -822,7 +423,8 @@
       "margen_pct": 0.57,
       "contribucion": 100000,
       "estado": "verde",
-      "accion": "Mantener"
+      "estado_label": "ok",
+      "accion": "Mantener."
     },
     {
       "id": "serum_capilar",
@@ -834,7 +436,8 @@
       "margen_pct": 0.57,
       "contribucion": 96000,
       "estado": "verde",
-      "accion": "Cross-sell post-mechas"
+      "estado_label": "ok",
+      "accion": "Cross-sell post-mechas."
     },
     {
       "id": "ampolla_brillo",
@@ -846,7 +449,8 @@
       "margen_pct": 0.59,
       "contribucion": 70000,
       "estado": "verde",
-      "accion": "Ticket pequeño, alta rotación"
+      "estado_label": "ok",
+      "accion": "Ticket pequeño · alta rotación."
     },
     {
       "id": "spray_protector",
@@ -858,7 +462,8 @@
       "margen_pct": 0.53,
       "contribucion": 40000,
       "estado": "amarillo",
-      "accion": "Stock alto vs ventas — promover"
+      "estado_label": "revisar",
+      "accion": "Stock alto vs ventas — promover."
     },
     {
       "id": "aceite_argan",
@@ -870,7 +475,8 @@
       "margen_pct": 0.54,
       "contribucion": 19500,
       "estado": "amarillo",
-      "accion": "Sin movimiento >60 días"
+      "estado_label": "dormido",
+      "accion": "Sin movimiento >60 días — promover o devolver."
     },
     {
       "id": "kit_color",
@@ -882,17 +488,17 @@
       "margen_pct": 0.51,
       "contribucion": 18000,
       "estado": "rojo",
-      "accion": "Liquidar o devolver — capital atrapado"
+      "estado_label": "crítico",
+      "accion": "Liquidar -30% (7 días) o devolución a proveedor."
     }
   ],
   "productos_resumen": {
-    "section_title": "Productos CLOE — tu segunda línea de ingresos.",
-    "section_intro": "El retail debería ser el 20-25% de tu facturación. Hoy es 19%.",
-    "top_titulo": "Los que se mueven",
-    "top_intro": "Tres SKUs hacen el 65% del retail.",
-    "stock_dormido_titulo": "Stock dormido",
-    "stock_dormido_detalle": "2 SKUs sin venta en >60 días. Capital atrapado: $200.000 en repisa.",
-    "stock_dormido_accion": "Promo -30% una semana o devolución a proveedor."
+    "eyebrow": "05 · RETAIL CLOE · ROTACIÓN Y MIX",
+    "section_title": "Línea de productos CLOE · análisis de retail",
+    "section_intro": "Retail objetivo 20-25% de facturación. Mayo: 19%. Tres SKUs concentran 65% del retail. Dos SKUs sin movimiento >60 días.",
+    "alert_label": "ATENCIÓN · INVENTARIO SIN MOVIMIENTO >60 DÍAS",
+    "alert_detalle": "Kit cuidado color + Aceite de argán. Capital atrapado: $200.000.",
+    "alert_accion": "Promo -30% (7 días) o devolución a proveedor."
   },
   "personas": [
     {
@@ -935,7 +541,7 @@
       "costo_real_mensual": 360000,
       "ventas_generadas": 1200000,
       "productividad_pct": 0.3,
-      "bandera_legal": "Boleta variable con horario fijo — riesgo de figura laboral encubierta"
+      "bandera_legal": "Boleta variable con horario fijo y exclusivo — riesgo de figura laboral encubierta."
     },
     {
       "id": "manicurista_2",
@@ -967,12 +573,14 @@
     }
   ],
   "personas_resumen": {
-    "section_title": "Tu equipo y cuánto te deja cada uno.",
-    "section_intro": "Lo importante es la productividad por persona, no quién gana más.",
+    "eyebrow": "06 · CAPITAL HUMANO · COSTO Y PRODUCTIVIDAD",
+    "section_title": "Análisis de capital humano y productividad",
+    "section_intro": "Métrica clave: ventas generadas ÷ costo real mensual. Meta >2,0x. Banderas legales señalizadas.",
     "total_costo_mensual": 2972500,
     "peso_remuneraciones_pct": 0.412,
     "semaforo_peso": "amarillo",
-    "mensaje_peso": "Peso remuneraciones / ventas en 41,2%. Sano para tu rubro está entre 35-40%. Si subes a 50%, el negocio empieza a apretar."
+    "mensaje_peso_label": "PESO REMUNERACIONES SOBRE VENTA",
+    "mensaje_peso": "41,2%. Rango sano 35-40%. Si supera 50%, margen consolidado se comprime crítico."
   },
   "costos_fijos": [
     {
@@ -1031,13 +639,14 @@
     }
   ],
   "simuladores": {
-    "section_title": "Mueve los controles. Mira qué pasa.",
-    "section_intro": "Los números se recalculan en vivo. Sin recargar nada."
+    "eyebrow": "07 · ESCENARIOS · ANÁLISIS DE SENSIBILIDAD",
+    "section_title": "Escenarios de ajuste · simuladores en vivo",
+    "section_intro": "Recalcula en vivo. Simulador 01: variación de precio. Simulador 02: contratación adicional con leyes sociales."
   },
   "simulador_precios": {
     "habilitado": true,
-    "titulo": "¿Y si subo precios?",
-    "subtitulo": "Ajusta el porcentaje y observa cómo cambia tu utilidad mensual.",
+    "titulo": "Simulador 01 · Variación de precio",
+    "subtitulo": "Aplica % de ajuste sobre servicios elegibles. Recalcula margen, utilidad y punto de equilibrio en vivo.",
     "rango_min_pct": -0.1,
     "rango_max_pct": 0.2,
     "step_pct": 0.01,
@@ -1056,7 +665,7 @@
         "valor_pct": 0.1
       }
     ],
-    "supuesto_elasticidad": "SUPUESTO: cantidades constantes (sin caída por subida de precio). Si la subida es >10%, considerar -5% en cantidad.",
+    "supuesto_elasticidad": "SUPUESTO: cantidades constantes (sin caída por subida de precio). Si la subida supera 10%, considerar -5% en cantidad.",
     "servicios_aplicables_ids": [
       "mechas",
       "color_completo",
@@ -1067,8 +676,8 @@
   },
   "simulador_contratacion": {
     "habilitado": true,
-    "titulo": "¿Y si contrato a alguien más?",
-    "subtitulo": "Tres escenarios. Calculamos el breakeven y el costo real con leyes sociales.",
+    "titulo": "Simulador 02 · Contratación adicional",
+    "subtitulo": "Tres escenarios (conservador / base / optimista). Cálculo de costo real con factor 1,25 leyes sociales y breakeven mensual.",
     "escenarios": [
       {
         "id": "conservador",
@@ -1098,51 +707,62 @@
         "factor_leyes_sociales": 1.25
       }
     ],
-    "supuesto_factor": "SUPUESTO: factor 1.25 leyes sociales = AFP + salud + seguro + vacaciones promedio CL para contrato indefinido"
+    "supuesto_factor": "SUPUESTO: factor 1,25 leyes sociales = AFP + salud + seguro + vacaciones promedio CL para contrato indefinido."
   },
   "oportunidades": {
-    "section_title": "5 movimientos que aumentan tu utilidad este mes.",
-    "section_intro": "Ordenados por relación impacto / esfuerzo.",
+    "eyebrow": "08 · PLAN DE ACCIÓN · IMPACTO / ESFUERZO / PLAZO",
+    "section_title": "Plan de acción priorizado",
+    "section_intro": "Cinco acciones ordenadas por impacto sobre utilidad mensual. Plazo objetivo: 30 días. Impacto agregado estimado: +$575.000.",
     "items": [
       {
         "id": 1,
+        "icon": "trending-up",
         "titulo": "Subir Color completo +5%",
         "delta_mes": 90000,
         "esfuerzo": "Bajo",
+        "plazo_dias": 15,
         "detalle": "Margen sube de 55% a 57,5%. Comunicar a clientas frecuentes con 15 días de aviso."
       },
       {
         "id": 2,
-        "titulo": "Sacar Bronceado sin sol o subirlo +15%",
+        "icon": "scissors",
+        "titulo": "Subir +15% Bronceado sin sol o excluir del menú",
         "delta_mes": 25000,
         "esfuerzo": "Nulo",
-        "detalle": "Es el servicio con peor margen. Si no lo subes, dejas de perder margen relativo."
+        "plazo_dias": 7,
+        "detalle": "Servicio con peor margen. Si no se ajusta, sigue diluyendo el margen consolidado del salón."
       },
       {
         "id": 3,
-        "titulo": "Liquidar Kit color y Aceite argán",
+        "icon": "package",
+        "titulo": "Liquidar Kit cuidado color y Aceite argán",
         "delta_mes": 30000,
         "esfuerzo": "Bajo",
-        "detalle": "Promo -30% una semana. Recupera $200K de capital atrapado y libera repisa."
+        "plazo_dias": 7,
+        "detalle": "Promo -30% (7 días). Recupera $200.000 de capital atrapado y libera repisa."
       },
       {
         "id": 4,
+        "icon": "sparkles",
         "titulo": "Lanzar pack Mechas + Tratamiento",
         "delta_mes": 180000,
         "esfuerzo": "Medio",
-        "detalle": "Promo +$15K sobre mechas, incluye tratamiento valorado en $25K. Sube ticket promedio sin canibalizar."
+        "plazo_dias": 30,
+        "detalle": "Promo +$15.000 sobre Mechas, incluye Tratamiento valorado en $25.000. Sube ticket promedio sin canibalizar."
       },
       {
         "id": 5,
+        "icon": "calendar",
         "titulo": "Promo lunes-miércoles 11:30-14:00",
         "delta_mes": 250000,
         "esfuerzo": "Medio",
-        "detalle": "15% off en horario muerto con código MAÑANA. Levanta ocupación sin tocar full price."
+        "plazo_dias": 30,
+        "detalle": "15% off en horario de baja ocupación con código MAÑANA. Levanta capacidad ociosa sin tocar full price."
       }
     ],
     "total_potencial": 575000,
-    "total_potencial_label": "Total potencial captado en 30 días.",
-    "total_potencial_disclaimer": "Estimaciones sobre la base de cifras demo. Tu cifra real depende de tu mix actual."
+    "total_potencial_label": "IMPACTO POTENCIAL AGREGADO (30 DÍAS)",
+    "total_potencial_disclaimer": "Estimaciones sobre cifras demo. Valor real depende del mix actual."
   },
   "recomendaciones": [
     {
@@ -1161,7 +781,7 @@
       "esfuerzo": "Bajo",
       "prioridad": "P1",
       "delta_utilidad_mensual": 25000,
-      "accion": "Promo -30% una semana. Recupera capital y libera espacio físico."
+      "accion": "Promo -30% (7 días). Recupera capital y libera espacio físico."
     },
     {
       "id": 3,
@@ -1170,7 +790,7 @@
       "esfuerzo": "Medio",
       "prioridad": "P2",
       "delta_utilidad_mensual": 180000,
-      "accion": "Promo +$15K sobre mechas, incluye tratamiento valorado en $25K."
+      "accion": "Promo +$15.000 sobre Mechas, incluye Tratamiento valorado en $25.000."
     },
     {
       "id": 4,
@@ -1183,65 +803,591 @@
     },
     {
       "id": 5,
-      "titulo": "Revisar modalidad Manicurista 1",
+      "titulo": "Revisar modalidad contractual Manicurista 1",
       "impacto": "Medio",
       "esfuerzo": "Medio",
       "prioridad": "P3",
       "delta_utilidad_mensual": 0,
-      "accion": "Boleta variable con horario fijo y exclusivo es una figura riesgosa. Conversar formalización."
+      "accion": "Boleta variable con horario fijo y exclusivo es figura riesgosa. Conversar formalización."
     }
   ],
   "supuestos": [
     {
       "tipo": "SUPUESTO",
-      "texto": "Factor 1.25 leyes sociales = AFP + salud + seguro + vacaciones promedio CL para contrato indefinido"
+      "texto": "Factor 1,25 leyes sociales = AFP + salud + seguro + vacaciones promedio CL para contrato indefinido."
     },
     {
       "tipo": "SUPUESTO",
-      "texto": "Costos directos por servicio incluyen insumos + comisión profesional"
+      "texto": "Costos directos por servicio incluyen insumos + comisión profesional."
     },
     {
       "tipo": "SUPUESTO",
-      "texto": "Punto de equilibrio asume mix de venta actual y mismo margen consolidado"
+      "texto": "Punto de equilibrio asume mix de venta actual y mismo margen consolidado."
     },
     {
       "tipo": "RIESGO",
-      "texto": "Stock CLOE para venta vs uso interno del salón está mezclado — el margen de productos puede estar inflado en hasta un 8%"
+      "texto": "Stock CLOE para venta vs uso interno del salón está mezclado — el margen de productos puede estar inflado en hasta 8%."
     },
     {
       "tipo": "PENDIENTE",
-      "texto": "Histórico de ventas 3-6 meses para validar estacionalidad"
+      "texto": "Histórico de ventas 3-6 meses para validar estacionalidad."
     }
   ],
   "cta_final": {
-    "headline": "Esto es solo una muestra.",
-    "headline_2": "Tu diagnóstico real, con tus números, es lo que cierra esta historia.",
-    "subhead": "La diferencia entre intuir y saber, en 14 días.",
-    "whatsapp_label": "Hablemos por WhatsApp",
-    "email_label": "Escribir un correo"
+    "eyebrow": "09 · PRÓXIMO PASO · COORDINEMOS UNA REUNIÓN",
+    "headline": "El diagnóstico real, con sus números, en 14 días hábiles.",
+    "subhead": "Coordinemos una reunión de 30 minutos para revisar este formato con sus datos reales y definir alcance.",
+    "agendar_label": "Agendar reunión 30 min",
+    "whatsapp_label": "+56 9 7883 7430 · WhatsApp",
+    "email_label": "contacto@safepoint-ehs.com"
   },
   "footer": {
-    "powered_by_label": "Análisis desarrollado por",
+    "powered_by_label": "ANÁLISIS DESARROLLADO POR",
     "consultor_linea_1": "Cross Point Consultores",
     "consultor_linea_2": "Asesoría Comercial y Financiera para Pymes",
     "consultor_linea_3": "San Miguel, Santiago · safepoint-ehs.cl",
-    "demo_disclaimer": "Demo · cifras ilustrativas · datos reales se cargan tras el intake del cliente"
+    "demo_disclaimer": "Demo · cifras ilustrativas · este formato se replica con sus datos tras el intake."
   }
 }
   </script>
+</head>
 
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<body x-data="dashboard()" x-init="init()" x-cloak>
 
-  <!-- Alpine.js (defer para que dashboard() esté disponible) -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+  <!-- Banner DEMO sticky -->
+  <div class="lk-banner-demo" x-text="data.hero?.demo_banner || 'DEMO · cifras ilustrativas · este formato se replica con sus datos reales tras el intake'"></div>
 
-  <!-- AOS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Sticky header (visible al scroll) -->
+  <header class="lk-sticky-header" :class="{ 'is-visible': stickyVisible }">
+    <a href="#hero" class="lk-sticky-wordmark" x-text="data.hero?.wordmark || 'LK Studio'"></a>
+    <a :href="'https://wa.me/' + (data.meta?.consultor_whatsapp || '+56978837430').replace(/[^0-9]/g, '') + '?text=' + encodeURIComponent('Hola, vi el diagnóstico financiero LK Studio y quiero coordinar una reunión')"
+       class="lk-sticky-cta" target="_blank" rel="noopener">
+      <i data-lucide="message-circle" style="width:16px;height:16px;stroke-width:2;"></i>
+      Coordinar reunión
+    </a>
+  </header>
 
-  <!-- App propio -->
-  <script src="./assets/js/app.js"></script>
-  <script src="./assets/js/simulators.js"></script>
-  <script src="./assets/js/animations.js"></script>
+  <!-- ============================================================== -->
+  <!-- 01 · HERO — Diagnóstico financiero LK Studio                   -->
+  <!-- ============================================================== -->
+  <section id="hero" class="lk-hero">
+    <div class="lk-wordmark" data-aos="fade-down" data-aos-duration="700">
+      <div class="lk-wordmark-main" x-text="data.hero?.wordmark || 'LK Studio'"></div>
+      <div class="lk-wordmark-divider"></div>
+      <div class="lk-wordmark-sub" x-text="data.hero?.wordmark_sub || ''"></div>
+    </div>
+
+    <div class="lk-hero-mes" data-aos="fade-up" data-aos-delay="120" x-text="data.hero?.eyebrow || '01 · DIAGNÓSTICO FINANCIERO · MAYO 2026'"></div>
+
+    <h1 class="lk-hero-headline" data-aos="fade-up" data-aos-delay="200" x-text="data.hero?.headline || 'Diagnóstico financiero · análisis del período mayo 2026'"></h1>
+
+    <p class="lk-hero-subhead" data-aos="fade-up" data-aos-delay="280" x-text="data.hero?.subhead || ''"></p>
+
+    <!-- Executive summary mini grid (4 bullets) -->
+    <div class="lk-exec-summary-grid" data-aos="fade-up" data-aos-delay="360">
+      <template x-for="bullet in (data.executive_summary?.items || [])" :key="bullet.label">
+        <div class="lk-exec-bullet">
+          <div class="lk-exec-bullet-header">
+            <i :data-lucide="bullet.icon"></i>
+            <span class="lk-exec-bullet-label" x-text="bullet.label"></span>
+          </div>
+          <div class="lk-exec-bullet-valor" x-text="bullet.valor"></div>
+        </div>
+      </template>
+    </div>
+
+    <div class="text-center" data-aos="fade-up" data-aos-delay="440">
+      <a href="#hallazgos" class="lk-btn-primary">
+        <span x-text="data.hero?.cta_primary || 'Solicitar diagnóstico con datos reales'"></span>
+        <i data-lucide="arrow-right"></i>
+      </a>
+    </div>
+
+    <a href="#hallazgos" class="lk-scroll-arrow" data-aos="fade-up" data-aos-delay="600">
+      <span x-text="data.hero?.cta_scroll || 'Recorrer secciones'"></span>
+      <i data-lucide="chevron-down" style="width:18px;height:18px;stroke-width:2;"></i>
+    </a>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 02 · HALLAZGOS CLAVE — síntesis ejecutiva                      -->
+  <!-- ============================================================== -->
+  <section id="hallazgos" class="lk-section lk-section-ivory">
+    <div class="lk-container">
+      <div data-aos="fade-up">
+        <span class="lk-eyebrow-tech" x-text="data.hallazgos_clave?.eyebrow || '02 · HALLAZGOS CLAVE · SÍNTESIS EJECUTIVA'"></span>
+        <h2 class="lk-section-title" x-text="data.hallazgos_clave?.section_title || 'Hallazgos clave del período'"></h2>
+        <p class="lk-section-intro" x-text="data.hallazgos_clave?.section_intro || ''"></p>
+      </div>
+
+      <div class="lk-data-cards-grid">
+        <template x-for="(luz, idx) in (data.hallazgos_clave?.luces || [])" :key="luz.tipo">
+          <div class="lk-data-card" :class="'lk-data-card-' + luz.color" data-aos="fade-up" :data-aos-delay="100 + idx * 80">
+            <div class="lk-data-card-header">
+              <span class="lk-data-card-etiqueta" x-text="luz.etiqueta"></span>
+              <i class="lk-data-card-icon" :data-lucide="luz.icon_lucide"></i>
+            </div>
+            <div class="lk-data-card-titulo" x-text="luz.titulo"></div>
+            <div class="lk-data-card-metrica" x-text="luz.metrica_principal"></div>
+            <div class="lk-data-card-metrica-sub" x-text="luz.metrica_sublabel"></div>
+            <div class="lk-data-card-detalle" x-text="luz.detalle"></div>
+            <div class="lk-data-card-accion">
+              <span class="lk-data-card-accion-label" x-text="luz.accion_label || 'RECOMENDACIÓN'"></span>
+              <div class="lk-data-card-accion-text" x-text="luz.accion"></div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 03 · INDICADORES DEL PERÍODO — KPIs + Gauge                    -->
+  <!-- ============================================================== -->
+  <section id="numeros" class="lk-section lk-section-paper">
+    <div class="lk-container">
+      <div data-aos="fade-up">
+        <span class="lk-eyebrow-tech" x-text="data.estado_general?.eyebrow || '03 · KPIs DEL PERÍODO · COMPARATIVAS VS META'"></span>
+        <h2 class="lk-section-title" x-text="data.estado_general?.section_title || 'Indicadores del período · mayo 2026'"></h2>
+        <p class="lk-section-intro" x-text="data.estado_general?.section_intro || ''"></p>
+      </div>
+
+      <!-- KPI Grid (4 cards) -->
+      <div class="lk-kpi-grid">
+        <template x-for="(kpi, idx) in (data.kpis || [])" :key="kpi.id">
+          <div class="lk-kpi-card" data-aos="fade-up" :data-aos-delay="80 + idx * 70">
+            <div class="lk-kpi-card-header">
+              <i :data-lucide="kpi.icon"></i>
+              <span class="lk-kpi-label" x-text="kpi.label"></span>
+            </div>
+            <div class="lk-kpi-value" x-text="formatValue(kpi.valor, kpi.formato)"></div>
+            <div class="lk-kpi-trend" :class="'lk-kpi-trend-' + kpi.trend">
+              <i x-show="kpi.trend === 'up'" data-lucide="trending-up" style="width:14px;height:14px"></i>
+              <i x-show="kpi.trend === 'down'" data-lucide="trending-down" style="width:14px;height:14px"></i>
+              <span x-text="kpi.trend_texto"></span>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Gauge block -->
+      <div class="lk-gauge-block" data-aos="fade-up" data-aos-delay="320">
+        <div class="lk-gauge-canvas-wrapper">
+          <canvas id="gauge-pe" width="220" height="220"></canvas>
+          <div class="lk-gauge-pct" x-text="formatPCT(data.estado_general?.pe_pct_alcanzado || 0, 0)"></div>
+        </div>
+        <div class="lk-gauge-info">
+          <div class="lk-gauge-label" x-text="data.estado_general?.gauge_label || 'del punto de equilibrio cubierto'"></div>
+          <div class="lk-gauge-titulo" x-text="data.estado_general?.titulo || 'Cumplimiento sobre meta'"></div>
+          <div class="lk-gauge-mensaje" x-text="data.estado_general?.mensaje || ''"></div>
+          <div class="lk-gauge-subtext" x-text="data.estado_general?.gauge_subtext || ''"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 04 · RANKING DE SERVICIOS — tabla densa                        -->
+  <!-- ============================================================== -->
+  <section id="ranking" class="lk-section lk-section-ivory">
+    <div class="lk-container">
+      <div data-aos="fade-up">
+        <span class="lk-eyebrow-tech" x-text="data.ranking_servicios?.eyebrow || '04 · RANKING DE SERVICIOS · CONTRIBUCIÓN MENSUAL'"></span>
+        <h2 class="lk-section-title" x-text="data.ranking_servicios?.section_title || 'Ranking de servicios por contribución a utilidad'"></h2>
+        <p class="lk-section-intro" x-text="data.ranking_servicios?.section_intro || ''"></p>
+      </div>
+
+      <div class="lk-action-table-wrapper" data-aos="fade-up" data-aos-delay="120">
+        <table class="lk-action-table">
+          <thead>
+            <tr>
+              <th>Servicio</th>
+              <th class="right">Precio</th>
+              <th class="right">Cantidad/mes</th>
+              <th class="right">Margen %</th>
+              <th class="right">Contribución</th>
+              <th class="center">Estado</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template x-for="s in [...(data.servicios || [])].sort((a,b) => b.contribucion - a.contribucion)" :key="s.id">
+              <tr>
+                <td><span class="nombre" x-text="s.nombre"></span></td>
+                <td class="right" x-text="formatCLP(s.precio)"></td>
+                <td class="right" x-text="s.cantidad_mes"></td>
+                <td class="right">
+                  <span class="lk-badge"
+                        :class="s.estado === 'verde' ? 'lk-badge-verde' : s.estado === 'amarillo' ? 'lk-badge-ambar' : 'lk-badge-rojo'"
+                        x-text="formatPCT(s.margen_pct, 0)"></span>
+                </td>
+                <td class="right" x-text="formatCLP(s.contribucion)"></td>
+                <td class="center">
+                  <span class="lk-badge"
+                        :class="s.estado === 'verde' ? 'lk-badge-verde' : s.estado === 'amarillo' ? 'lk-badge-ambar' : 'lk-badge-rojo'"
+                        x-text="s.estado_label"></span>
+                </td>
+                <td><span class="accion" x-text="s.accion"></span></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Insight box -->
+      <div class="lk-insight-box" data-aos="fade-up" data-aos-delay="200">
+        <span class="lk-insight-label" x-text="data.ranking_servicios?.bottom_line_label || 'INSIGHT'"></span>
+        <div class="lk-insight-text" x-text="data.ranking_servicios?.bottom_line || ''"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 05 · LÍNEA DE PRODUCTOS CLOE — análisis de retail              -->
+  <!-- ============================================================== -->
+  <section id="productos" class="lk-section lk-section-paper">
+    <div class="lk-container">
+      <div data-aos="fade-up">
+        <span class="lk-eyebrow-tech" x-text="data.productos_resumen?.eyebrow || '05 · RETAIL CLOE · ROTACIÓN Y MIX'"></span>
+        <h2 class="lk-section-title" x-text="data.productos_resumen?.section_title || 'Línea de productos CLOE · análisis de retail'"></h2>
+        <p class="lk-section-intro" x-text="data.productos_resumen?.section_intro || ''"></p>
+      </div>
+
+      <div class="lk-action-table-wrapper" data-aos="fade-up" data-aos-delay="100">
+        <table class="lk-action-table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th class="right">Precio</th>
+              <th class="right">Costo</th>
+              <th class="right">Margen %</th>
+              <th class="right">Ventas/mes</th>
+              <th class="right">Stock</th>
+              <th class="right">Contribución</th>
+              <th class="center">Estado</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template x-for="p in [...(data.productos_cloe || [])].sort((a,b) => b.contribucion - a.contribucion)" :key="p.id">
+              <tr>
+                <td><span class="nombre" x-text="p.nombre"></span></td>
+                <td class="right" x-text="formatCLP(p.precio)"></td>
+                <td class="right" x-text="formatCLP(p.costo)"></td>
+                <td class="right" x-text="formatPCT(p.margen_pct, 0)"></td>
+                <td class="right" x-text="p.ventas_mes"></td>
+                <td class="right" x-text="p.stock"></td>
+                <td class="right" x-text="formatCLP(p.contribucion)"></td>
+                <td class="center">
+                  <span class="lk-badge"
+                        :class="p.estado === 'verde' ? 'lk-badge-verde' : p.estado === 'amarillo' ? 'lk-badge-ambar' : 'lk-badge-rojo'"
+                        x-text="p.estado_label"></span>
+                </td>
+                <td><span class="accion" x-text="p.accion"></span></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Alert banner stock dormido -->
+      <div class="lk-alert-banner" data-aos="fade-up" data-aos-delay="180">
+        <i class="lk-alert-banner-icon" data-lucide="package-x"></i>
+        <div class="lk-alert-banner-content">
+          <div class="lk-alert-banner-label" x-text="data.productos_resumen?.alert_label || 'ATENCIÓN · INVENTARIO SIN MOVIMIENTO'"></div>
+          <div class="lk-alert-banner-detalle" x-text="data.productos_resumen?.alert_detalle || ''"></div>
+          <div class="lk-alert-banner-accion" x-text="data.productos_resumen?.alert_accion || ''"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 06 · CAPITAL HUMANO — análisis de costo y productividad       -->
+  <!-- ============================================================== -->
+  <section id="equipo" class="lk-section lk-section-ivory">
+    <div class="lk-container">
+      <div data-aos="fade-up">
+        <span class="lk-eyebrow-tech" x-text="data.personas_resumen?.eyebrow || '06 · CAPITAL HUMANO · COSTO Y PRODUCTIVIDAD'"></span>
+        <h2 class="lk-section-title" x-text="data.personas_resumen?.section_title || 'Análisis de capital humano y productividad'"></h2>
+        <p class="lk-section-intro" x-text="data.personas_resumen?.section_intro || ''"></p>
+      </div>
+
+      <div class="lk-personas-grid">
+        <template x-for="(p, idx) in (data.personas || [])" :key="p.id">
+          <div class="lk-persona-card"
+               :class="{ 'lk-persona-card-flagged': p.bandera_legal }"
+               data-aos="fade-up" :data-aos-delay="80 + idx * 60">
+            <div class="lk-persona-header">
+              <i :data-lucide="p.bandera_legal ? 'user-x' : 'user'"></i>
+              <div class="lk-persona-rol" x-text="p.rol"></div>
+            </div>
+            <div class="lk-persona-modalidad" x-text="p.modalidad"></div>
+
+            <div class="lk-persona-stat">
+              <span class="lk-persona-stat-label">Sueldo / honorario</span>
+              <span class="lk-persona-stat-valor" x-text="formatCLP((p.sueldo_bruto || 0) + (p.honorario_fijo || 0))"></span>
+            </div>
+            <div class="lk-persona-stat">
+              <span class="lk-persona-stat-label">Costo real mensual</span>
+              <span class="lk-persona-stat-valor" x-text="formatCLP(p.costo_real_mensual)"></span>
+            </div>
+            <div class="lk-persona-stat">
+              <span class="lk-persona-stat-label">Ventas generadas</span>
+              <span class="lk-persona-stat-valor" x-text="formatCLP(p.ventas_generadas)"></span>
+            </div>
+            <div class="lk-persona-stat" x-show="p.productividad_pct !== null">
+              <span class="lk-persona-stat-label">Productividad</span>
+              <span class="lk-persona-stat-valor" x-text="formatPCT(p.productividad_pct, 0)"></span>
+            </div>
+
+            <div class="lk-persona-bandera" x-show="p.bandera_legal">
+              <i data-lucide="alert-triangle"></i>
+              <span x-text="p.bandera_legal"></span>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Banner peso remuneraciones -->
+      <div class="lk-alert-banner lk-alert-banner-ambar" data-aos="fade-up" data-aos-delay="280">
+        <i class="lk-alert-banner-icon" data-lucide="percent"></i>
+        <div class="lk-alert-banner-content">
+          <div class="lk-alert-banner-label" x-text="data.personas_resumen?.mensaje_peso_label || 'PESO REMUNERACIONES SOBRE VENTA'"></div>
+          <div class="lk-alert-banner-detalle" x-text="data.personas_resumen?.mensaje_peso || ''"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 07 · ESCENARIOS — simuladores en vivo                          -->
+  <!-- ============================================================== -->
+  <section id="simuladores" class="lk-section lk-section-noir">
+    <div class="lk-container">
+      <div data-aos="fade-up">
+        <span class="lk-eyebrow-tech" x-text="data.simuladores?.eyebrow || '07 · ESCENARIOS · ANÁLISIS DE SENSIBILIDAD'"></span>
+        <h2 class="lk-section-title" x-text="data.simuladores?.section_title || 'Escenarios de ajuste · simuladores en vivo'"></h2>
+        <p class="lk-section-intro" x-text="data.simuladores?.section_intro || ''"></p>
+      </div>
+
+      <!-- Simulador 01: Variación de precio -->
+      <div class="lk-sim-block" x-data="simuladorPrecios(data)" data-aos="fade-up" data-aos-delay="120">
+        <div class="lk-sim-eyebrow" x-text="(data.simulador_precios?.titulo || '').split('·')[0].trim() || 'SIMULADOR 01'"></div>
+        <h3 class="lk-sim-titulo" x-text="data.simulador_precios?.titulo || 'Simulador 01 · Variación de precio'"></h3>
+        <p class="lk-sim-subtitulo" x-text="data.simulador_precios?.subtitulo || ''"></p>
+
+        <!-- Slider -->
+        <div class="flex items-center gap-4 mb-3">
+          <input
+            type="range"
+            class="lk-slider"
+            :min="(data.simulador_precios?.rango_min_pct || -0.1) * 100"
+            :max="(data.simulador_precios?.rango_max_pct || 0.2) * 100"
+            :step="(data.simulador_precios?.step_pct || 0.01) * 100"
+            :value="spPct * 100"
+            @input="spPct = parseFloat($event.target.value) / 100"
+          />
+          <div class="font-bold text-2xl text-lk-champagne-light tabular-nums" x-text="(spPct >= 0 ? '+' : '') + (spPct * 100).toFixed(0) + '%'" style="min-width: 75px; text-align: right;"></div>
+        </div>
+
+        <!-- Presets -->
+        <div class="flex gap-2 flex-wrap mb-2">
+          <template x-for="preset in (data.simulador_precios?.presets || [])" :key="preset.label">
+            <button
+              class="lk-preset-btn"
+              :class="{ 'lk-preset-btn-active': Math.abs(spPct - preset.valor_pct) < 0.001 }"
+              @click="spPct = preset.valor_pct"
+              x-text="preset.label"></button>
+          </template>
+        </div>
+
+        <!-- Resultados -->
+        <div class="lk-sim-result-grid">
+          <div class="lk-sim-result">
+            <div class="lk-sim-result-label">Margen consolidado</div>
+            <div class="lk-sim-result-valor" x-text="formatPCT(spMargenNuevo(), 1)"></div>
+          </div>
+          <div class="lk-sim-result">
+            <div class="lk-sim-result-label">Δ utilidad / mes</div>
+            <div class="lk-sim-result-valor" :class="{ 'text-lk-verde': spDeltaUtilidad() > 0, 'text-lk-rojo': spDeltaUtilidad() < 0 }" x-text="(spDeltaUtilidad() >= 0 ? '+' : '') + formatCLP(spDeltaUtilidad())"></div>
+          </div>
+          <div class="lk-sim-result">
+            <div class="lk-sim-result-label">Punto de equilibrio</div>
+            <div class="lk-sim-result-valor" x-text="formatCLP(spPENuevo())"></div>
+          </div>
+          <div class="lk-sim-result">
+            <div class="lk-sim-result-label">Servicios afectados</div>
+            <div class="lk-sim-result-valor" x-text="(data.simulador_precios?.servicios_aplicables_ids || []).length + ' / ' + (data.servicios || []).length"></div>
+          </div>
+        </div>
+
+        <div class="lk-sim-supuesto" x-text="data.simulador_precios?.supuesto_elasticidad || ''"></div>
+      </div>
+
+      <!-- Simulador 02: Contratación adicional -->
+      <div class="lk-sim-block" x-data="simuladorContratacion(data)" data-aos="fade-up" data-aos-delay="240" style="margin-top: 1.5rem;">
+        <div class="lk-sim-eyebrow" x-text="(data.simulador_contratacion?.titulo || '').split('·')[0].trim() || 'SIMULADOR 02'"></div>
+        <h3 class="lk-sim-titulo" x-text="data.simulador_contratacion?.titulo || 'Simulador 02 · Contratación adicional'"></h3>
+        <p class="lk-sim-subtitulo" x-text="data.simulador_contratacion?.subtitulo || ''"></p>
+
+        <table class="lk-sim-tabla">
+          <thead>
+            <tr>
+              <th>Escenario</th>
+              <th class="right">Costo real / mes</th>
+              <th class="right">Venta esperada</th>
+              <th class="right">Δ utilidad / mes</th>
+              <th class="right">Breakeven</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template x-for="(row, idx) in scRows()" :key="row.id">
+              <tr :class="{ 'is-best': idx === scBestIdx() }">
+                <td x-text="row.label"></td>
+                <td class="right" x-text="formatCLP(row.costo_real)"></td>
+                <td class="right" x-text="formatCLP(row.venta_esperada)"></td>
+                <td class="right" x-text="(row.utilidad_extra >= 0 ? '+' : '') + formatCLP(row.utilidad_extra)"></td>
+                <td class="right" x-text="row.meses_breakeven < 99 ? row.meses_breakeven.toFixed(1) + ' meses' : '—'"></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+
+        <div class="lk-sim-recomendacion" x-text="scRecomendacion()"></div>
+        <div class="lk-sim-supuesto" x-text="data.simulador_contratacion?.supuesto_factor || ''"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 08 · PLAN DE ACCIÓN — tabla numerada                           -->
+  <!-- ============================================================== -->
+  <section id="oportunidades" class="lk-section lk-section-paper">
+    <div class="lk-container">
+      <div data-aos="fade-up">
+        <span class="lk-eyebrow-tech" x-text="data.oportunidades?.eyebrow || '08 · PLAN DE ACCIÓN · IMPACTO / ESFUERZO / PLAZO'"></span>
+        <h2 class="lk-section-title" x-text="data.oportunidades?.section_title || 'Plan de acción priorizado'"></h2>
+        <p class="lk-section-intro" x-text="data.oportunidades?.section_intro || ''"></p>
+      </div>
+
+      <div class="lk-action-table-wrapper" data-aos="fade-up" data-aos-delay="120">
+        <table class="lk-action-table lk-action-table-numbered">
+          <thead>
+            <tr>
+              <th class="center">#</th>
+              <th>Acción</th>
+              <th class="right">Δ utilidad/mes</th>
+              <th class="center">Esfuerzo</th>
+              <th class="center">Plazo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template x-for="op in (data.oportunidades?.items || [])" :key="op.id">
+              <tr>
+                <td class="numeral" x-text="String(op.id).padStart(2, '0')"></td>
+                <td>
+                  <div class="nombre" x-text="op.titulo"></div>
+                  <div class="meta" x-text="op.detalle"></div>
+                </td>
+                <td class="right delta-positivo" x-text="'+' + formatCLP(op.delta_mes)"></td>
+                <td class="center">
+                  <span class="lk-badge"
+                        :class="
+                          op.esfuerzo === 'Bajo' ? 'lk-badge-esfuerzo-bajo' :
+                          op.esfuerzo === 'Medio' ? 'lk-badge-esfuerzo-medio' :
+                          op.esfuerzo === 'Alto' ? 'lk-badge-esfuerzo-alto' :
+                          'lk-badge-esfuerzo-nulo'
+                        "
+                        x-text="op.esfuerzo"></span>
+                </td>
+                <td class="center">
+                  <span class="lk-badge lk-badge-neutral" x-text="(op.plazo_dias || 30) + ' días'"></span>
+                </td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Total agregado -->
+      <div class="lk-total-agregado" data-aos="fade-up" data-aos-delay="200">
+        <div>
+          <div class="lk-total-agregado-label" x-text="data.oportunidades?.total_potencial_label || 'IMPACTO POTENCIAL AGREGADO (30 DÍAS)'"></div>
+          <div class="lk-total-agregado-num" x-text="'+' + formatCLP(data.oportunidades?.total_potencial || 0)"></div>
+        </div>
+        <div class="lk-total-agregado-disclaimer" x-text="data.oportunidades?.total_potencial_disclaimer || ''"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 09 · CTA FINAL — coordinemos una reunión                       -->
+  <!-- ============================================================== -->
+  <section id="contacto" class="lk-cta-final">
+    <div class="lk-container">
+      <div data-aos="fade-up">
+        <div class="lk-eyebrow-tech" style="text-align:center; max-width:fit-content; margin-left:auto; margin-right:auto; border-bottom:none; color: var(--lk-champagne-light);" x-text="data.cta_final?.eyebrow || '09 · PRÓXIMO PASO · COORDINEMOS UNA REUNIÓN'"></div>
+
+        <h2 class="lk-cta-headline" x-text="data.cta_final?.headline || 'El diagnóstico real, con sus números, en 14 días hábiles.'"></h2>
+
+        <p class="lk-cta-subhead" x-text="data.cta_final?.subhead || ''"></p>
+
+        <div class="lk-cta-buttons">
+          <a :href="'https://wa.me/' + (data.meta?.consultor_whatsapp || '+56978837430').replace(/[^0-9]/g, '') + '?text=' + encodeURIComponent('Hola, vi el diagnóstico financiero LK Studio y quiero coordinar una reunión de 30 minutos')"
+             target="_blank" rel="noopener"
+             class="lk-btn-primary">
+            <i data-lucide="calendar-check"></i>
+            <span x-text="data.cta_final?.agendar_label || 'Agendar reunión 30 min'"></span>
+          </a>
+          <a :href="'https://wa.me/' + (data.meta?.consultor_whatsapp || '+56978837430').replace(/[^0-9]/g, '')"
+             target="_blank" rel="noopener"
+             class="lk-btn-secondary">
+            <i data-lucide="message-circle"></i>
+            <span x-text="data.cta_final?.whatsapp_label || '+56 9 7883 7430 · WhatsApp'"></span>
+          </a>
+          <a :href="'mailto:' + (data.meta?.consultor_email || 'contacto@safepoint-ehs.com') + '?subject=' + encodeURIComponent('Reunión sobre diagnóstico LK Studio')"
+             class="lk-btn-secondary">
+            <i data-lucide="mail"></i>
+            <span x-text="data.cta_final?.email_label || 'contacto@safepoint-ehs.com'"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer institucional -->
+  <footer class="lk-footer">
+    <div class="lk-footer-divider"></div>
+    <span class="lk-footer-powered-label" x-text="data.footer?.powered_by_label || 'ANÁLISIS DESARROLLADO POR'"></span>
+    <div class="lk-footer-consultor" x-text="data.footer?.consultor_linea_1 || 'Cross Point Consultores'"></div>
+    <div class="lk-footer-lema" x-text="data.footer?.consultor_linea_2 || 'Asesoría Comercial y Financiera para Pymes'"></div>
+    <div class="lk-footer-contacto" x-text="data.footer?.consultor_linea_3 || 'San Miguel, Santiago · safepoint-ehs.cl'"></div>
+    <div class="lk-footer-disclaimer" x-text="data.footer?.demo_disclaimer || 'Demo · cifras ilustrativas'"></div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a id="fab-wsp"
+     class="lk-fab-wsp"
+     :href="'https://wa.me/' + (data.meta?.consultor_whatsapp || '+56978837430').replace(/[^0-9]/g, '') + '?text=' + encodeURIComponent('Hola, vi el diagnóstico financiero LK Studio y quiero coordinar una reunión')"
+     target="_blank"
+     rel="noopener"
+     aria-label="WhatsApp Cross Point Consultores"
+     style="opacity: 0; pointer-events: none;">
+    <svg class="lk-fab-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+    </svg>
+  </a>
+
+  <!-- Scripts -->
+  <!-- App scripts primero (definen window.dashboard, simuladores, etc.) -->
+  <script src="./assets/js/app.js?v=3.6"></script>
+  <script src="./assets/js/simulators.js?v=3.6"></script>
+  <!-- Libs externas defer (se ejecutan después en orden) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script defer src="./assets/js/animations.js?v=3.6"></script>
+  <!-- Alpine último: necesita que dashboard()/simuladores estén en window -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>

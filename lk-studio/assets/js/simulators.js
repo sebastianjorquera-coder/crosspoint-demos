@@ -1,50 +1,39 @@
 /* =====================================================================
    simulators.js — LK Studio diagnóstico financiero
-   - simuladorPrecios()       → slider % aumento + cálculo en vivo
-   - simuladorContratacion()  → 3 escenarios + breakeven + recomendación
+   - simuladorPrecios(rootData)       → slider % aumento + cálculo en vivo
+   - simuladorContratacion(rootData)  → 3 escenarios + breakeven + recomendación
+
+   Patrón Alpine 3: el root data se pasa como argumento al construir el
+   componente (x-data="simuladorPrecios(data)") en lugar de hacer walk-up
+   del _x_dataStack — el walk-up tropieza con proxies reactivos de Alpine
+   y causa "Maximum call stack size exceeded".
    ===================================================================== */
 
-/* Helper: walk up the Alpine data stack to find the parent dashboard()
-   component (which holds .data). Used because child components don't
-   inherit data automatically. */
-function _lkDataRoot(el) {
-  let cur = el;
-  while (cur) {
-    if (cur._x_dataStack && cur._x_dataStack.length) {
-      for (const scope of cur._x_dataStack) {
-        if (scope && scope.data && scope.data.kpis) return scope;
-      }
-    }
-    cur = cur.parentElement || null;
-  }
-  return null;
+/* Helpers de formato (compartidos) */
+function _lkFormatCLP(v) {
+  if (v == null || isNaN(v)) return '$—';
+  return '$' + Math.round(v).toLocaleString('es-CL').replace(/,/g, '.');
+}
+
+function _lkFormatPCT(v, decimals = 1) {
+  if (v == null || isNaN(v)) return '—';
+  return (v * 100).toFixed(decimals).replace('.', ',') + '%';
 }
 
 /* ====================================================================
-   Simulador 1: ¿Y si subo precios?
+   Simulador 01: Variación de precio
    ==================================================================== */
-function simuladorPrecios() {
+function simuladorPrecios(rootData) {
   return {
     spPct: 0.05,
-
-    init() {
-      // Tomar valor inicial del data si existe
-      const root = this._dataRoot();
-      const ini = root?.data?.simulador_precios?.valor_inicial_pct;
-      if (typeof ini === 'number') this.spPct = ini;
-    },
-
-    _dataRoot() {
-      return _lkDataRoot(this.$el);
-    },
+    _rootData: rootData,
 
     get data() {
-      return this._dataRoot()?.data || {};
+      return this._rootData || {};
     },
 
     formatCLP(v) {
-      const root = this._dataRoot();
-      return root ? root.formatCLP(v) : '$' + Math.round(v || 0).toLocaleString('es-CL');
+      return _lkFormatCLP(v);
     },
 
     /* Servicios aplicables (los que están en simulador_precios.servicios_aplicables_ids) */
@@ -119,23 +108,18 @@ function simuladorPrecios() {
 window.simuladorPrecios = simuladorPrecios;
 
 /* ====================================================================
-   Simulador 2: ¿Y si contrato a alguien?
+   Simulador 02: Contratación adicional
    ==================================================================== */
-function simuladorContratacion() {
+function simuladorContratacion(rootData) {
   return {
-    init() {},
-
-    _dataRoot() {
-      return _lkDataRoot(this.$el);
-    },
+    _rootData: rootData,
 
     get data() {
-      return this._dataRoot()?.data || {};
+      return this._rootData || {};
     },
 
     formatCLP(v) {
-      const root = this._dataRoot();
-      return root ? root.formatCLP(v) : '$' + Math.round(v || 0).toLocaleString('es-CL');
+      return _lkFormatCLP(v);
     },
 
     _calcEscenario(esc) {
@@ -145,7 +129,7 @@ function simuladorContratacion() {
       const costo_real = (sueldo_total + comision_total) * factor;
       const venta_esperada = (esc.venta_esperada_uno || 0) * (esc.n_personas || 1);
 
-      const margen_actual = this._dataRoot()?.data?.kpis?.find(k => k.id === 'margen_consolidado')?.valor || 0.6;
+      const margen_actual = this.data.kpis?.find(k => k.id === 'margen_consolidado')?.valor || 0.6;
       const utilidad_extra = (venta_esperada * margen_actual) - costo_real;
       const meses_breakeven = utilidad_extra > 0 ? (costo_real / utilidad_extra) : 99;
 
@@ -183,10 +167,10 @@ function simuladorContratacion() {
       if (!rows.length) return '';
       const best = rows[this.scBestIdx()];
       if (best.utilidad_extra <= 0) {
-        return 'Ninguno de los escenarios deja utilidad incremental positiva. Antes de contratar, primero subí ocupación con los recursos actuales.';
+        return 'Ninguno de los escenarios deja utilidad incremental positiva. Antes de contratar, primero subir ocupación con los recursos actuales.';
       }
       const meses = best.meses_breakeven < 99 ? best.meses_breakeven.toFixed(1) : '—';
-      return 'El escenario "' + best.label + '" es el más conveniente: utilidad incremental de ' + this.formatCLP(best.utilidad_extra) + '/mes y breakeven en ' + meses + ' meses. Validalo con histórico de productividad antes de firmar.';
+      return 'El escenario "' + best.label + '" es el más conveniente: utilidad incremental de ' + this.formatCLP(best.utilidad_extra) + '/mes y breakeven en ' + meses + ' meses. Validar contra histórico de productividad antes de firmar.';
     }
   };
 }
