@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#028090" />
+  <title>Demo · Cross Point Consultores</title>
+  <meta name="description" content="Estado del negocio en una pantalla. Asesoría Comercial y Financiera para Pymes." />
+
+  <!-- OpenGraph (compartir WhatsApp/email) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Demo · Cross Point Consultores" />
+  <meta property="og:description" content="Estado del negocio en una pantalla. Cifras ilustrativas." />
+  <meta property="og:image" content="./assets/img/og-image.png" />
+  <meta property="og:locale" content="es_CL" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN (zero build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cp: {
+              teal: '#028090',
+              tealDark: '#015d68',
+              tealMist: '#E8F6F7',
+              gold: '#C9A84C',
+              goldLight: '#F0E4BA',
+              dark: '#1F2937',
+              mid: '#6B7280',
+              light: '#F3F4F6',
+              ok: '#16A34A',
+              warn: '#EAB308',
+              risk: '#DC2626'
+            }
+          },
+          fontFamily: {
+            display: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            body: ['Inter', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            card: '0 2px 8px rgba(2, 128, 144, 0.08), 0 1px 2px rgba(2, 128, 144, 0.04)',
+            cardHover: '0 8px 24px rgba(2, 128, 144, 0.12), 0 2px 6px rgba(2, 128, 144, 0.08)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS animations (scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Alpine.js (reactividad simple, defer obligatorio) -->
+  <script defer src="https://unpkg.com/alpinejs@3.13.5/dist/cdn.min.js"></script>
+
+  <!-- Theme custom -->
+  <link rel="stylesheet" href="./assets/css/theme.css" />
+</head>
+
+<body class="font-body bg-white text-cp-dark antialiased"
+      x-data="dashboard()"
+      x-init="init()"
+      x-cloak>
+
+  <!-- ============================================================ -->
+  <!-- BANNER DEMO (sticky top, gold ribbon) -->
+  <!-- ============================================================ -->
+  <div class="sticky top-0 z-50 bg-cp-goldLight border-b border-cp-gold/40"
+       x-show="data.meta?.es_demo === true">
+    <div class="max-w-6xl mx-auto px-4 py-2 text-center text-xs sm:text-sm font-semibold text-cp-tealDark">
+      DEMO · cifras ilustrativas · datos reales se cargan tras intake
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SECCIÓN 1 · HERO -->
+  <!-- ============================================================ -->
+  <section id="hero" class="relative min-h-[88vh] flex items-center overflow-hidden">
+    <!-- Gradiente teal -->
+    <div class="absolute inset-0 bg-gradient-to-br from-cp-teal via-cp-teal to-cp-tealDark"></div>
+    <div class="absolute inset-0 opacity-10"
+         style="background-image: radial-gradient(circle at 20% 30%, white 0%, transparent 40%), radial-gradient(circle at 80% 70%, white 0%, transparent 40%);"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 py-16 w-full">
+      <!-- Logo + consultor (top) -->
+      <div class="flex items-center gap-3 mb-12 sm:mb-16" data-aos="fade-down">
+        <div class="w-10 h-10 rounded-lg bg-cp-gold/20 border border-cp-gold/40 flex items-center justify-center font-display font-bold text-cp-goldLight text-lg">
+          CP
+        </div>
+        <div class="text-cp-goldLight">
+          <div class="font-display font-semibold text-sm sm:text-base" x-text="data.meta?.consultor_nombre"></div>
+          <div class="text-xs opacity-80" x-text="data.meta?.consultor_lema"></div>
+        </div>
+      </div>
+
+      <!-- Título cliente -->
+      <h1 class="font-display font-extrabold text-white text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-none"
+          data-aos="fade-up">
+        <span x-text="data.hero?.titulo">—</span>
+      </h1>
+      <p class="mt-3 text-cp-goldLight text-lg sm:text-2xl font-light"
+         data-aos="fade-up" data-aos-delay="100"
+         x-text="data.hero?.subtitulo">—</p>
+
+      <!-- KPI hero gigante -->
+      <div class="mt-10 sm:mt-16" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-cp-goldLight text-sm uppercase tracking-widest font-semibold"
+             x-text="data.hero?.kpi_principal_label">—</div>
+        <div class="font-display font-extrabold text-white mt-2 text-6xl sm:text-8xl lg:text-9xl tracking-tight leading-none"
+             x-text="formatValue(data.hero?.kpi_principal_valor, data.hero?.kpi_principal_formato)">—</div>
+      </div>
+
+      <!-- CTA scroll -->
+      <div class="mt-12 sm:mt-20 flex items-center gap-3" data-aos="fade-up" data-aos-delay="300">
+        <a href="#estado" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-cp-gold text-cp-tealDark font-semibold text-sm hover:bg-cp-goldLight transition-all shadow-lg">
+          <span x-text="data.hero?.cta_scroll_label || 'Recorre el negocio'">↓ Recorre el negocio</span>
+          <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECCIÓN 2 · ESTADO GENERAL (KPIs + Gauge + Semáforo) -->
+  <!-- ============================================================ -->
+  <section id="estado" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <div class="inline-block px-4 py-1 rounded-full bg-cp-tealMist text-cp-tealDark text-xs font-semibold uppercase tracking-widest mb-3">
+          Resumen ejecutivo
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-cp-dark">El estado del negocio</h2>
+        <p class="mt-2 text-cp-mid">Lo esencial en una pantalla.</p>
+      </div>
+
+      <!-- 4 KPI cards -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <template x-for="(kpi, idx) in data.kpis || []" :key="kpi.id">
+          <div class="kpi-card bg-white rounded-xl shadow-card border-t-4 hover:shadow-cardHover transition-all"
+               :style="`border-top-color: ${getColorByKey(kpi.color_borde)}`"
+               :data-aos-delay="idx * 80"
+               data-aos="fade-up">
+            <div class="p-5">
+              <div class="text-xs text-cp-mid uppercase tracking-wider font-semibold" x-text="kpi.label"></div>
+              <div class="mt-2 font-display font-extrabold text-cp-dark text-2xl sm:text-3xl"
+                   x-text="formatValue(kpi.valor, kpi.formato)"></div>
+              <div class="mt-2 flex items-center gap-1 text-xs" :class="trendColorClass(kpi.trend)">
+                <span x-text="trendArrow(kpi.trend)" class="font-bold"></span>
+                <span x-text="kpi.trend_texto"></span>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Gauge + Mensaje -->
+      <div class="mt-12 grid lg:grid-cols-2 gap-8 items-center bg-cp-light rounded-2xl p-6 sm:p-10" data-aos="fade-up">
+        <div class="relative h-64 flex items-center justify-center">
+          <canvas id="gaugeChart" width="280" height="280"></canvas>
+          <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+            <div class="font-display font-extrabold text-5xl text-cp-teal"
+                 x-text="`${Math.round((data.estado_general?.pe_pct_alcanzado || 0) * 100)}%`"></div>
+            <div class="text-xs text-cp-mid uppercase tracking-wider">del PE alcanzado</div>
+          </div>
+        </div>
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider"
+               :class="semaforoBgClass(data.estado_general?.semaforo)">
+            <span class="w-2 h-2 rounded-full"
+                  :class="semaforoDotClass(data.estado_general?.semaforo)"></span>
+            <span x-text="data.estado_general?.titulo">—</span>
+          </div>
+          <p class="mt-4 text-cp-dark text-lg leading-relaxed" x-text="data.estado_general?.mensaje">—</p>
+          <div class="mt-6 flex items-center gap-3 text-sm text-cp-mid">
+            <svg class="w-5 h-5 text-cp-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Cubres tus costos fijos al día <strong class="text-cp-dark" x-text="data.estado_general?.dias_para_pe"></strong> de <span x-text="data.estado_general?.dias_total_mes"></span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top alertas + oportunidades -->
+      <div class="mt-12 grid md:grid-cols-2 gap-6">
+        <div class="bg-white border border-cp-risk/20 rounded-xl overflow-hidden" data-aos="fade-up">
+          <div class="bg-cp-risk text-white px-5 py-3 font-display font-semibold flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            Top 3 alertas
+          </div>
+          <ol class="divide-y divide-cp-light">
+            <template x-for="(a, i) in (data.alertas || []).slice(0, 3)" :key="i">
+              <li class="px-5 py-4">
+                <div class="flex gap-3">
+                  <span class="flex-shrink-0 w-6 h-6 rounded-full bg-cp-risk/10 text-cp-risk text-xs font-bold flex items-center justify-center" x-text="i + 1"></span>
+                  <div>
+                    <div class="font-semibold text-cp-dark text-sm" x-text="a.titulo"></div>
+                    <div class="text-xs text-cp-mid mt-1" x-text="a.detalle"></div>
+                  </div>
+                </div>
+              </li>
+            </template>
+          </ol>
+        </div>
+
+        <div class="bg-white border border-cp-ok/20 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="80">
+          <div class="bg-cp-ok text-white px-5 py-3 font-display font-semibold flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            Top 3 oportunidades
+          </div>
+          <ol class="divide-y divide-cp-light">
+            <template x-for="(o, i) in (data.oportunidades || []).slice(0, 3)" :key="i">
+              <li class="px-5 py-4">
+                <div class="flex gap-3">
+                  <span class="flex-shrink-0 w-6 h-6 rounded-full bg-cp-ok/10 text-cp-ok text-xs font-bold flex items-center justify-center" x-text="i + 1"></span>
+                  <div class="flex-1">
+                    <div class="font-semibold text-cp-dark text-sm" x-text="o.titulo"></div>
+                    <div class="text-xs text-cp-mid mt-1" x-text="o.detalle"></div>
+                    <div class="text-xs font-semibold text-cp-ok mt-2" x-show="o.impacto_estimado">
+                      <span x-text="`Impacto estimado: ${formatValue(o.impacto_estimado, 'CLP')}/mes`"></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </template>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECCIÓN 3 · SERVICIOS + PRODUCTOS (tabs) -->
+  <!-- ============================================================ -->
+  <section id="lineas" class="py-16 sm:py-24 bg-cp-light">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+      <div class="text-center mb-10" data-aos="fade-up">
+        <div class="inline-block px-4 py-1 rounded-full bg-cp-gold/20 text-cp-tealDark text-xs font-semibold uppercase tracking-widest mb-3">
+          Las dos líneas del negocio
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-cp-dark">Qué genera tu plata</h2>
+      </div>
+
+      <!-- Tab buttons -->
+      <div class="flex justify-center gap-2 mb-8" data-aos="fade-up" data-aos-delay="80">
+        <button class="px-5 py-2 rounded-full text-sm font-semibold transition-all"
+                :class="tab === 'servicios' ? 'bg-cp-teal text-white shadow-card' : 'bg-white text-cp-mid hover:bg-cp-tealMist'"
+                @click="setTab('servicios')">Servicios</button>
+        <button class="px-5 py-2 rounded-full text-sm font-semibold transition-all"
+                :class="tab === 'productos' ? 'bg-cp-teal text-white shadow-card' : 'bg-white text-cp-mid hover:bg-cp-tealMist'"
+                @click="setTab('productos')"
+                x-show="(data.productos_cloe || []).length > 0">Productos</button>
+        <button class="px-5 py-2 rounded-full text-sm font-semibold transition-all"
+                :class="tab === 'consolidado' ? 'bg-cp-teal text-white shadow-card' : 'bg-white text-cp-mid hover:bg-cp-tealMist'"
+                @click="setTab('consolidado')">Consolidado</button>
+      </div>
+
+      <!-- Tab Servicios -->
+      <div x-show="tab === 'servicios'" x-transition.opacity>
+        <div class="bg-white rounded-2xl shadow-card p-6 sm:p-8">
+          <div class="mb-6">
+            <h3 class="font-display font-bold text-xl text-cp-dark">Contribución por servicio</h3>
+            <p class="text-sm text-cp-mid">Ordenado por lo que más aporta al negocio cada mes.</p>
+          </div>
+          <canvas id="serviciosChart" class="!w-full !h-80"></canvas>
+
+          <!-- Tabla -->
+          <div class="mt-8 overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-cp-mid border-b border-cp-light">
+                  <th class="py-2 px-3 text-left font-semibold">Servicio</th>
+                  <th class="py-2 px-3 text-right font-semibold">Precio</th>
+                  <th class="py-2 px-3 text-right font-semibold hidden sm:table-cell">Cant.</th>
+                  <th class="py-2 px-3 text-right font-semibold">Margen %</th>
+                  <th class="py-2 px-3 text-right font-semibold">Contribución</th>
+                  <th class="py-2 px-3 text-center font-semibold">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <template x-for="s in (data.servicios || [])" :key="s.id">
+                  <tr class="border-b border-cp-light/60 hover:bg-cp-tealMist/30 transition-colors">
+                    <td class="py-2 px-3 font-medium" x-text="s.nombre"></td>
+                    <td class="py-2 px-3 text-right tabular-nums" x-text="formatValue(s.precio, 'CLP')"></td>
+                    <td class="py-2 px-3 text-right tabular-nums hidden sm:table-cell" x-text="s.cantidad_mes"></td>
+                    <td class="py-2 px-3 text-right tabular-nums" x-text="formatValue(s.margen_pct, 'PCT')"></td>
+                    <td class="py-2 px-3 text-right tabular-nums font-semibold text-cp-dark" x-text="formatValue(s.contribucion, 'CLP')"></td>
+                    <td class="py-2 px-3 text-center">
+                      <span class="inline-block w-3 h-3 rounded-full"
+                            :class="semaforoDotClass(s.estado)"></span>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Productos -->
+      <div x-show="tab === 'productos'" x-transition.opacity>
+        <div class="bg-white rounded-2xl shadow-card p-6 sm:p-8">
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <h3 class="font-display font-bold text-xl text-cp-dark">Top vendedores</h3>
+              <ul class="mt-3 space-y-2">
+                <template x-for="p in topProductos()" :key="p.id">
+                  <li class="flex items-center justify-between gap-3 p-3 bg-cp-ok/5 border border-cp-ok/20 rounded-lg">
+                    <span class="font-medium text-sm text-cp-dark" x-text="p.nombre"></span>
+                    <span class="text-xs font-semibold text-cp-ok tabular-nums" x-text="`${p.ventas_mes} u`"></span>
+                  </li>
+                </template>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl text-cp-dark">Sin movimiento</h3>
+              <ul class="mt-3 space-y-2">
+                <template x-for="p in productosLentos()" :key="p.id">
+                  <li class="flex items-center justify-between gap-3 p-3 bg-cp-risk/5 border border-cp-risk/20 rounded-lg">
+                    <span class="font-medium text-sm text-cp-dark" x-text="p.nombre"></span>
+                    <span class="text-xs font-semibold text-cp-risk tabular-nums" x-text="`stock ${p.stock} · ventas ${p.ventas_mes}`"></span>
+                  </li>
+                </template>
+              </ul>
+            </div>
+          </div>
+
+          <canvas id="productosChart" class="!w-full !h-80 mt-4"></canvas>
+        </div>
+      </div>
+
+      <!-- Tab Consolidado -->
+      <div x-show="tab === 'consolidado'" x-transition.opacity>
+        <div class="bg-white rounded-2xl shadow-card p-6 sm:p-8">
+          <h3 class="font-display font-bold text-xl text-cp-dark mb-2">Mix consolidado</h3>
+          <p class="text-sm text-cp-mid mb-6">Cómo se reparte la contribución total del mes.</p>
+          <canvas id="consolidadoChart" class="!w-full !h-80"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECCIÓN 4 · PERSONAS -->
+  <!-- ============================================================ -->
+  <section id="personas" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+      <div class="text-center mb-10" data-aos="fade-up">
+        <div class="inline-block px-4 py-1 rounded-full bg-cp-tealMist text-cp-tealDark text-xs font-semibold uppercase tracking-widest mb-3">
+          Equipo
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-cp-dark">Quién genera la venta</h2>
+      </div>
+
+      <!-- Resumen peso remuneraciones -->
+      <div class="mb-8 p-6 rounded-2xl border-2"
+           :class="semaforoBorderClass(data.personas_resumen?.semaforo_peso)"
+           data-aos="fade-up">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <div class="text-xs uppercase tracking-wider text-cp-mid font-semibold">Peso remuneraciones / ventas</div>
+            <div class="font-display font-extrabold text-4xl mt-1"
+                 :class="semaforoTextClass(data.personas_resumen?.semaforo_peso)"
+                 x-text="formatValue(data.personas_resumen?.peso_remuneraciones_pct, 'PCT')"></div>
+          </div>
+          <div class="text-sm text-cp-dark max-w-md leading-relaxed" x-text="data.personas_resumen?.mensaje_peso"></div>
+        </div>
+      </div>
+
+      <!-- Cards personas -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <template x-for="(p, idx) in data.personas || []" :key="p.id">
+          <div class="bg-white border border-cp-light rounded-xl p-5 shadow-card hover:shadow-cardHover transition-all"
+               data-aos="fade-up"
+               :data-aos-delay="idx * 50">
+            <div class="flex items-start justify-between gap-2 mb-3">
+              <div>
+                <div class="font-display font-semibold text-cp-dark" x-text="p.rol"></div>
+                <div class="text-xs text-cp-mid mt-1" x-text="p.modalidad"></div>
+              </div>
+              <div class="text-xs px-2 py-1 rounded-full bg-cp-tealMist text-cp-tealDark font-semibold tabular-nums"
+                   x-text="`${p.horas_semana} h/sem`"></div>
+            </div>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-cp-mid">Costo real mes</span>
+                <span class="tabular-nums font-semibold" x-text="formatValue(p.costo_real_mensual, 'CLP')"></span>
+              </div>
+              <div class="flex justify-between" x-show="p.ventas_generadas > 0">
+                <span class="text-cp-mid">Ventas generadas</span>
+                <span class="tabular-nums font-semibold" x-text="formatValue(p.ventas_generadas, 'CLP')"></span>
+              </div>
+              <div class="flex justify-between" x-show="p.productividad_pct !== null">
+                <span class="text-cp-mid">Productividad</span>
+                <span class="tabular-nums font-semibold" :class="productividadColor(p.productividad_pct)"
+                      x-text="formatValue(p.productividad_pct, 'PCT')"></span>
+              </div>
+            </div>
+            <div x-show="p.bandera_legal"
+                 class="mt-3 p-2 bg-cp-warn/10 border-l-4 border-cp-warn rounded text-xs text-cp-dark">
+              <strong class="text-cp-warn">⚑ Bandera legal:</strong>
+              <span x-text="p.bandera_legal"></span>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECCIÓN 5 · SIMULADORES -->
+  <!-- ============================================================ -->
+  <section id="simuladores" class="py-16 sm:py-24 bg-gradient-to-br from-cp-tealDark to-cp-teal text-white">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <div class="inline-block px-4 py-1 rounded-full bg-cp-gold/20 text-cp-goldLight text-xs font-semibold uppercase tracking-widest mb-3">
+          Toca y mira el impacto
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl">Simuladores en vivo</h2>
+        <p class="mt-2 text-cp-goldLight/90">Mueve los controles. Los números se recalculan al instante.</p>
+      </div>
+
+      <!-- Simulador Precios -->
+      <div class="bg-white text-cp-dark rounded-2xl p-6 sm:p-8 mb-8 shadow-2xl"
+           data-aos="fade-up"
+           x-data="simuladorPrecios()"
+           x-init="initSP()"
+           x-show="data.simulador_precios?.habilitado">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-xs px-2 py-1 rounded bg-cp-teal text-white font-semibold">SIMULADOR</span>
+          <h3 class="font-display font-bold text-xl">¿Y si subo precios?</h3>
+        </div>
+        <p class="text-sm text-cp-mid mb-6">Ajusta el % de aumento y observa cómo cambia tu utilidad estimada.</p>
+
+        <!-- Presets -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <template x-for="preset in (data.simulador_precios?.presets || [])" :key="preset.label">
+            <button class="px-3 py-1.5 rounded-full text-xs font-semibold border transition-all"
+                    :class="Math.abs(spPct - preset.valor_pct) < 0.001 ? 'bg-cp-teal text-white border-cp-teal' : 'bg-white text-cp-teal border-cp-teal/40 hover:bg-cp-tealMist'"
+                    @click="setPreset(preset.valor_pct)"
+                    x-text="`${preset.label} (${preset.valor_pct >= 0 ? '+' : ''}${(preset.valor_pct * 100).toFixed(0)}%)`"></button>
+          </template>
+        </div>
+
+        <!-- Slider -->
+        <div class="mb-2">
+          <input type="range"
+                 class="w-full h-2 rounded-full appearance-none bg-cp-light slider-cp"
+                 :min="data.simulador_precios?.rango_min_pct ?? -0.10"
+                 :max="data.simulador_precios?.rango_max_pct ?? 0.20"
+                 :step="data.simulador_precios?.step_pct ?? 0.01"
+                 x-model.number="spPct" />
+          <div class="flex justify-between text-xs text-cp-mid mt-1">
+            <span x-text="`${(data.simulador_precios?.rango_min_pct * 100).toFixed(0)}%`"></span>
+            <span class="font-display font-bold text-2xl text-cp-teal" x-text="`${spPct >= 0 ? '+' : ''}${(spPct * 100).toFixed(1)}%`"></span>
+            <span x-text="`+${(data.simulador_precios?.rango_max_pct * 100).toFixed(0)}%`"></span>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="grid sm:grid-cols-3 gap-4 mt-6">
+          <div class="p-4 rounded-xl bg-cp-tealMist">
+            <div class="text-xs text-cp-mid uppercase tracking-wider font-semibold">Margen nuevo</div>
+            <div class="font-display font-bold text-2xl text-cp-teal mt-1" x-text="formatValue(spMargenNuevo(), 'PCT')"></div>
+          </div>
+          <div class="p-4 rounded-xl bg-cp-tealMist">
+            <div class="text-xs text-cp-mid uppercase tracking-wider font-semibold">Utilidad delta</div>
+            <div class="font-display font-bold text-2xl mt-1"
+                 :class="spDeltaUtilidad() >= 0 ? 'text-cp-ok' : 'text-cp-risk'"
+                 x-text="`${spDeltaUtilidad() >= 0 ? '+' : ''}${formatValue(spDeltaUtilidad(), 'CLP')}`"></div>
+          </div>
+          <div class="p-4 rounded-xl bg-cp-tealMist">
+            <div class="text-xs text-cp-mid uppercase tracking-wider font-semibold">Utilidad mensual</div>
+            <div class="font-display font-bold text-2xl text-cp-tealDark mt-1" x-text="formatValue(spUtilidadNueva(), 'CLP')"></div>
+          </div>
+        </div>
+
+        <p class="mt-4 text-xs text-cp-mid italic" x-text="data.simulador_precios?.supuesto_elasticidad"></p>
+      </div>
+
+      <!-- Simulador Contratación -->
+      <div class="bg-white text-cp-dark rounded-2xl p-6 sm:p-8 shadow-2xl"
+           data-aos="fade-up" data-aos-delay="100"
+           x-data="simuladorContratacion()"
+           x-init="initSC()"
+           x-show="data.simulador_contratacion?.habilitado">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-xs px-2 py-1 rounded bg-cp-gold text-cp-tealDark font-semibold">SIMULADOR</span>
+          <h3 class="font-display font-bold text-xl">¿Y si contrato a alguien más?</h3>
+        </div>
+        <p class="text-sm text-cp-mid mb-6">3 escenarios lado a lado. Verde = mejor caso por fila.</p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-cp-mid border-b-2 border-cp-light">
+                <th class="py-3 text-left font-semibold">Métrica</th>
+                <template x-for="esc in (data.simulador_contratacion?.escenarios || [])" :key="esc.id">
+                  <th class="py-3 px-3 text-right font-semibold" x-text="esc.label"></th>
+                </template>
+              </tr>
+            </thead>
+            <tbody>
+              <template x-for="row in scRows()" :key="row.label">
+                <tr class="border-b border-cp-light/50">
+                  <td class="py-3 font-medium text-cp-dark" x-text="row.label"></td>
+                  <template x-for="(val, idx) in row.values" :key="idx">
+                    <td class="py-3 px-3 text-right tabular-nums font-semibold"
+                        :class="row.bestIdx === idx ? 'text-cp-ok bg-cp-ok/5' : (row.worstIdx === idx ? 'text-cp-risk' : 'text-cp-dark')"
+                        x-text="formatValue(val, row.formato)"></td>
+                  </template>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-6 p-4 rounded-xl bg-cp-goldLight border-l-4 border-cp-gold">
+          <div class="text-xs uppercase tracking-wider text-cp-tealDark font-semibold mb-1">Recomendación</div>
+          <p class="text-cp-dark text-sm leading-relaxed" x-text="scRecomendacion()"></p>
+        </div>
+
+        <p class="mt-4 text-xs text-cp-mid italic" x-text="data.simulador_contratacion?.supuesto_factor"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECCIÓN 6 · RECOMENDACIONES + CTA -->
+  <!-- ============================================================ -->
+  <section id="recomendaciones" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+      <div class="text-center mb-10" data-aos="fade-up">
+        <div class="inline-block px-4 py-1 rounded-full bg-cp-tealMist text-cp-tealDark text-xs font-semibold uppercase tracking-widest mb-3">
+          Plan de acción
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-cp-dark">Qué hacer esta semana</h2>
+        <p class="mt-2 text-cp-mid">Top 5 acciones priorizadas por impacto y esfuerzo.</p>
+      </div>
+
+      <div class="space-y-3">
+        <template x-for="(r, idx) in (data.recomendaciones || [])" :key="r.id">
+          <div class="flex flex-col sm:flex-row items-start gap-4 p-5 bg-white border border-cp-light rounded-xl hover:border-cp-teal/30 hover:shadow-card transition-all"
+               data-aos="fade-up"
+               :data-aos-delay="idx * 60">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center font-display font-bold text-white"
+                 :class="prioridadBgClass(r.prioridad)"
+                 x-text="r.prioridad"></div>
+            <div class="flex-1">
+              <h3 class="font-display font-semibold text-cp-dark text-lg" x-text="r.titulo"></h3>
+              <p class="text-sm text-cp-mid mt-1" x-text="r.accion"></p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-cp-light font-medium text-cp-mid">
+                  Impacto: <strong class="text-cp-dark" x-text="r.impacto"></strong>
+                </span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-cp-light font-medium text-cp-mid">
+                  Esfuerzo: <strong class="text-cp-dark" x-text="r.esfuerzo"></strong>
+                </span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-cp-ok/10 font-semibold text-cp-ok"
+                      x-show="r.delta_utilidad_mensual > 0"
+                      x-text="`+${formatValue(r.delta_utilidad_mensual, 'CLP')}/mes`"></span>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Supuestos -->
+      <div class="mt-12 p-6 rounded-xl bg-cp-light" data-aos="fade-up">
+        <h3 class="font-display font-bold text-cp-dark text-lg mb-3">Supuestos y notas</h3>
+        <ul class="space-y-2">
+          <template x-for="(s, i) in (data.supuestos || [])" :key="i">
+            <li class="flex gap-3 text-sm">
+              <span class="text-xs px-2 py-0.5 rounded font-bold flex-shrink-0"
+                    :class="supuestoBadgeClass(s.tipo)"
+                    x-text="s.tipo"></span>
+              <span class="text-cp-mid leading-relaxed" x-text="s.texto"></span>
+            </li>
+          </template>
+        </ul>
+      </div>
+
+      <!-- CTA final -->
+      <div class="mt-16 text-center p-8 sm:p-12 rounded-2xl bg-gradient-to-br from-cp-teal to-cp-tealDark text-white shadow-2xl" data-aos="fade-up">
+        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-2">¿Te suena lo que vimos?</h3>
+        <p class="text-cp-goldLight max-w-2xl mx-auto mb-6">Esto es la versión demo. Con tus cifras reales, el dashboard se afina y las recomendaciones se hacen accionables. Empezamos cuando tú decidas.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a :href="`https://wa.me/${(data.meta?.consultor_whatsapp || '').replace(/[^0-9]/g, '')}`"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cp-gold text-cp-tealDark font-semibold hover:bg-cp-goldLight transition-all shadow-lg">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Hablemos por WhatsApp
+          </a>
+          <a :href="`mailto:${data.meta?.consultor_email}`"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/30 text-white font-semibold hover:bg-white/20 transition-all">
+            Escribir un email
+          </a>
+          <a href="#hero"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/0 border border-white/30 text-white font-semibold hover:bg-white/10 transition-all">
+            ↑ Volver al inicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================================ -->
+  <footer class="py-8 bg-cp-dark text-white">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 text-center text-sm">
+      <p class="font-display font-semibold" x-text="data.footer?.linea_1">Cross Point Consultores · Asesoría Comercial y Financiera para Pymes</p>
+      <p class="mt-1 text-white/70" x-text="data.footer?.linea_2">+56 9 7883 7430 · contacto@safepoint-ehs.com</p>
+      <p class="mt-3 text-xs text-white/50 italic" x-text="data.footer?.linea_3">Demo · cifras ilustrativas</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- ERROR overlay (si fetch JSON falla) -->
+  <!-- ============================================================ -->
+  <div x-show="loadError"
+       class="fixed inset-0 z-50 bg-cp-dark/95 flex items-center justify-center p-6"
+       style="display:none">
+    <div class="max-w-md bg-white rounded-2xl p-8 shadow-2xl">
+      <h3 class="font-display font-bold text-xl text-cp-risk mb-3">No se pudo cargar el demo</h3>
+      <p class="text-sm text-cp-dark leading-relaxed">El navegador bloqueó la carga del archivo de datos local. Para abrir este demo en tu computador, ejecuta en la terminal:</p>
+      <pre class="mt-4 p-3 bg-cp-light rounded-lg text-xs font-mono">cd "carpeta del demo"
+python -m http.server 8000</pre>
+      <p class="mt-3 text-sm text-cp-dark">Y luego abre: <code class="bg-cp-light px-2 py-0.5 rounded text-xs">http://localhost:8000</code></p>
+      <p class="mt-3 text-xs text-cp-mid">Si ya estás en GitHub Pages, recarga la página en unos segundos.</p>
+    </div>
+  </div>
+
+  <!-- AOS init -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Custom scripts -->
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/simulators.js"></script>
+  <script src="./assets/js/animations.js"></script>
+</body>
+</html>

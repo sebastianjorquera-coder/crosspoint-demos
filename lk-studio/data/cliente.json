@@ -1,0 +1,612 @@
+{
+  "meta": {
+    "cliente_nombre": "LK Studio",
+    "cliente_slug": "lk-studio",
+    "cliente_rubro": "Salón de belleza + retail CLOE · Maipú",
+    "fecha_corte": "2026-05-02",
+    "mes_corte_label": "mayo 2026",
+    "es_demo": true,
+    "moneda_simbolo": "$",
+    "moneda_codigo": "CLP",
+    "locale": "es-CL",
+    "consultor_nombre": "Cross Point Consultores",
+    "consultor_lema": "Asesoría Comercial y Financiera para Pymes",
+    "consultor_whatsapp": "+56 9 7883 7430",
+    "consultor_email": "contacto@safepoint-ehs.com",
+    "consultor_web": "safepoint-ehs.cl"
+  },
+  "branding": {
+    "color_primario": "#028090",
+    "color_primario_dark": "#015d68",
+    "color_secundario": "#C9A84C",
+    "color_secundario_light": "#F0E4BA",
+    "color_neutro_dark": "#1F2937",
+    "color_neutro_mid": "#6B7280",
+    "color_neutro_light": "#F3F4F6",
+    "color_verde": "#16A34A",
+    "color_amarillo": "#EAB308",
+    "color_rojo": "#DC2626",
+    "tipografia_titulares": "Plus Jakarta Sans",
+    "tipografia_cuerpo": "Inter"
+  },
+  "hero": {
+    "titulo": "LK Studio",
+    "subtitulo": "Estado del negocio · mayo 2026",
+    "kpi_principal_label": "Venta total del mes",
+    "kpi_principal_valor": 7220000,
+    "kpi_principal_formato": "CLP",
+    "cta_scroll_label": "Recorre el negocio"
+  },
+  "kpis": [
+    {
+      "id": "venta_total",
+      "label": "Venta total mes",
+      "valor": 7220000,
+      "formato": "CLP",
+      "meta": 6900000,
+      "trend": "up",
+      "trend_texto": "+4,6% vs meta",
+      "color_borde": "primario"
+    },
+    {
+      "id": "margen_consolidado",
+      "label": "Margen consolidado",
+      "valor": 0.625,
+      "formato": "PCT",
+      "meta": 0.6,
+      "trend": "up",
+      "trend_texto": "+2,5 pp vs meta",
+      "color_borde": "secundario"
+    },
+    {
+      "id": "punto_equilibrio",
+      "label": "Punto de equilibrio",
+      "valor": 3017672,
+      "formato": "CLP",
+      "meta": null,
+      "trend": "flat",
+      "trend_texto": "Cubierto al día 13",
+      "color_borde": "primario_dark"
+    },
+    {
+      "id": "utilidad",
+      "label": "Utilidad estimada",
+      "valor": 2625000,
+      "formato": "CLP",
+      "meta": 2200000,
+      "trend": "up",
+      "trend_texto": "+19% vs meta",
+      "color_borde": "verde"
+    }
+  ],
+  "estado_general": {
+    "semaforo": "verde",
+    "titulo": "Negocio sano",
+    "mensaje": "La venta cubre los costos fijos y deja utilidad. El punto de equilibrio se alcanza al día 13 del mes.",
+    "pe_pct_alcanzado": 0.87,
+    "dias_para_pe": 13,
+    "dias_total_mes": 30
+  },
+  "servicios": [
+    {
+      "id": "mechas",
+      "nombre": "Mechas",
+      "precio": 90000,
+      "cantidad_mes": 20,
+      "costo_directo": 27000,
+      "comision_pct": 0.15,
+      "margen_unitario": 49500,
+      "margen_pct": 0.55,
+      "contribucion": 990000,
+      "estado": "verde",
+      "accion": "Mantener — alta contribución"
+    },
+    {
+      "id": "color_completo",
+      "nombre": "Color completo",
+      "precio": 65000,
+      "cantidad_mes": 28,
+      "costo_directo": 19500,
+      "comision_pct": 0.15,
+      "margen_unitario": 35750,
+      "margen_pct": 0.55,
+      "contribucion": 1001000,
+      "estado": "verde",
+      "accion": "Mantener"
+    },
+    {
+      "id": "corte_mujer",
+      "nombre": "Corte mujer",
+      "precio": 18000,
+      "cantidad_mes": 60,
+      "costo_directo": 1800,
+      "comision_pct": 0.12,
+      "margen_unitario": 14040,
+      "margen_pct": 0.78,
+      "contribucion": 842400,
+      "estado": "verde",
+      "accion": "Servicio ancla — proteger"
+    },
+    {
+      "id": "manicure",
+      "nombre": "Manicure",
+      "precio": 12000,
+      "cantidad_mes": 80,
+      "costo_directo": 1800,
+      "comision_pct": 0.2,
+      "margen_unitario": 7800,
+      "margen_pct": 0.65,
+      "contribucion": 624000,
+      "estado": "verde",
+      "accion": "Pack pedicure complementa bien"
+    },
+    {
+      "id": "pedicure",
+      "nombre": "Pedicure",
+      "precio": 15000,
+      "cantidad_mes": 50,
+      "costo_directo": 2500,
+      "comision_pct": 0.2,
+      "margen_unitario": 9500,
+      "margen_pct": 0.63,
+      "contribucion": 475000,
+      "estado": "verde",
+      "accion": "Mantener"
+    },
+    {
+      "id": "pestanas",
+      "nombre": "Pestañas",
+      "precio": 35000,
+      "cantidad_mes": 18,
+      "costo_directo": 7000,
+      "comision_pct": 0.18,
+      "margen_unitario": 21700,
+      "margen_pct": 0.62,
+      "contribucion": 390600,
+      "estado": "verde",
+      "accion": "Empujar a fines de semana"
+    },
+    {
+      "id": "maquillaje",
+      "nombre": "Maquillaje aerógrafo",
+      "precio": 30000,
+      "cantidad_mes": 12,
+      "costo_directo": 3000,
+      "comision_pct": 0.2,
+      "margen_unitario": 21000,
+      "margen_pct": 0.7,
+      "contribucion": 252000,
+      "estado": "verde",
+      "accion": "Combinar con pestañas"
+    },
+    {
+      "id": "tratamiento_capilar",
+      "nombre": "Tratamiento capilar",
+      "precio": 25000,
+      "cantidad_mes": 14,
+      "costo_directo": 8750,
+      "comision_pct": 0.15,
+      "margen_unitario": 12500,
+      "margen_pct": 0.5,
+      "contribucion": 175000,
+      "estado": "amarillo",
+      "accion": "Revisar costo de insumo"
+    },
+    {
+      "id": "depilacion",
+      "nombre": "Depilación",
+      "precio": 20000,
+      "cantidad_mes": 10,
+      "costo_directo": 4000,
+      "comision_pct": 0.2,
+      "margen_unitario": 12000,
+      "margen_pct": 0.6,
+      "contribucion": 120000,
+      "estado": "amarillo",
+      "accion": "Margen bajo el promedio"
+    },
+    {
+      "id": "bronceado",
+      "nombre": "Bronceado sin sol",
+      "precio": 22000,
+      "cantidad_mes": 6,
+      "costo_directo": 8800,
+      "comision_pct": 0.18,
+      "margen_unitario": 9240,
+      "margen_pct": 0.42,
+      "contribucion": 55440,
+      "estado": "rojo",
+      "accion": "Margen <45% — evaluar precio o eliminar"
+    }
+  ],
+  "productos_cloe": [
+    {
+      "id": "shampoo_reparador",
+      "nombre": "Shampoo Reparador 250ml",
+      "precio": 18000,
+      "costo": 8000,
+      "ventas_mes": 12,
+      "stock": 8,
+      "margen_pct": 0.56,
+      "contribucion": 120000,
+      "estado": "verde",
+      "accion": "Top vendedor — reponer"
+    },
+    {
+      "id": "mascarilla_keratina",
+      "nombre": "Mascarilla Keratina 200g",
+      "precio": 22000,
+      "costo": 9500,
+      "ventas_mes": 8,
+      "stock": 5,
+      "margen_pct": 0.57,
+      "contribucion": 100000,
+      "estado": "verde",
+      "accion": "Mantener"
+    },
+    {
+      "id": "serum_capilar",
+      "nombre": "Sérum capilar 50ml",
+      "precio": 28000,
+      "costo": 12000,
+      "ventas_mes": 6,
+      "stock": 4,
+      "margen_pct": 0.57,
+      "contribucion": 96000,
+      "estado": "verde",
+      "accion": "Cross-sell post-mechas"
+    },
+    {
+      "id": "ampolla_brillo",
+      "nombre": "Ampolla brillo intenso",
+      "precio": 8500,
+      "costo": 3500,
+      "ventas_mes": 14,
+      "stock": 22,
+      "margen_pct": 0.59,
+      "contribucion": 70000,
+      "estado": "verde",
+      "accion": "Ticket pequeño, alta rotación"
+    },
+    {
+      "id": "spray_protector",
+      "nombre": "Spray protector térmico",
+      "precio": 15000,
+      "costo": 7000,
+      "ventas_mes": 5,
+      "stock": 12,
+      "margen_pct": 0.53,
+      "contribucion": 40000,
+      "estado": "amarillo",
+      "accion": "Stock alto vs ventas — ¿promo?"
+    },
+    {
+      "id": "aceite_argan",
+      "nombre": "Aceite de argán 30ml",
+      "precio": 12000,
+      "costo": 5500,
+      "ventas_mes": 3,
+      "stock": 14,
+      "margen_pct": 0.54,
+      "contribucion": 19500,
+      "estado": "amarillo",
+      "accion": "Sin movimiento >60 días"
+    },
+    {
+      "id": "kit_color",
+      "nombre": "Kit cuidado color",
+      "precio": 35000,
+      "costo": 17000,
+      "ventas_mes": 1,
+      "stock": 6,
+      "margen_pct": 0.51,
+      "contribucion": 18000,
+      "estado": "rojo",
+      "accion": "Liquidar o devolver — capital atrapado"
+    }
+  ],
+  "personas": [
+    {
+      "id": "estilista_1",
+      "rol": "Estilista 1",
+      "modalidad": "Contrato indefinido",
+      "sueldo_bruto": 650000,
+      "honorario_fijo": 0,
+      "comision_pct": 0.1,
+      "horas_semana": 45,
+      "antiguedad_anios": 4,
+      "costo_real_mensual": 812500,
+      "ventas_generadas": 1900000,
+      "productividad_pct": 0.43,
+      "bandera_legal": null
+    },
+    {
+      "id": "estilista_2",
+      "rol": "Estilista 2",
+      "modalidad": "Contrato indefinido",
+      "sueldo_bruto": 600000,
+      "honorario_fijo": 0,
+      "comision_pct": 0.1,
+      "horas_semana": 45,
+      "antiguedad_anios": 2,
+      "costo_real_mensual": 750000,
+      "ventas_generadas": 1750000,
+      "productividad_pct": 0.43,
+      "bandera_legal": null
+    },
+    {
+      "id": "manicurista_1",
+      "rol": "Manicurista 1",
+      "modalidad": "Honorarios variable por servicio",
+      "sueldo_bruto": 0,
+      "honorario_fijo": 0,
+      "comision_pct": 0.3,
+      "horas_semana": 40,
+      "antiguedad_anios": 3,
+      "costo_real_mensual": 360000,
+      "ventas_generadas": 1200000,
+      "productividad_pct": 0.3,
+      "bandera_legal": "Boleta variable con horario fijo — riesgo de figura laboral encubierta"
+    },
+    {
+      "id": "manicurista_2",
+      "rol": "Manicurista 2",
+      "modalidad": "Honorarios mensual fijo",
+      "sueldo_bruto": 0,
+      "honorario_fijo": 450000,
+      "comision_pct": 0,
+      "horas_semana": 36,
+      "antiguedad_anios": 1,
+      "costo_real_mensual": 450000,
+      "ventas_generadas": 1000000,
+      "productividad_pct": 0.45,
+      "bandera_legal": null
+    },
+    {
+      "id": "recepcionista",
+      "rol": "Recepción",
+      "modalidad": "Contrato indefinido",
+      "sueldo_bruto": 480000,
+      "honorario_fijo": 0,
+      "comision_pct": 0,
+      "horas_semana": 45,
+      "antiguedad_anios": 5,
+      "costo_real_mensual": 600000,
+      "ventas_generadas": 0,
+      "productividad_pct": null,
+      "bandera_legal": null
+    }
+  ],
+  "personas_resumen": {
+    "total_costo_mensual": 2972500,
+    "peso_remuneraciones_pct": 0.412,
+    "semaforo_peso": "amarillo",
+    "mensaje_peso": "Peso remuneraciones / ventas en 41% — el rango sano de salones medio-altos chilenos es 35-40%."
+  },
+  "costos_fijos": [
+    {
+      "concepto": "Arriendo local",
+      "monto_mensual": 850000,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.118
+    },
+    {
+      "concepto": "Servicios básicos (luz, agua)",
+      "monto_mensual": 180000,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.025
+    },
+    {
+      "concepto": "Internet + teléfono",
+      "monto_mensual": 45000,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.006
+    },
+    {
+      "concepto": "Software agenda + POS",
+      "monto_mensual": 35000,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.005
+    },
+    {
+      "concepto": "Marketing digital (RRSS + ads)",
+      "monto_mensual": 250000,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.035
+    },
+    {
+      "concepto": "Contador externo",
+      "monto_mensual": 120000,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.017
+    },
+    {
+      "concepto": "Seguros",
+      "monto_mensual": 45000,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.006
+    },
+    {
+      "concepto": "Mantención + insumos generales",
+      "monto_mensual": 80000,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.011
+    },
+    {
+      "concepto": "Otros (banco, contingencias)",
+      "monto_mensual": 280000,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.039
+    }
+  ],
+  "alertas": [
+    {
+      "titulo": "Stock CLOE con SKU sin movimiento",
+      "detalle": "Aceite argán y Kit color: 6+ unidades sin venta en >60 días. Capital atrapado ~$200K.",
+      "severidad": "alta"
+    },
+    {
+      "titulo": "Peso remuneraciones / ventas en 41%",
+      "detalle": "Sobre el rango sano de salones medio-altos chilenos (35-40%). Revisar productividad por persona.",
+      "severidad": "media"
+    },
+    {
+      "titulo": "Bronceado sin sol con margen 42%",
+      "detalle": "Bajo el umbral de servicios sanos (45%). Subir precio 10% o evaluar eliminar.",
+      "severidad": "alta"
+    }
+  ],
+  "oportunidades": [
+    {
+      "titulo": "Pack Mechas + Tratamiento",
+      "detalle": "Mechas tiene 55% margen y alta contribución. Pack post-mechas con tratamiento sube ticket promedio.",
+      "impacto_estimado": 180000
+    },
+    {
+      "titulo": "Cross-sell sérum capilar post-servicio",
+      "detalle": "Sérum capilar margen 57%. Vender 1 frasco por cada 4 mechas = +6 unidades/mes.",
+      "impacto_estimado": 96000
+    },
+    {
+      "titulo": "Lunes-miércoles 11:30-14:00 baja ocupación",
+      "detalle": "Promo 15% off en horario muerto puede levantar ocupación sin canibalizar venta full price.",
+      "impacto_estimado": 250000
+    }
+  ],
+  "simulador_precios": {
+    "habilitado": true,
+    "rango_min_pct": -0.1,
+    "rango_max_pct": 0.2,
+    "step_pct": 0.01,
+    "valor_inicial_pct": 0.05,
+    "presets": [
+      {
+        "label": "Conservador",
+        "valor_pct": 0.03
+      },
+      {
+        "label": "Base",
+        "valor_pct": 0.05
+      },
+      {
+        "label": "Optimista",
+        "valor_pct": 0.1
+      }
+    ],
+    "supuesto_elasticidad": "SUPUESTO: cantidades constantes (sin caída por subida de precio). Si la subida es >10%, considerar -5% en cantidad.",
+    "servicios_aplicables_ids": [
+      "mechas",
+      "color_completo",
+      "manicure",
+      "pedicure",
+      "pestanas"
+    ]
+  },
+  "simulador_contratacion": {
+    "habilitado": true,
+    "escenarios": [
+      {
+        "id": "conservador",
+        "label": "Conservador (1 estilista part-time)",
+        "n_personas": 1,
+        "sueldo_bruto_uno": 450000,
+        "comision_uno": 60000,
+        "venta_esperada_uno": 1200000,
+        "factor_leyes_sociales": 1.25
+      },
+      {
+        "id": "base",
+        "label": "Base (1 estilista full-time)",
+        "n_personas": 1,
+        "sueldo_bruto_uno": 600000,
+        "comision_uno": 100000,
+        "venta_esperada_uno": 1700000,
+        "factor_leyes_sociales": 1.25
+      },
+      {
+        "id": "optimista",
+        "label": "Optimista (1 estilista senior)",
+        "n_personas": 1,
+        "sueldo_bruto_uno": 750000,
+        "comision_uno": 130000,
+        "venta_esperada_uno": 2100000,
+        "factor_leyes_sociales": 1.25
+      }
+    ],
+    "supuesto_factor": "SUPUESTO: factor 1.25 leyes sociales = AFP + salud + seguro + vacaciones promedio CL para contrato indefinido"
+  },
+  "recomendaciones": [
+    {
+      "id": 1,
+      "titulo": "Subir precio Mechas +5%",
+      "impacto": "Alto",
+      "esfuerzo": "Bajo",
+      "prioridad": "P1",
+      "delta_utilidad_mensual": 90000,
+      "accion": "Comunicar a clientas frecuentes con 15 días de aviso. Margen sube de 55% a 57,5%."
+    },
+    {
+      "id": 2,
+      "titulo": "Liquidar Kit cuidado color y Aceite argán",
+      "impacto": "Medio",
+      "esfuerzo": "Bajo",
+      "prioridad": "P1",
+      "delta_utilidad_mensual": 25000,
+      "accion": "Promo -30% una semana. Recupera capital y libera espacio físico."
+    },
+    {
+      "id": 3,
+      "titulo": "Lanzar pack Mechas + Tratamiento",
+      "impacto": "Alto",
+      "esfuerzo": "Medio",
+      "prioridad": "P2",
+      "delta_utilidad_mensual": 180000,
+      "accion": "Promo +$15K sobre mechas, incluye tratamiento valorado en $25K."
+    },
+    {
+      "id": 4,
+      "titulo": "Promo lunes-miércoles AM",
+      "impacto": "Medio",
+      "esfuerzo": "Medio",
+      "prioridad": "P2",
+      "delta_utilidad_mensual": 250000,
+      "accion": "15% off de 11:30 a 14:00 con código MAÑANA. Levanta ocupación de horario muerto."
+    },
+    {
+      "id": 5,
+      "titulo": "Revisar modalidad Manicurista 1",
+      "impacto": "Medio",
+      "esfuerzo": "Medio",
+      "prioridad": "P3",
+      "delta_utilidad_mensual": 0,
+      "accion": "Boleta variable con horario fijo y exclusivo es una figura riesgosa. Conversar formalización."
+    }
+  ],
+  "supuestos": [
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Factor 1.25 leyes sociales = AFP + salud + seguro + vacaciones promedio CL para contrato indefinido"
+    },
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Costos directos por servicio incluyen insumos + comisión profesional"
+    },
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Punto de equilibrio asume mix de venta actual y mismo margen consolidado"
+    },
+    {
+      "tipo": "RIESGO",
+      "texto": "Stock CLOE para venta vs uso interno del salón está mezclado — el margen de productos puede estar inflado en hasta un 8%"
+    },
+    {
+      "tipo": "PENDIENTE",
+      "texto": "Histórico de ventas 3-6 meses para validar estacionalidad"
+    }
+  ],
+  "footer": {
+    "linea_1": "Cross Point Consultores · Asesoría Comercial y Financiera para Pymes",
+    "linea_2": "+56 9 7883 7430 · contacto@safepoint-ehs.com · safepoint-ehs.cl",
+    "linea_3": "Demo · cifras ilustrativas · datos reales se cargan tras intake del cliente"
+  }
+}
