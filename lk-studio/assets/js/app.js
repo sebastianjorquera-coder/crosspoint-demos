@@ -50,10 +50,21 @@ function dashboard() {
       });
     },
 
-    // ----- Sticky header visibility -----
+    // ----- Sticky header visibility + sticky CTA mobile (v3.7) -----
     bindScroll() {
       const heroEl = document.getElementById('hero');
       const fab = document.getElementById('fab-wsp');
+      const stickyCta = document.getElementById('sticky-cta-mobile');
+      const ctaFinalEl = document.getElementById('contacto');
+
+      // IntersectionObserver para ocultar sticky CTA cuando llega a CTA final
+      let ctaFinalInView = false;
+      if (stickyCta && ctaFinalEl && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => { ctaFinalInView = e.isIntersecting; });
+        }, { threshold: 0.15 });
+        io.observe(ctaFinalEl);
+      }
 
       const handler = () => {
         const y = window.scrollY || window.pageYOffset;
@@ -68,6 +79,12 @@ function dashboard() {
           fab.style.opacity = showFab ? '1' : '0';
           fab.style.pointerEvents = showFab ? 'auto' : 'none';
           fab.style.transform = showFab ? 'scale(1)' : 'scale(0.7)';
+        }
+
+        // Sticky CTA mobile: aparece tras 800px, desaparece al llegar al CTA final
+        if (stickyCta) {
+          const shouldShow = y > 800 && !ctaFinalInView;
+          stickyCta.classList.toggle('is-visible', shouldShow);
         }
       };
 

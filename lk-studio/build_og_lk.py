@@ -85,30 +85,30 @@ ax.text(
     zorder=5,
 )
 
-# Headline ejecutivo Manrope-ish (sans bold, NO italic)
+# Headline cuantificado v3.7 (Manrope-ish bold)
 ax.text(
-    W / 2, H * 0.45,
-    "Diagnóstico financiero",
+    W / 2, H * 0.46,
+    "Identifica hasta +$575K mensuales",
     ha="center", va="center",
-    fontsize=42, color=NOIR,
+    fontsize=38, color=NOIR,
     family="DejaVu Sans",
     fontweight="bold",
     zorder=5,
 )
 ax.text(
     W / 2, H * 0.36,
-    "análisis del período mayo 2026",
+    "de rentabilidad oculta",
     ha="center", va="center",
-    fontsize=24, color=NOIR,
+    fontsize=28, color=NOIR,
     family="DejaVu Sans",
     fontweight="medium",
     zorder=5,
 )
 
-# Subhead descriptivo (sin lirismo)
+# Subhead descriptivo: plazo y propuesta de valor
 ax.text(
     W / 2, H * 0.27,
-    "Análisis de rentabilidad por línea de servicio  ·  Plan de acción priorizado",
+    "Diagnóstico ejecutivo en 14 días  ·  Plan de acción priorizado  ·  Sin inversión inicial",
     ha="center", va="center",
     fontsize=13, color=GRAY_500,
     family="DejaVu Sans",

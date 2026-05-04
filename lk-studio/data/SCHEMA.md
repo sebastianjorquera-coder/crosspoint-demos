@@ -1,4 +1,4 @@
-# SCHEMA — `data/cliente.json`
+﻿# SCHEMA — `data/cliente.json`
 
 Documento de referencia para crear o editar el JSON que alimenta el demo web. Cada cliente tiene su propio `cliente.json`. La estructura es estable: el `index.html` espera estos campos exactos.
 
@@ -24,8 +24,8 @@ Identidad del cliente y del consultor.
 | `consultor_nombre` | string | ✓ | Cross Point Consultores |
 | `consultor_lema` | string | ✓ | "Asesoría Comercial y Financiera para Pymes" |
 | `consultor_whatsapp` | string | ✓ | Formato `+56 9 7883 7430` |
-| `consultor_email` | string | ✓ | `contacto@safepoint-ehs.com` |
-| `consultor_web` | string | ✓ | `safepoint-ehs.cl` |
+| `consultor_email` | string | ✓ | `contacto@crosspointconsultores.cl` |
+| `consultor_web` | string | ✓ | `crosspointconsultores.cl` |
 
 ---
 

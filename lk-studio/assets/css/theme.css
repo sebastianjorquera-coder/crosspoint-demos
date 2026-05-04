@@ -1611,11 +1611,461 @@ body {
   }
 }
 
+/* ============================================================== */
+/* v3.7 — Elevación premium                                         */
+/* ============================================================== */
+
+/* ---------- 01b · Cómo funciona (3 etapas) ---------- */
+
+.lk-como-funciona {
+  background: var(--lk-paper);
+}
+
+.lk-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+  margin-top: 2.5rem;
+  position: relative;
+}
+
+.lk-step-card {
+  background: var(--lk-ivory);
+  border: 1px solid var(--lk-gray-200);
+  border-top: 4px solid var(--lk-champagne);
+  border-radius: 6px;
+  padding: 1.75rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  transition: transform 200ms ease-out, border-top-width 200ms ease-out;
+}
+
+.lk-step-card:hover {
+  transform: translateY(-2px);
+  border-top-width: 5px;
+}
+
+.lk-step-numero {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--lk-champagne-dark);
+}
+
+.lk-step-titulo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.lk-step-titulo-row i {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+  color: var(--lk-noir);
+}
+
+.lk-step-titulo {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--lk-noir);
+}
+
+.lk-step-plazo {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lk-champagne-dark);
+  background: rgba(200, 169, 110, 0.12);
+  padding: 0.3rem 0.55rem;
+  border-radius: 3px;
+  align-self: flex-start;
+}
+
+.lk-step-detalle {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--lk-gray-500);
+}
+
+/* ---------- 09 · Garantía banner ---------- */
+
+.lk-garantia-section {
+  background: var(--lk-ivory);
+  padding: 4rem 1.5rem;
+}
+
+.lk-garantia-banner {
+  max-width: 920px;
+  margin: 0 auto;
+  background: var(--lk-paper);
+  border-left: 4px solid var(--lk-champagne);
+  border-radius: 0 6px 6px 0;
+  padding: 2rem 2.25rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  box-shadow: 0 1px 3px rgba(14, 14, 16, 0.04);
+}
+
+.lk-garantia-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(200, 169, 110, 0.14);
+  border-radius: 50%;
+  color: var(--lk-champagne-dark);
+}
+
+.lk-garantia-icon i {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+}
+
+.lk-garantia-body {
+  flex: 1;
+}
+
+.lk-garantia-eyebrow {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lk-champagne-dark);
+  margin-bottom: 0.5rem;
+}
+
+.lk-garantia-copy {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--lk-noir);
+  margin-bottom: 0.75rem;
+}
+
+.lk-garantia-aplicabilidad {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 0.83rem;
+  color: var(--lk-gray-500);
+  font-style: italic;
+}
+
+/* ---------- Plan acción · barras de impacto ---------- */
+
+.lk-action-impact-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  min-width: 120px;
+}
+
+.lk-action-impact-bar-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(200, 169, 110, 0.18);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.lk-action-impact-bar-fill {
+  height: 100%;
+  background: var(--lk-champagne);
+  border-radius: 2px;
+  transition: width 600ms ease-out;
+}
+
+/* ---------- CTA final · jerarquía v3.7 ---------- */
+
+.lk-cta-buttons-v37 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.lk-cta-primary-v37 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--lk-noir);
+  color: var(--lk-champagne-light, #E8D9B6);
+  padding: 1.1rem 2.4rem;
+  border-radius: 4px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border: 1px solid var(--lk-champagne);
+  transition: background 200ms ease-out, transform 200ms ease-out;
+  min-width: 280px;
+}
+
+.lk-cta-primary-v37:hover {
+  background: var(--lk-champagne-dark);
+  color: var(--lk-noir);
+  transform: translateY(-1px);
+}
+
+.lk-cta-primary-v37 i {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.lk-cta-secondary-v37 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: var(--lk-champagne-light, #E8D9B6);
+  padding: 0.65rem 1.4rem;
+  border-radius: 4px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 0.92rem;
+  text-decoration: none;
+  border: 1px solid rgba(232, 217, 182, 0.4);
+  transition: border-color 200ms ease-out;
+}
+
+.lk-cta-secondary-v37:hover {
+  border-color: var(--lk-champagne-light, #E8D9B6);
+}
+
+.lk-cta-secondary-v37 i {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
+
+.lk-cta-tertiary-v37 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(232, 217, 182, 0.65);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 0.82rem;
+  text-decoration: none;
+  margin-top: 0.25rem;
+  transition: color 200ms ease-out;
+}
+
+.lk-cta-tertiary-v37:hover {
+  color: var(--lk-champagne-light, #E8D9B6);
+  text-decoration: underline;
+}
+
+.lk-cta-tertiary-v37 i {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2;
+}
+
+/* ---------- Sticky CTA mobile ---------- */
+
+.lk-sticky-cta-mobile {
+  display: none; /* hidden by default — shown only en mobile via media query */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--lk-noir);
+  color: var(--lk-champagne-light, #E8D9B6);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-decoration: none;
+  padding: 1rem 1.25rem;
+  z-index: 90;
+  border-top: 1px solid var(--lk-champagne);
+  transform: translateY(100%);
+  transition: transform 280ms ease-out, opacity 200ms ease-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lk-sticky-cta-mobile.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lk-sticky-cta-mobile i {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+}
+
+/* ---------- Refinamiento microinteracciones ---------- */
+
+.lk-data-card {
+  transition: transform 200ms ease-out, border-top-width 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.lk-data-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 14, 16, 0.06);
+}
+
+/* ============================================================== */
+/* Mobile responsive · v3.7                                        */
+/* ============================================================== */
+
+@media (max-width: 640px) {
+
+  /* Steps stack vertical en mobile */
+  .lk-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  /* Garantía banner en mobile: stack vertical */
+  .lk-garantia-banner {
+    flex-direction: column;
+    padding: 1.5rem 1.25rem;
+    gap: 1rem;
+  }
+  .lk-garantia-copy {
+    font-size: 0.98rem;
+  }
+
+  /* Sticky CTA mobile · visible solo aquí */
+  .lk-sticky-cta-mobile {
+    display: block;
+  }
+
+  /* Padding bottom en body para que sticky CTA no tape contenido */
+  body {
+    padding-bottom: 72px;
+  }
+
+  /* CTA buttons v37 — primario full width */
+  .lk-cta-primary-v37 {
+    width: 100%;
+    min-width: 0;
+    padding: 1rem 1.25rem;
+    font-size: 0.98rem;
+  }
+
+  /* ---------- Tablas → card-stack en mobile ---------- */
+
+  .lk-action-table-wrapper {
+    overflow-x: visible !important;
+    border: none;
+  }
+
+  .lk-action-table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .lk-action-table thead {
+    display: none;
+  }
+
+  .lk-action-table tbody, .lk-action-table tr, .lk-action-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .lk-action-table tbody tr {
+    border: 1px solid var(--lk-gray-200);
+    border-radius: 6px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 0.75rem;
+    background: var(--lk-paper);
+    box-shadow: 0 1px 2px rgba(14, 14, 16, 0.03);
+  }
+
+  .lk-action-table tbody tr:hover {
+    background: var(--lk-paper);
+  }
+
+  .lk-action-table td {
+    border-bottom: 1px dashed var(--lk-gray-200);
+    padding: 0.5rem 0;
+    text-align: left !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .lk-action-table tbody tr td:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .lk-action-table tbody tr td:first-child {
+    padding-top: 0;
+  }
+
+  .lk-action-table td::before {
+    content: attr(data-label);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--lk-gray-500);
+    flex-shrink: 0;
+  }
+
+  /* Numeral grande en card-stack */
+  .lk-action-table-numbered td.numeral {
+    font-size: 1.6rem;
+    padding: 0 0 0.5rem 0 !important;
+    border-bottom: none;
+    justify-content: flex-start;
+  }
+  .lk-action-table-numbered td.numeral::before {
+    display: none;
+  }
+
+  /* Impact cell en mobile — barra ocupa ancho completo */
+  .lk-action-impact-cell {
+    align-items: stretch;
+    min-width: 0;
+    width: 100%;
+  }
+  .lk-action-impact-bar-track {
+    display: none; /* en mobile la barra se omite, el número manda */
+  }
+
+}
+
 /* ---------- Print ---------- */
 
 @media print {
   .lk-fab-wsp,
   .lk-sticky-header,
+  .lk-sticky-cta-mobile,
   .lk-banner-demo {
     display: none !important;
   }

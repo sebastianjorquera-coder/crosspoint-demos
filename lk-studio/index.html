@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es-CL">
 <head>
   <meta charset="UTF-8" />
@@ -66,7 +66,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
   <!-- Theme propio v3.6 -->
-  <link rel="stylesheet" href="./assets/css/theme.css" />
+  <link rel="stylesheet" href="./assets/css/theme.css?v=3.7" />
 
   <!-- Lucide Icons (CDN) — reemplaza emoji, look ejecutivo -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -87,8 +87,8 @@
     "consultor_nombre": "Cross Point Consultores",
     "consultor_lema": "Asesoría Comercial y Financiera para Pymes",
     "consultor_whatsapp": "+56 9 7883 7430",
-    "consultor_email": "contacto@safepoint-ehs.com",
-    "consultor_web": "safepoint-ehs.cl",
+    "consultor_email": "contacto@crosspointconsultores.cl",
+    "consultor_web": "crosspointconsultores.cl",
     "consultor_ciudad": "San Miguel, Santiago",
     "eyebrow_master": "Período: mayo 2026 · Datos: intake LK Studio · Actualizado: 2026-05-03"
   },
@@ -839,13 +839,13 @@
     "subhead": "Coordinemos una reunión de 30 minutos para revisar este formato con sus datos reales y definir alcance.",
     "agendar_label": "Agendar reunión 30 min",
     "whatsapp_label": "+56 9 7883 7430 · WhatsApp",
-    "email_label": "contacto@safepoint-ehs.com"
+    "email_label": "contacto@crosspointconsultores.cl"
   },
   "footer": {
     "powered_by_label": "ANÁLISIS DESARROLLADO POR",
     "consultor_linea_1": "Cross Point Consultores",
     "consultor_linea_2": "Asesoría Comercial y Financiera para Pymes",
-    "consultor_linea_3": "San Miguel, Santiago · safepoint-ehs.cl",
+    "consultor_linea_3": "San Miguel, Santiago · crosspointconsultores.cl",
     "demo_disclaimer": "Demo · cifras ilustrativas · este formato se replica con sus datos tras el intake."
   }
 }
@@ -903,10 +903,37 @@
       </a>
     </div>
 
-    <a href="#hallazgos" class="lk-scroll-arrow" data-aos="fade-up" data-aos-delay="600">
+    <a href="#como-funciona" class="lk-scroll-arrow" data-aos="fade-up" data-aos-delay="600">
       <span x-text="data.hero?.cta_scroll || 'Recorrer secciones'"></span>
       <i data-lucide="chevron-down" style="width:18px;height:18px;stroke-width:2;"></i>
     </a>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 01b · CÓMO FUNCIONA — proceso 3 etapas, plazos firmes          -->
+  <!-- ============================================================== -->
+  <section id="como-funciona" class="lk-section lk-como-funciona">
+    <div class="lk-container">
+      <div data-aos="fade-up">
+        <span class="lk-eyebrow-tech" x-text="data.como_funciona?.eyebrow || '01b · PROCESO · 3 ETAPAS · PLAZOS FIRMES'"></span>
+        <h2 class="lk-section-title" x-text="data.como_funciona?.section_title || 'Cómo funciona el diagnóstico'"></h2>
+        <p class="lk-section-intro" x-text="data.como_funciona?.section_intro || ''"></p>
+      </div>
+
+      <div class="lk-steps-grid">
+        <template x-for="(step, idx) in (data.como_funciona?.steps || [])" :key="step.numero">
+          <div class="lk-step-card" data-aos="fade-up" :data-aos-delay="100 + idx * 80">
+            <div class="lk-step-numero" x-text="step.numero"></div>
+            <div class="lk-step-titulo-row">
+              <i :data-lucide="step.icon || 'circle'"></i>
+              <span class="lk-step-titulo" x-text="step.titulo"></span>
+            </div>
+            <span class="lk-step-plazo" x-text="step.plazo"></span>
+            <p class="lk-step-detalle" x-text="step.detalle"></p>
+          </div>
+        </template>
+      </div>
+    </div>
   </section>
 
   <!-- ============================================================== -->
@@ -1013,21 +1040,21 @@
           <tbody>
             <template x-for="s in [...(data.servicios || [])].sort((a,b) => b.contribucion - a.contribucion)" :key="s.id">
               <tr>
-                <td><span class="nombre" x-text="s.nombre"></span></td>
-                <td class="right" x-text="formatCLP(s.precio)"></td>
-                <td class="right" x-text="s.cantidad_mes"></td>
-                <td class="right">
+                <td data-label="Servicio"><span class="nombre" x-text="s.nombre"></span></td>
+                <td class="right" data-label="Precio" x-text="formatCLP(s.precio)"></td>
+                <td class="right" data-label="Cantidad/mes" x-text="s.cantidad_mes"></td>
+                <td class="right" data-label="Margen %">
                   <span class="lk-badge"
                         :class="s.estado === 'verde' ? 'lk-badge-verde' : s.estado === 'amarillo' ? 'lk-badge-ambar' : 'lk-badge-rojo'"
                         x-text="formatPCT(s.margen_pct, 0)"></span>
                 </td>
-                <td class="right" x-text="formatCLP(s.contribucion)"></td>
-                <td class="center">
+                <td class="right" data-label="Contribución" x-text="formatCLP(s.contribucion)"></td>
+                <td class="center" data-label="Estado">
                   <span class="lk-badge"
                         :class="s.estado === 'verde' ? 'lk-badge-verde' : s.estado === 'amarillo' ? 'lk-badge-ambar' : 'lk-badge-rojo'"
                         x-text="s.estado_label"></span>
                 </td>
-                <td><span class="accion" x-text="s.accion"></span></td>
+                <td data-label="Acción"><span class="accion" x-text="s.accion"></span></td>
               </tr>
             </template>
           </tbody>
@@ -1071,19 +1098,19 @@
           <tbody>
             <template x-for="p in [...(data.productos_cloe || [])].sort((a,b) => b.contribucion - a.contribucion)" :key="p.id">
               <tr>
-                <td><span class="nombre" x-text="p.nombre"></span></td>
-                <td class="right" x-text="formatCLP(p.precio)"></td>
-                <td class="right" x-text="formatCLP(p.costo)"></td>
-                <td class="right" x-text="formatPCT(p.margen_pct, 0)"></td>
-                <td class="right" x-text="p.ventas_mes"></td>
-                <td class="right" x-text="p.stock"></td>
-                <td class="right" x-text="formatCLP(p.contribucion)"></td>
-                <td class="center">
+                <td data-label="Producto"><span class="nombre" x-text="p.nombre"></span></td>
+                <td class="right" data-label="Precio" x-text="formatCLP(p.precio)"></td>
+                <td class="right" data-label="Costo" x-text="formatCLP(p.costo)"></td>
+                <td class="right" data-label="Margen %" x-text="formatPCT(p.margen_pct, 0)"></td>
+                <td class="right" data-label="Ventas/mes" x-text="p.ventas_mes"></td>
+                <td class="right" data-label="Stock" x-text="p.stock"></td>
+                <td class="right" data-label="Contribución" x-text="formatCLP(p.contribucion)"></td>
+                <td class="center" data-label="Estado">
                   <span class="lk-badge"
                         :class="p.estado === 'verde' ? 'lk-badge-verde' : p.estado === 'amarillo' ? 'lk-badge-ambar' : 'lk-badge-rojo'"
                         x-text="p.estado_label"></span>
                 </td>
-                <td><span class="accion" x-text="p.accion"></span></td>
+                <td data-label="Acción"><span class="accion" x-text="p.accion"></span></td>
               </tr>
             </template>
           </tbody>
@@ -1285,13 +1312,21 @@
           <tbody>
             <template x-for="op in (data.oportunidades?.items || [])" :key="op.id">
               <tr>
-                <td class="numeral" x-text="String(op.id).padStart(2, '0')"></td>
-                <td>
+                <td class="numeral" data-label="#" x-text="String(op.id).padStart(2, '0')"></td>
+                <td data-label="Acción">
                   <div class="nombre" x-text="op.titulo"></div>
                   <div class="meta" x-text="op.detalle"></div>
                 </td>
-                <td class="right delta-positivo" x-text="'+' + formatCLP(op.delta_mes)"></td>
-                <td class="center">
+                <td class="right" data-label="Δ utilidad/mes">
+                  <div class="lk-action-impact-cell">
+                    <span class="delta-positivo" x-text="'+' + formatCLP(op.delta_mes)"></span>
+                    <div class="lk-action-impact-bar-track">
+                      <div class="lk-action-impact-bar-fill"
+                           :style="'width: ' + Math.round((op.delta_mes / (data.oportunidades?.total_potencial || 575000)) * 100) + '%;'"></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="center" data-label="Esfuerzo">
                   <span class="lk-badge"
                         :class="
                           op.esfuerzo === 'Bajo' ? 'lk-badge-esfuerzo-bajo' :
@@ -1301,7 +1336,7 @@
                         "
                         x-text="op.esfuerzo"></span>
                 </td>
-                <td class="center">
+                <td class="center" data-label="Plazo">
                   <span class="lk-badge lk-badge-neutral" x-text="(op.plazo_dias || 30) + ' días'"></span>
                 </td>
               </tr>
@@ -1322,34 +1357,57 @@
   </section>
 
   <!-- ============================================================== -->
-  <!-- 09 · CTA FINAL — coordinemos una reunión                       -->
+  <!-- 09 · GARANTÍA — compromiso de resultado                        -->
+  <!-- ============================================================== -->
+  <section id="garantia" class="lk-garantia-section">
+    <div class="lk-container">
+      <div class="lk-garantia-banner" data-aos="fade-up">
+        <div class="lk-garantia-icon">
+          <i :data-lucide="data.garantia?.icon || 'shield-check'"></i>
+        </div>
+        <div class="lk-garantia-body">
+          <div class="lk-garantia-eyebrow" x-text="data.garantia?.eyebrow || '09 · GARANTÍA'"></div>
+          <p class="lk-garantia-copy" x-text="data.garantia?.copy || ''"></p>
+          <div class="lk-garantia-aplicabilidad" x-text="data.garantia?.aplicabilidad || ''"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 10 · CTA FINAL — coordinemos una reunión                       -->
   <!-- ============================================================== -->
   <section id="contacto" class="lk-cta-final">
     <div class="lk-container">
       <div data-aos="fade-up">
-        <div class="lk-eyebrow-tech" style="text-align:center; max-width:fit-content; margin-left:auto; margin-right:auto; border-bottom:none; color: var(--lk-champagne-light);" x-text="data.cta_final?.eyebrow || '09 · PRÓXIMO PASO · COORDINEMOS UNA REUNIÓN'"></div>
+        <div class="lk-eyebrow-tech" style="text-align:center; max-width:fit-content; margin-left:auto; margin-right:auto; border-bottom:none; color: var(--lk-champagne-light);" x-text="data.cta_final?.eyebrow || '10 · PRÓXIMO PASO · COORDINEMOS UNA REUNIÓN'"></div>
 
         <h2 class="lk-cta-headline" x-text="data.cta_final?.headline || 'El diagnóstico real, con sus números, en 14 días hábiles.'"></h2>
 
         <p class="lk-cta-subhead" x-text="data.cta_final?.subhead || ''"></p>
 
-        <div class="lk-cta-buttons">
+        <div class="lk-cta-buttons-v37">
+          <!-- Primario: Agendar reunión (peso visual dominante) -->
           <a :href="'https://wa.me/' + (data.meta?.consultor_whatsapp || '+56978837430').replace(/[^0-9]/g, '') + '?text=' + encodeURIComponent('Hola, vi el diagnóstico financiero LK Studio y quiero coordinar una reunión de 30 minutos')"
              target="_blank" rel="noopener"
-             class="lk-btn-primary">
+             class="lk-cta-primary-v37">
             <i data-lucide="calendar-check"></i>
-            <span x-text="data.cta_final?.agendar_label || 'Agendar reunión 30 min'"></span>
+            <span x-text="data.cta_final?.agendar_label || 'Agendar reunión · 30 min'"></span>
           </a>
+
+          <!-- Secundario: WhatsApp con microcopy -->
           <a :href="'https://wa.me/' + (data.meta?.consultor_whatsapp || '+56978837430').replace(/[^0-9]/g, '')"
              target="_blank" rel="noopener"
-             class="lk-btn-secondary">
+             class="lk-cta-secondary-v37">
             <i data-lucide="message-circle"></i>
-            <span x-text="data.cta_final?.whatsapp_label || '+56 9 7883 7430 · WhatsApp'"></span>
+            <span x-text="data.cta_final?.whatsapp_label || 'WhatsApp · respuesta el mismo día'"></span>
           </a>
-          <a :href="'mailto:' + (data.meta?.consultor_email || 'contacto@safepoint-ehs.com') + '?subject=' + encodeURIComponent('Reunión sobre diagnóstico LK Studio')"
-             class="lk-btn-secondary">
+
+          <!-- Terciario: Email ghost -->
+          <a :href="'mailto:' + (data.meta?.consultor_email || 'contacto@crosspointconsultores.cl') + '?subject=' + encodeURIComponent('Reunión sobre diagnóstico LK Studio')"
+             class="lk-cta-tertiary-v37">
             <i data-lucide="mail"></i>
-            <span x-text="data.cta_final?.email_label || 'contacto@safepoint-ehs.com'"></span>
+            <span x-text="data.meta?.consultor_email || 'contacto@crosspointconsultores.cl'"></span>
           </a>
         </div>
       </div>
@@ -1362,9 +1420,15 @@
     <span class="lk-footer-powered-label" x-text="data.footer?.powered_by_label || 'ANÁLISIS DESARROLLADO POR'"></span>
     <div class="lk-footer-consultor" x-text="data.footer?.consultor_linea_1 || 'Cross Point Consultores'"></div>
     <div class="lk-footer-lema" x-text="data.footer?.consultor_linea_2 || 'Asesoría Comercial y Financiera para Pymes'"></div>
-    <div class="lk-footer-contacto" x-text="data.footer?.consultor_linea_3 || 'San Miguel, Santiago · safepoint-ehs.cl'"></div>
+    <div class="lk-footer-contacto" x-text="data.footer?.consultor_linea_3 || 'San Miguel, Santiago · crosspointconsultores.cl'"></div>
     <div class="lk-footer-disclaimer" x-text="data.footer?.demo_disclaimer || 'Demo · cifras ilustrativas'"></div>
   </footer>
+
+  <!-- Sticky CTA mobile (v3.7) -->
+  <a id="sticky-cta-mobile" href="#contacto" class="lk-sticky-cta-mobile" aria-label="Agendar reunión 30 minutos">
+    Agendar reunión · 30 min
+    <i data-lucide="arrow-right"></i>
+  </a>
 
   <!-- Floating WhatsApp -->
   <a id="fab-wsp"
@@ -1381,12 +1445,12 @@
 
   <!-- Scripts -->
   <!-- App scripts primero (definen window.dashboard, simuladores, etc.) -->
-  <script src="./assets/js/app.js?v=3.6"></script>
-  <script src="./assets/js/simulators.js?v=3.6"></script>
+  <script src="./assets/js/app.js?v=3.7"></script>
+  <script src="./assets/js/simulators.js?v=3.7"></script>
   <!-- Libs externas defer (se ejecutan después en orden) -->
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script defer src="./assets/js/animations.js?v=3.6"></script>
+  <script defer src="./assets/js/animations.js?v=3.7"></script>
   <!-- Alpine último: necesita que dashboard()/simuladores estén en window -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
