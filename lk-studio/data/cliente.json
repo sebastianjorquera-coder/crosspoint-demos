@@ -3,9 +3,9 @@
     "cliente_nombre": "LK Studio",
     "cliente_slug": "lk-studio",
     "cliente_rubro": "Estudio de Belleza · Maipú",
-    "fecha_corte": "2026-05-02",
-    "mes_corte_label": "mayo 2026",
-    "es_demo": true,
+    "fecha_corte": "2026-04-30",
+    "mes_corte_label": "abril 2026",
+    "es_demo": false,
     "moneda_simbolo": "$",
     "moneda_codigo": "CLP",
     "locale": "es-CL",
@@ -15,7 +15,7 @@
     "consultor_email": "contacto@crosspointconsultores.cl",
     "consultor_web": "crosspointconsultores.cl",
     "consultor_ciudad": "San Miguel, Santiago",
-    "eyebrow_master": "Período: mayo 2026 · Datos: intake LK Studio · Actualizado: 2026-05-03"
+    "eyebrow_master": "Período: abril 2026 · Diagnóstico LK Studio · Actualizado: 2026-05-19"
   },
   "branding": {
     "color_noir": "#0E0E10",
@@ -35,17 +35,17 @@
   "hero": {
     "wordmark": "LK Studio",
     "wordmark_sub": "ESTUDIO DE BELLEZA · MAIPÚ",
-    "eyebrow": "01 · DIAGNÓSTICO FINANCIERO · MAYO 2026",
-    "headline": "Identifica hasta +$575K mensuales de rentabilidad oculta",
-    "subhead": "Diagnóstico ejecutivo en 14 días · plan de acción priorizado · sin inversión inicial.",
-    "demo_banner": "DEMO · cifras ilustrativas · este formato se replica con sus datos reales tras el intake",
-    "kpi_strip_label": "Mayo 2026",
+    "eyebrow": "01 · DIAGNÓSTICO FINANCIERO · ABRIL 2026",
+    "headline": "Diagnosticamos $3.394.424/mes en no-show bruto detectado · oportunidad accionable: +$630.951/mes en 30 días",
+    "subhead": "Anti-no-show $555.451/mes (CSV04) + renegociación bancaria $75.500/mes. Sobre base de $31.130.660 facturados en abril 2026.",
+    "demo_banner": "",
+    "kpi_strip_label": "Abril 2026",
     "kpi_strip_facturado_label": "Facturado",
-    "kpi_strip_facturado_valor": 7220000,
-    "kpi_strip_utilidad_label": "Utilidad estimada",
-    "kpi_strip_utilidad_valor": 2625000,
-    "cta_primary": "Agendar reunión · 30 min",
-    "cta_scroll": "Recorrer secciones"
+    "kpi_strip_facturado_valor": 31130660,
+    "kpi_strip_utilidad_label": "Resultado neto",
+    "kpi_strip_utilidad_valor": 4533434,
+    "cta_primary": "Agendar sesión de cierre",
+    "cta_scroll": "Recorrer diagnóstico"
   },
   "como_funciona": {
     "eyebrow": "01b · PROCESO · 3 ETAPAS · PLAZOS FIRMES",
@@ -88,22 +88,22 @@
       {
         "icon": "trending-up",
         "label": "Margen consolidado",
-        "valor": "62,5% · sobre meta (60%)"
+        "valor": "62,4% · sobre meta (60%)"
       },
       {
         "icon": "target",
         "label": "Punto de equilibrio",
-        "valor": "Cubierto al día 13 · utilidad estimada $2.625K"
+        "valor": "Cubierto al día 12 · resultado neto $4.533.434"
       },
       {
         "icon": "alert-circle",
-        "label": "Concentración",
-        "valor": "Top 3 servicios = 39% facturación"
+        "label": "Concentración de servicios",
+        "valor": "Top 3: Crecimiento ($3.375.000), Mechas L ($2.750.000), Corte Dama ($2.652.000) = 30% de los ingresos de servicios. Fuente: AgendaPro abril 2026."
       },
       {
         "icon": "flag",
         "label": "Riesgo legal",
-        "valor": "1 modalidad contractual a revisar"
+        "valor": "7 profesionales en modalidad 100% comisión. Verificar ausencia de subordinación laboral encubierta — Código del Trabajo Chile."
       }
     ]
   },
@@ -116,37 +116,37 @@
         "tipo": "alerta",
         "color": "rojo",
         "icon_lucide": "alert-triangle",
-        "etiqueta": "ALERTA · MARGEN BAJO",
-        "titulo": "Bronceado sin sol · margen 42%",
-        "metrica_principal": "42%",
-        "metrica_sublabel": "vs rango sano 50%+",
-        "detalle": "Margen 42% bajo el rango sano. Impacto mensual: $55.440 (6 servicios al mes). Comparativa: Color completo (55%) genera $1.001.000/mes con 28 servicios.",
+        "etiqueta": "ALERTA · CAPITAL HUMANO",
+        "titulo": "Remuneraciones 48,0% sobre venta — fuera del rango sano",
+        "metrica_principal": "48,0%",
+        "metrica_sublabel": "rango sano 35-40%",
+        "detalle": "Comisiones $9.871.072 + sueldos $3.320.289 + imposiciones $1.760.816 = $14.952.177 sobre $31.130.660 de ingresos. Exceso estimado vs benchmark 40%: (48%-40%) × $31.130.660 = $2.490.452 ≈ $2.490.000/mes. SUPUESTO: imposiciones calculadas con promedio Q1 2026 (dato real abril no disponible). SUPUESTO: benchmark 40% = criterio consultor basado en industria salones Chile.",
         "accion_label": "RECOMENDACIÓN",
-        "accion": "Subir precio +15% o evaluar exclusión del menú."
+        "accion": "Revisar estructura de comisiones y sueldos. Meta: ≤40% sobre ventas. Desglose individual PENDIENTE: hoja VALORES."
       },
       {
         "tipo": "precaucion",
         "color": "ambar",
         "icon_lucide": "alert-circle",
-        "etiqueta": "PRECAUCIÓN · CAPITAL HUMANO",
-        "titulo": "Peso remuneraciones · 41,2% sobre venta",
-        "metrica_principal": "41,2%",
-        "metrica_sublabel": "rango sano 35-40%",
-        "detalle": "Peso remuneraciones supera el rango sano de salones medio-altos chilenos. Si baja productividad o sube a 50%, margen consolidado se comprime crítico.",
+        "etiqueta": "PRECAUCIÓN · GASTOS OPERACIONALES",
+        "titulo": "Discrepancia en 'Otros operacionales': $943.000 declarado vs $2.684.000 real",
+        "metrica_principal": "$1.741.000",
+        "metrica_sublabel": "subreporte de gastos",
+        "detalle": "Leyla totalizó $943.000 en 'Otros operacionales' pero la revisión de filas 1-73 de la hoja GASTOS arroja $2.684.000. Diferencia: $1.741.000. RIESGO: puede haber gastos no clasificados o pagos no registrados que afectan el resultado neto real.",
         "accion_label": "RECOMENDACIÓN",
-        "accion": "Revisar productividad por persona y formalizar modalidad contractual de Manicurista 1 (boleta variable + horario fijo · riesgo legal)."
+        "accion": "Auditar detalle de 'Otros operacionales' con Leyla. Identificar las 73 filas y clasificar cada ítem."
       },
       {
         "tipo": "fortaleza",
         "color": "verde",
         "icon_lucide": "check-circle-2",
-        "etiqueta": "FORTALEZA · MOTOR DE CONTRIBUCIÓN",
-        "titulo": "Color completo · servicio de mayor contribución",
-        "metrica_principal": "$1.001.000",
-        "metrica_sublabel": "contribución mensual",
-        "detalle": "Margen 55% · 28 servicios al mes · 14% de la utilidad total del negocio. Servicio ancla con base de clientas frecuentes.",
+        "etiqueta": "FORTALEZA · POSICIÓN FINANCIERA",
+        "titulo": "163% sobre punto de equilibrio · margen bruto 62,4%",
+        "metrica_principal": "163%",
+        "metrica_sublabel": "ventas vs PE mensual",
+        "detalle": "Ventas $31.130.660 vs PE $11.830.569. Punto de equilibrio cubierto al día 12 del mes. Margen bruto 62,4% — sobre meta 60%. Posición sólida para absorber intervenciones de optimización.",
         "accion_label": "RECOMENDACIÓN",
-        "accion": "Proteger el margen — no descontar, no tercerizar, comunicar valor a clientas frecuentes."
+        "accion": "Mantener ritmo. Redirigir margen operativo ($12.033.000) a resolver las alertas de estructura de costos."
       }
     ]
   },
@@ -155,447 +155,583 @@
       "id": "venta_total",
       "icon": "banknote",
       "label": "Facturado",
-      "valor": 7220000,
+      "valor": 31130660,
       "formato": "CLP",
-      "meta": 6900000,
+      "meta": null,
       "trend": "up",
-      "trend_texto": "+4,6% vs meta",
+      "trend_texto": "Servicios 93,7% · productos 6,3%",
       "color_borde": "champagne"
     },
     {
       "id": "margen_consolidado",
       "icon": "percent",
       "label": "Margen consolidado",
-      "valor": 0.625,
+      "valor": 0.624,
       "formato": "PCT",
       "meta": 0.6,
       "trend": "up",
-      "trend_texto": "+2,5 pp vs meta",
+      "trend_texto": "+2,4 pp vs meta",
       "color_borde": "champagne"
     },
     {
       "id": "punto_equilibrio",
       "icon": "target",
       "label": "Punto de equilibrio",
-      "valor": 3017672,
+      "valor": 11830569,
       "formato": "CLP",
       "meta": null,
       "trend": "flat",
-      "trend_texto": "Cubierto al día 13",
+      "trend_texto": "Cubierto al día 12",
       "color_borde": "champagne"
     },
     {
       "id": "utilidad",
       "icon": "trending-up",
-      "label": "Utilidad estimada",
-      "valor": 2625000,
+      "label": "Resultado neto estimado",
+      "valor": 4533434,
       "formato": "CLP",
-      "meta": 2200000,
+      "meta": null,
       "trend": "up",
-      "trend_texto": "+19% vs meta",
+      "trend_texto": "14,6% sobre ventas",
       "color_borde": "champagne"
     }
   ],
   "estado_general": {
     "eyebrow": "03 · KPIs DEL PERÍODO · COMPARATIVAS VS META",
-    "section_title": "Indicadores del período · mayo 2026",
-    "section_intro": "Cuatro métricas de control. Comparativas vs meta y nivel de cumplimiento del punto de equilibrio.",
+    "section_title": "Indicadores del período · abril 2026",
+    "section_intro": "Cuatro métricas de control. Datos reales abril 2026. Fuente: P&L diagnóstico Cross Point Consultores.",
     "semaforo": "verde",
-    "titulo": "Cumplimiento sobre meta",
-    "mensaje": "Margen consolidado 62,5% sobre meta de 60%. Cobertura de costos fijos al día 13.",
-    "pe_pct_alcanzado": 0.87,
-    "dias_para_pe": 13,
+    "titulo": "Posición financiera sólida",
+    "mensaje": "Margen consolidado 62,4% sobre meta de 60%. Punto de equilibrio cubierto al día 12. Brecha: 163% sobre PE mensual ($31.130.660 vs $11.830.569).",
+    "pe_pct_alcanzado": 1.00,
+    "dias_para_pe": 12,
     "dias_total_mes": 30,
-    "gauge_label": "del punto de equilibrio cubierto",
-    "gauge_subtext": "Resto del mes (días 14-30): utilidad neta antes de imprevistos.",
-    "footnote": "Cifras ilustrativas. Los rangos del intake se reemplazan tras el diagnóstico real."
+    "gauge_label": "del punto de equilibrio mensual cubierto",
+    "gauge_subtext": "Ventas $31.130.660 = 2,63× el PE mensual de $11.830.569.",
+    "footnote": "Datos reales abril 2026. SUPUESTO: imposiciones estimadas con promedio Q1 (dato real no disponible). Resultado neto incluye IVA débito fiscal estimado avg Q1."
   },
   "ranking_servicios": {
     "eyebrow": "04 · RANKING DE SERVICIOS · CONTRIBUCIÓN MENSUAL",
     "section_title": "Ranking de servicios por contribución a utilidad",
-    "section_intro": "Diez servicios ordenados por contribución mensual. Estado según margen vs rango sano del salón.",
-    "bottom_line_label": "INSIGHT",
-    "bottom_line": "Concentración alta en top 3 servicios (39% de facturación). Riesgo: vulnerabilidad si caen. Oportunidad: optimizar el mix actual antes de lanzar nuevos servicios."
+    "section_intro": "Datos reales AgendaPro abril 2026. 82 servicios registrados. Top 10 por contribución a margen bruto. Fuente: CSV01 AgendaPro + análisis de insumos Cross Point Consultores.",
+    "bottom_line_label": "OPORTUNIDAD PRICING",
+    "bottom_line": "3 de los top 10 servicios tienen margen bajo el rango sano (55%): Coloración L (48,5%), Coloración M (47,9%) y Mechas XL (45,6%). Subir precio +8-10% en estos servicios equivale a +$340.000/mes de margen adicional estimado."
   },
   "servicios": [
     {
-      "id": "color_completo",
-      "nombre": "Color completo",
-      "precio": 65000,
+      "id": "crecimiento_tradicional",
+      "nombre": "Crecimiento Tradicional",
+      "precio": 44408,
+      "cantidad_mes": 76,
+      "costo_directo": 3331,
+      "comision_pct": 0.36,
+      "margen_unitario": 25087,
+      "margen_pct": 0.565,
+      "contribucion": 1906649,
+      "estado": "verde",
+      "estado_label": "motor",
+      "accion": "Mayor volumen del mes (76 tx). Servicio ancla de frecuencia — proteger disponibilidad de agenda."
+    },
+    {
+      "id": "mechas_l",
+      "nombre": "Mechas L",
+      "precio": 130952,
+      "cantidad_mes": 21,
+      "costo_directo": 9823,
+      "comision_pct": 0.31,
+      "margen_unitario": 80891,
+      "margen_pct": 0.618,
+      "contribucion": 1698720,
+      "estado": "verde",
+      "estado_label": "motor",
+      "accion": "Mayor margen unitario entre servicios premium. Priorizar agenda y capacitación en técnica."
+    },
+    {
+      "id": "corte_dama",
+      "nombre": "Corte Dama",
+      "precio": 17563,
+      "cantidad_mes": 151,
+      "costo_directo": 0,
+      "comision_pct": 0.40,
+      "margen_unitario": 10474,
+      "margen_pct": 0.596,
+      "contribucion": 1581588,
+      "estado": "verde",
+      "estado_label": "ancla",
+      "accion": "Mayor número de transacciones (151 tx). Servicio ancla de recurrencia — clave para retención."
+    },
+    {
+      "id": "coloracion_l",
+      "nombre": "Coloración L",
+      "precio": 80000,
+      "cantidad_mes": 29,
+      "costo_directo": 6001,
+      "comision_pct": 0.44,
+      "margen_unitario": 38809,
+      "margen_pct": 0.485,
+      "contribucion": 1125471,
+      "estado": "amarillo",
+      "estado_label": "revisar",
+      "accion": "Margen 48,5% — bajo rango sano (55%). Evaluar subir precio +8% o revisar nivel de insumo."
+    },
+    {
+      "id": "coloracion_m",
+      "nombre": "Coloración M",
+      "precio": 69286,
       "cantidad_mes": 28,
-      "costo_directo": 19500,
-      "comision_pct": 0.15,
-      "margen_unitario": 35750,
-      "margen_pct": 0.55,
-      "contribucion": 1001000,
+      "costo_directo": 5197,
+      "comision_pct": 0.45,
+      "margen_unitario": 33185,
+      "margen_pct": 0.479,
+      "contribucion": 929185,
+      "estado": "amarillo",
+      "estado_label": "revisar",
+      "accion": "Margen 47,9% — bajo rango sano. Comisión alta (45%). Subir precio o renegociar comisión."
+    },
+    {
+      "id": "mechas_m",
+      "nombre": "Mechas M",
+      "precio": 100769,
+      "cantidad_mes": 13,
+      "costo_directo": 7559,
+      "comision_pct": 0.27,
+      "margen_unitario": 65903,
+      "margen_pct": 0.654,
+      "contribucion": 856736,
       "estado": "verde",
       "estado_label": "motor",
-      "accion": "Servicio ancla — proteger margen y comunicar valor."
+      "accion": "Margen 65,4% — mejor ratio del segmento mechas. Empujar upgrade de S/L a M en consultoría."
     },
     {
-      "id": "mechas",
-      "nombre": "Mechas",
-      "precio": 90000,
-      "cantidad_mes": 20,
-      "costo_directo": 27000,
-      "comision_pct": 0.15,
-      "margen_unitario": 49500,
-      "margen_pct": 0.55,
-      "contribucion": 990000,
-      "estado": "verde",
-      "estado_label": "motor",
-      "accion": "Empujar pack Mechas + Tratamiento (ver plan acción)."
-    },
-    {
-      "id": "corte_mujer",
-      "nombre": "Corte mujer",
-      "precio": 18000,
-      "cantidad_mes": 60,
-      "costo_directo": 1800,
-      "comision_pct": 0.12,
-      "margen_unitario": 14040,
-      "margen_pct": 0.78,
-      "contribucion": 842400,
-      "estado": "verde",
-      "estado_label": "ancla",
-      "accion": "Mayor margen del salón — sostener volumen."
-    },
-    {
-      "id": "manicure",
-      "nombre": "Manicure",
-      "precio": 12000,
-      "cantidad_mes": 80,
-      "costo_directo": 1800,
-      "comision_pct": 0.2,
-      "margen_unitario": 7800,
-      "margen_pct": 0.65,
-      "contribucion": 624000,
-      "estado": "verde",
-      "estado_label": "ancla",
-      "accion": "Pack Manicure + esmalte CLOE complementa bien."
-    },
-    {
-      "id": "pedicure",
-      "nombre": "Pedicure",
-      "precio": 15000,
-      "cantidad_mes": 50,
-      "costo_directo": 2500,
-      "comision_pct": 0.2,
-      "margen_unitario": 9500,
-      "margen_pct": 0.63,
-      "contribucion": 475000,
-      "estado": "verde",
-      "estado_label": "ancla",
-      "accion": "Mantener — alta rotación."
-    },
-    {
-      "id": "pestanas",
-      "nombre": "Pestañas",
-      "precio": 35000,
-      "cantidad_mes": 18,
-      "costo_directo": 7000,
-      "comision_pct": 0.18,
-      "margen_unitario": 21700,
-      "margen_pct": 0.62,
-      "contribucion": 390600,
-      "estado": "verde",
-      "estado_label": "ancla",
-      "accion": "Empujar fines de semana."
-    },
-    {
-      "id": "maquillaje",
-      "nombre": "Maquillaje aerógrafo",
+      "id": "corte_tratamiento",
+      "nombre": "Corte + Tratamiento Capilar",
       "precio": 30000,
-      "cantidad_mes": 12,
-      "costo_directo": 3000,
-      "comision_pct": 0.2,
-      "margen_unitario": 21000,
-      "margen_pct": 0.7,
-      "contribucion": 252000,
+      "cantidad_mes": 61,
+      "costo_directo": 2250,
+      "comision_pct": 0.48,
+      "margen_unitario": 13485,
+      "margen_pct": 0.450,
+      "contribucion": 822604,
+      "estado": "amarillo",
+      "estado_label": "revisar",
+      "accion": "Margen 44,9% — comisión 48% muy alta para este ticket. Revisar estructura del pack o subir precio."
+    },
+    {
+      "id": "corte_premier",
+      "nombre": "Corte + Premier Kerastase",
+      "precio": 50000,
+      "cantidad_mes": 30,
+      "costo_directo": 3750,
+      "comision_pct": 0.39,
+      "margen_unitario": 26916,
+      "margen_pct": 0.538,
+      "contribucion": 807484,
       "estado": "verde",
       "estado_label": "ancla",
-      "accion": "Combinar con pestañas — pack novia."
+      "accion": "Buen mix precio-margen. Promover como upgrade natural del Corte Dama básico."
     },
     {
-      "id": "tratamiento_capilar",
-      "nombre": "Tratamiento capilar",
-      "precio": 25000,
-      "cantidad_mes": 14,
-      "costo_directo": 8750,
-      "comision_pct": 0.15,
-      "margen_unitario": 12500,
-      "margen_pct": 0.5,
-      "contribucion": 175000,
+      "id": "alisado_hakari",
+      "nombre": "Promo Alisado Hakari",
+      "precio": 99990,
+      "cantidad_mes": 12,
+      "costo_directo": 7500,
+      "comision_pct": 0.36,
+      "margen_unitario": 56191,
+      "margen_pct": 0.562,
+      "contribucion": 674289,
+      "estado": "verde",
+      "estado_label": "ancla",
+      "accion": "Margen 56,2% y ticket alto. Mantener promo Hakari y comunicar valor diferencial."
+    },
+    {
+      "id": "mechas_xl",
+      "nombre": "Mechas XL",
+      "precio": 150000,
+      "cantidad_mes": 8,
+      "costo_directo": 11252,
+      "comision_pct": 0.47,
+      "margen_unitario": 68396,
+      "margen_pct": 0.456,
+      "contribucion": 547172,
       "estado": "amarillo",
       "estado_label": "revisar",
-      "accion": "Margen al límite del rango sano — revisar costo de insumo."
-    },
-    {
-      "id": "depilacion",
-      "nombre": "Depilación",
-      "precio": 20000,
-      "cantidad_mes": 10,
-      "costo_directo": 4000,
-      "comision_pct": 0.2,
-      "margen_unitario": 12000,
-      "margen_pct": 0.6,
-      "contribucion": 120000,
-      "estado": "amarillo",
-      "estado_label": "revisar",
-      "accion": "Margen bajo el promedio del salón — evaluar precio."
-    },
-    {
-      "id": "bronceado",
-      "nombre": "Bronceado sin sol",
-      "precio": 22000,
-      "cantidad_mes": 6,
-      "costo_directo": 8800,
-      "comision_pct": 0.18,
-      "margen_unitario": 9240,
-      "margen_pct": 0.42,
-      "contribucion": 55440,
-      "estado": "rojo",
-      "estado_label": "crítico",
-      "accion": "Margen bajo el rango sano — subir precio +15% o excluir del menú."
+      "accion": "Margen 45,6% — bajo para ticket premium de $150.000. Evaluar ajuste precio o reducir comisión."
     }
   ],
   "productos_cloe": [
     {
-      "id": "shampoo_reparador",
-      "nombre": "Shampoo Reparador 250ml",
-      "precio": 18000,
-      "costo": 8000,
-      "ventas_mes": 12,
-      "stock": 8,
-      "margen_pct": 0.56,
-      "contribucion": 120000,
+      "id": "mascara_spectrum_loreal",
+      "nombre": "Máscara Spectrum 250ml (L'Oréal)",
+      "precio": 38990,
+      "costo": 25483,
+      "ventas_mes": 4,
+      "stock": 3,
+      "margen_pct": 0.262,
+      "contribucion": 40927,
+      "estado": "amarillo",
+      "estado_label": "ok",
+      "accion": "Mayor revenue de reventa. Margen 26% — evaluar negociación de costo con proveedor."
+    },
+    {
+      "id": "serum_absolut_loreal",
+      "nombre": "Sérum Absolut 10 en 1 (L'Oréal)",
+      "precio": 34990,
+      "costo": 22869,
+      "ventas_mes": 4,
+      "stock": 15,
+      "margen_pct": 0.262,
+      "contribucion": 36727,
+      "estado": "amarillo",
+      "estado_label": "ok",
+      "accion": "Buen stock. Cross-sell post-tratamiento Absolut."
+    },
+    {
+      "id": "crema_strange_curls_cloe",
+      "nombre": "Crema Strange Curls Love (Cloe)",
+      "precio": 17100,
+      "costo": 9600,
+      "ventas_mes": 6,
+      "stock": 18,
+      "margen_pct": 0.355,
+      "contribucion": 36382,
       "estado": "verde",
       "estado_label": "top",
-      "accion": "Top vendedor — reponer."
+      "accion": "Mejor margen de la línea (35,5%). Alta rotación y buen stock. Priorizar en cross-sell."
     },
     {
-      "id": "mascarilla_keratina",
-      "nombre": "Mascarilla Keratina 200g",
-      "precio": 22000,
-      "costo": 9500,
-      "ventas_mes": 8,
-      "stock": 5,
-      "margen_pct": 0.57,
-      "contribucion": 100000,
-      "estado": "verde",
-      "estado_label": "ok",
-      "accion": "Mantener."
-    },
-    {
-      "id": "serum_capilar",
-      "nombre": "Sérum capilar 50ml",
-      "precio": 28000,
-      "costo": 12000,
-      "ventas_mes": 6,
-      "stock": 4,
-      "margen_pct": 0.57,
-      "contribucion": 96000,
-      "estado": "verde",
-      "estado_label": "ok",
-      "accion": "Cross-sell post-mechas."
-    },
-    {
-      "id": "ampolla_brillo",
-      "nombre": "Ampolla brillo intenso",
-      "precio": 8500,
-      "costo": 3500,
-      "ventas_mes": 14,
-      "stock": 22,
-      "margen_pct": 0.59,
-      "contribucion": 70000,
-      "estado": "verde",
-      "estado_label": "ok",
-      "accion": "Ticket pequeño · alta rotación."
-    },
-    {
-      "id": "spray_protector",
-      "nombre": "Spray protector térmico",
-      "precio": 15000,
-      "costo": 7000,
-      "ventas_mes": 5,
-      "stock": 12,
-      "margen_pct": 0.53,
-      "contribucion": 40000,
-      "estado": "amarillo",
-      "estado_label": "revisar",
-      "accion": "Stock alto vs ventas — promover."
-    },
-    {
-      "id": "aceite_argan",
-      "nombre": "Aceite de argán 30ml",
-      "precio": 12000,
-      "costo": 5500,
-      "ventas_mes": 3,
-      "stock": 14,
-      "margen_pct": 0.54,
-      "contribucion": 19500,
-      "estado": "amarillo",
-      "estado_label": "dormido",
-      "accion": "Sin movimiento >60 días — promover o devolver."
-    },
-    {
-      "id": "kit_color",
-      "nombre": "Kit cuidado color",
-      "precio": 35000,
-      "costo": 17000,
-      "ventas_mes": 1,
-      "stock": 6,
-      "margen_pct": 0.51,
-      "contribucion": 18000,
+      "id": "acondicionador_spectrum_loreal",
+      "nombre": "Acondicionador Spectrum 200ml (L'Oréal)",
+      "precio": 31990,
+      "costo": 20909,
+      "ventas_mes": 4,
+      "stock": 1,
+      "margen_pct": 0.262,
+      "contribucion": 33575,
       "estado": "rojo",
-      "estado_label": "crítico",
-      "accion": "Liquidar -30% (7 días) o devolución a proveedor."
+      "estado_label": "stock crítico",
+      "accion": "Solo 1 unidad en stock. Reponer urgente — se está vendiendo a par con la máscara."
+    },
+    {
+      "id": "mascara_molecular_loreal",
+      "nombre": "Máscara Molecular 250ml (L'Oréal)",
+      "precio": 38990,
+      "costo": 25483,
+      "ventas_mes": 3,
+      "stock": 4,
+      "margen_pct": 0.262,
+      "contribucion": 30696,
+      "estado": "amarillo",
+      "estado_label": "ok",
+      "accion": "Buen producto Spectrum. Promover como pack shampoo + máscara."
+    },
+    {
+      "id": "shampoo_spectrum_loreal",
+      "nombre": "Shampoo Spectrum 300ml (L'Oréal)",
+      "precio": 27990,
+      "costo": 18294,
+      "ventas_mes": 4,
+      "stock": 0,
+      "margen_pct": 0.262,
+      "contribucion": 29379,
+      "estado": "rojo",
+      "estado_label": "sin stock",
+      "accion": "Agotado. Reponer inmediatamente — se está vendiendo junto al acondicionador."
+    },
+    {
+      "id": "serum_elixir_kerastase",
+      "nombre": "Sérum Elixir Ultime 75ml (Kérastase)",
+      "precio": 52990,
+      "costo": 34634,
+      "ventas_mes": 2,
+      "stock": 0,
+      "margen_pct": 0.262,
+      "contribucion": 27810,
+      "estado": "rojo",
+      "estado_label": "sin stock",
+      "accion": "Ticket premium ($52.990). Agotado — cliente interesada en Kérastase no encuentra producto."
     }
   ],
   "productos_resumen": {
-    "eyebrow": "05 · RETAIL CLOE · ROTACIÓN Y MIX",
-    "section_title": "Línea de productos CLOE · análisis de retail",
-    "section_intro": "Retail objetivo 20-25% de facturación. Mayo: 19%. Tres SKUs concentran 65% del retail. Dos SKUs sin movimiento >60 días.",
-    "alert_label": "ATENCIÓN · INVENTARIO SIN MOVIMIENTO >60 DÍAS",
-    "alert_detalle": "Kit cuidado color + Aceite de argán. Capital atrapado: $200.000.",
-    "alert_accion": "Promo -30% (7 días) o devolución a proveedor."
+    "eyebrow": "05 · RETAIL REVENTA · ROTACIÓN Y MIX",
+    "section_title": "Línea de reventa · análisis de rotación y margen",
+    "section_intro": "Datos reales inventario abril 2026. 33 productos vendidos. Margen Loreal/Kerastase: 26,2%. Margen Cloe: 35-38%. Fuente: planilla inventario LK Studio.",
+    "alert_label": "CRÍTICO · DEAD STOCK: $7.170.000 INMOVILIZADOS",
+    "alert_detalle": "128 SKUs sin movimiento en bodega. Capital inmovilizado: $7.170.000. Marcas: Loreal, Kerastase, SOW, Cloe. Top ítem: Bifásico Absolut Loreal (8 unidades, $182.952).",
+    "alert_accion": "Promo -25% en SKUs detenidos (7 días). Separar bodega venta vs consumo interno del salón — mezcla actual infla margen de productos hasta 8%."
   },
   "personas": [
     {
-      "id": "estilista_1",
-      "rol": "Estilista 1",
-      "modalidad": "Contrato indefinido",
-      "sueldo_bruto": 650000,
-      "honorario_fijo": 0,
-      "comision_pct": 0.1,
-      "horas_semana": 45,
-      "antiguedad_anios": 4,
-      "costo_real_mensual": 812500,
-      "ventas_generadas": 1900000,
-      "productividad_pct": 0.43,
-      "bandera_legal": null
-    },
-    {
-      "id": "estilista_2",
-      "rol": "Estilista 2",
-      "modalidad": "Contrato indefinido",
-      "sueldo_bruto": 600000,
-      "honorario_fijo": 0,
-      "comision_pct": 0.1,
-      "horas_semana": 45,
-      "antiguedad_anios": 2,
-      "costo_real_mensual": 750000,
-      "ventas_generadas": 1750000,
-      "productividad_pct": 0.43,
-      "bandera_legal": null
-    },
-    {
-      "id": "manicurista_1",
-      "rol": "Manicurista 1",
-      "modalidad": "Honorarios variable por servicio",
-      "sueldo_bruto": 0,
-      "honorario_fijo": 0,
-      "comision_pct": 0.3,
-      "horas_semana": 40,
-      "antiguedad_anios": 3,
-      "costo_real_mensual": 360000,
-      "ventas_generadas": 1200000,
-      "productividad_pct": 0.3,
-      "bandera_legal": "Boleta variable con horario fijo y exclusivo — riesgo de figura laboral encubierta."
-    },
-    {
-      "id": "manicurista_2",
-      "rol": "Manicurista 2",
-      "modalidad": "Honorarios mensual fijo",
-      "sueldo_bruto": 0,
-      "honorario_fijo": 450000,
-      "comision_pct": 0,
-      "horas_semana": 36,
-      "antiguedad_anios": 1,
-      "costo_real_mensual": 450000,
-      "ventas_generadas": 1000000,
-      "productividad_pct": 0.45,
-      "bandera_legal": null
-    },
-    {
-      "id": "recepcionista",
-      "rol": "Recepción",
-      "modalidad": "Contrato indefinido",
-      "sueldo_bruto": 480000,
+      "id": "leyla",
+      "rol": "Fundadora · Gerencia",
+      "modalidad": "Sueldo fijo",
+      "sueldo_bruto": 1200000,
       "honorario_fijo": 0,
       "comision_pct": 0,
-      "horas_semana": 45,
-      "antiguedad_anios": 5,
-      "costo_real_mensual": 600000,
+      "horas_semana": null,
+      "antiguedad_anios": null,
+      "costo_real_mensual": 1200000,
+      "ventas_generadas": 4835280,
+      "productividad_pct": 4.03,
+      "bandera_legal": null
+    },
+    {
+      "id": "valeska",
+      "rol": "Administración",
+      "modalidad": "Sueldo fijo",
+      "sueldo_bruto": 1200000,
+      "honorario_fijo": 0,
+      "comision_pct": 0,
+      "horas_semana": null,
+      "antiguedad_anios": null,
+      "costo_real_mensual": 1200000,
       "ventas_generadas": 0,
       "productividad_pct": null,
+      "bandera_legal": null
+    },
+    {
+      "id": "andrea",
+      "rol": "Operadora Senior",
+      "modalidad": "Sueldo fijo",
+      "sueldo_bruto": 920289,
+      "honorario_fijo": 0,
+      "comision_pct": 0,
+      "horas_semana": null,
+      "antiguedad_anios": null,
+      "costo_real_mensual": 920289,
+      "ventas_generadas": 1572060,
+      "productividad_pct": 1.71,
+      "bandera_legal": null
+    },
+    {
+      "id": "paulina",
+      "rol": "Estilista",
+      "modalidad": "100% Comisión",
+      "sueldo_bruto": 0,
+      "honorario_fijo": 0,
+      "comision_pct": null,
+      "horas_semana": null,
+      "antiguedad_anios": null,
+      "costo_real_mensual": 1858429,
+      "ventas_generadas": 5449360,
+      "productividad_pct": 2.93,
+      "bandera_legal": null
+    },
+    {
+      "id": "carolina",
+      "rol": "Estilista",
+      "modalidad": "100% Comisión",
+      "sueldo_bruto": 0,
+      "honorario_fijo": 0,
+      "comision_pct": null,
+      "horas_semana": null,
+      "antiguedad_anios": null,
+      "costo_real_mensual": 1765227,
+      "ventas_generadas": 4446410,
+      "productividad_pct": 2.52,
+      "bandera_legal": null
+    },
+    {
+      "id": "vanesa",
+      "rol": "Estilista",
+      "modalidad": "100% Comisión",
+      "sueldo_bruto": 0,
+      "honorario_fijo": 0,
+      "comision_pct": null,
+      "horas_semana": null,
+      "antiguedad_anios": null,
+      "costo_real_mensual": 1641188,
+      "ventas_generadas": 4229100,
+      "productividad_pct": 2.58,
+      "bandera_legal": null
+    },
+    {
+      "id": "macarena",
+      "rol": "Estilista",
+      "modalidad": "100% Comisión",
+      "sueldo_bruto": 0,
+      "honorario_fijo": 0,
+      "comision_pct": null,
+      "horas_semana": null,
+      "antiguedad_anios": null,
+      "costo_real_mensual": 1473345,
+      "ventas_generadas": 3547390,
+      "productividad_pct": 2.41,
+      "bandera_legal": null
+    },
+    {
+      "id": "camila",
+      "rol": "Estilista",
+      "modalidad": "100% Comisión",
+      "sueldo_bruto": 0,
+      "honorario_fijo": 0,
+      "comision_pct": null,
+      "horas_semana": null,
+      "antiguedad_anios": null,
+      "costo_real_mensual": 1380832,
+      "ventas_generadas": 3846730,
+      "productividad_pct": 2.78,
+      "bandera_legal": null
+    },
+    {
+      "id": "m_ignacia",
+      "rol": "Estilista",
+      "modalidad": "100% Comisión",
+      "sueldo_bruto": 0,
+      "honorario_fijo": 0,
+      "comision_pct": null,
+      "horas_semana": null,
+      "antiguedad_anios": null,
+      "costo_real_mensual": 956609,
+      "ventas_generadas": 2689520,
+      "productividad_pct": 2.81,
+      "bandera_legal": null
+    },
+    {
+      "id": "lorena",
+      "rol": "Estilista",
+      "modalidad": "100% Comisión",
+      "sueldo_bruto": 0,
+      "honorario_fijo": 0,
+      "comision_pct": null,
+      "horas_semana": null,
+      "antiguedad_anios": null,
+      "costo_real_mensual": 795442,
+      "ventas_generadas": 1694290,
+      "productividad_pct": 2.13,
       "bandera_legal": null
     }
   ],
   "personas_resumen": {
     "eyebrow": "06 · CAPITAL HUMANO · COSTO Y PRODUCTIVIDAD",
     "section_title": "Análisis de capital humano y productividad",
-    "section_intro": "Métrica clave: ventas generadas ÷ costo real mensual. Meta >2,0x. Banderas legales señalizadas.",
-    "total_costo_mensual": 2972500,
-    "peso_remuneraciones_pct": 0.412,
-    "semaforo_peso": "amarillo",
+    "section_intro": "Métrica clave: ventas generadas ÷ costo real mensual. Meta >2,0x. Datos reales abril 2026: 10 personas (3 sueldo fijo + 7 comisión). Fuente: hoja VALORES planilla LK Studio.",
+    "total_costo_mensual": 14952177,
+    "peso_remuneraciones_pct": 0.480,
+    "semaforo_peso": "rojo",
     "mensaje_peso_label": "PESO REMUNERACIONES SOBRE VENTA",
-    "mensaje_peso": "41,2%. Rango sano 35-40%. Si supera 50%, margen consolidado se comprime crítico."
+    "mensaje_peso": "48,0%. Rango sano 35-40%. Excede el límite crítico de 45%. Intervención estructural requerida. Comisiones y sueldos base: datos reales hoja VALORES. SUPUESTO: imposiciones x3 = promedio Q1 2026 (dato real abril no disponible)."
   },
   "costos_fijos": [
     {
       "concepto": "Arriendo local",
-      "monto_mensual": 850000,
+      "monto_mensual": 1000000,
       "frecuencia": "mensual",
-      "pct_sobre_ventas": 0.118
+      "pct_sobre_ventas": 0.032
     },
     {
-      "concepto": "Servicios básicos (luz, agua)",
-      "monto_mensual": 180000,
+      "concepto": "GetNet comisiones bancarias",
+      "monto_mensual": 304073,
       "frecuencia": "mensual",
-      "pct_sobre_ventas": 0.025
+      "pct_sobre_ventas": 0.010
     },
     {
-      "concepto": "Internet + teléfono",
-      "monto_mensual": 45000,
+      "concepto": "AgendaPro software",
+      "monto_mensual": 130167,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.004
+    },
+    {
+      "concepto": "LIPIGAS (gas)",
+      "monto_mensual": 135780,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.004
+    },
+    {
+      "concepto": "Contabilidad (Sergio Verdugo)",
+      "monto_mensual": 200000,
       "frecuencia": "mensual",
       "pct_sobre_ventas": 0.006
     },
     {
-      "concepto": "Software agenda + POS",
-      "monto_mensual": 35000,
+      "concepto": "BCI Pagos",
+      "monto_mensual": 122111,
       "frecuencia": "mensual",
-      "pct_sobre_ventas": 0.005
+      "pct_sobre_ventas": 0.004
     },
     {
-      "concepto": "Marketing digital (RRSS + ads)",
-      "monto_mensual": 250000,
+      "concepto": "SMAPA (agua)",
+      "monto_mensual": 69150,
       "frecuencia": "mensual",
-      "pct_sobre_ventas": 0.035
+      "pct_sobre_ventas": 0.002
     },
     {
-      "concepto": "Contador externo",
-      "monto_mensual": 120000,
+      "concepto": "ADT (seguridad)",
+      "monto_mensual": 61350,
       "frecuencia": "mensual",
-      "pct_sobre_ventas": 0.017
+      "pct_sobre_ventas": 0.002
     },
     {
-      "concepto": "Seguros",
-      "monto_mensual": 45000,
+      "concepto": "Seguro Santander",
+      "monto_mensual": 55958,
       "frecuencia": "mensual",
-      "pct_sobre_ventas": 0.006
+      "pct_sobre_ventas": 0.002
     },
     {
-      "concepto": "Mantención + insumos generales",
-      "monto_mensual": 80000,
+      "concepto": "ENTEL",
+      "monto_mensual": 50731,
       "frecuencia": "mensual",
-      "pct_sobre_ventas": 0.011
+      "pct_sobre_ventas": 0.002
     },
     {
-      "concepto": "Otros (banco, contingencias)",
-      "monto_mensual": 280000,
+      "concepto": "Abogado",
+      "monto_mensual": 50000,
       "frecuencia": "mensual",
-      "pct_sobre_ventas": 0.039
+      "pct_sobre_ventas": 0.002
+    },
+    {
+      "concepto": "ENTEL PCS",
+      "monto_mensual": 43785,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.001
+    },
+    {
+      "concepto": "ENEL (electricidad)",
+      "monto_mensual": 31499,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.001
+    },
+    {
+      "concepto": "Zeal (agua potable)",
+      "monto_mensual": 20990,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.001
+    },
+    {
+      "concepto": "Santander comisiones",
+      "monto_mensual": 19522,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.001
+    },
+    {
+      "concepto": "BCI mantenimiento",
+      "monto_mensual": 5554,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.000
+    },
+    {
+      "concepto": "Patente municipal — SUPUESTO: pago anual en enero, $0 en abril",
+      "monto_mensual": 0,
+      "frecuencia": "anual (enero)",
+      "pct_sobre_ventas": 0.000
+    },
+    {
+      "concepto": "SUBTOTAL gastos operacionales (17 ítems)",
+      "monto_mensual": 2300670,
+      "frecuencia": "subtotal",
+      "pct_sobre_ventas": 0.074
+    },
+    {
+      "concepto": "Sueldos base (Leyla + Valeska + Andrea)",
+      "monto_mensual": 3320289,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.107
+    },
+    {
+      "concepto": "Imposiciones x3 — SUPUESTO: promedio Q1 2026 (dato real abril no disponible)",
+      "monto_mensual": 1760816,
+      "frecuencia": "mensual",
+      "pct_sobre_ventas": 0.057
     }
   ],
   "simuladores": {
@@ -627,11 +763,11 @@
     ],
     "supuesto_elasticidad": "SUPUESTO: cantidades constantes (sin caída por subida de precio). Si la subida supera 10%, considerar -5% en cantidad.",
     "servicios_aplicables_ids": [
-      "mechas",
-      "color_completo",
-      "manicure",
-      "pedicure",
-      "pestanas"
+      "mechas_l",
+      "coloracion_l",
+      "coloracion_m",
+      "mechas_xl",
+      "crecimiento_tradicional"
     ]
   },
   "simulador_contratacion": {
@@ -672,132 +808,168 @@
   "oportunidades": {
     "eyebrow": "08 · PLAN DE ACCIÓN · IMPACTO / ESFUERZO / PLAZO",
     "section_title": "Plan de acción priorizado",
-    "section_intro": "Cinco acciones ordenadas por impacto sobre utilidad mensual. Plazo objetivo: 30 días. Impacto agregado estimado: +$575.000.",
+    "section_intro": "Cinco acciones identificadas con base en datos reales abril 2026. Potencial inmediato: +$1.772.712/mes (30 días). Potencial estructural: hasta +$4.262.712/mes.",
     "items": [
       {
         "id": 1,
-        "icon": "trending-up",
-        "titulo": "Subir Color completo +5%",
-        "delta_mes": 90000,
-        "esfuerzo": "Bajo",
-        "plazo_dias": 15,
-        "detalle": "Margen sube de 55% a 57,5%. Comunicar a clientas frecuentes con 15 días de aviso."
+        "icon": "users",
+        "titulo": "Optimizar estructura de remuneraciones (meta ≤40%)",
+        "delta_mes": 2490000,
+        "esfuerzo": "Alto",
+        "plazo_dias": 180,
+        "detalle": "Remuneraciones actuales: 48% sobre ventas ($14.952.177). Meta sano: 40% ($12.452.264). Potencial de ahorro: ~$2.490.000/mes al alcanzar la meta. Acción: revisar estructura de comisiones para 7 personas + formalizar contratos. SUPUESTO: imposiciones estimadas con promedio Q1. PENDIENTE: desglose individual hoja VALORES."
       },
       {
         "id": 2,
-        "icon": "scissors",
-        "titulo": "Subir +15% Bronceado sin sol o excluir del menú",
-        "delta_mes": 25000,
-        "esfuerzo": "Nulo",
-        "plazo_dias": 7,
-        "detalle": "Servicio con peor margen. Si no se ajusta, sigue diluyendo el margen consolidado del salón."
+        "icon": "calendar-check",
+        "titulo": "Sistema anti-citas perdidas (no-show 96 servicios/mes)",
+        "delta_mes": 555451,
+        "esfuerzo": "Bajo",
+        "plazo_dias": 30,
+        "detalle": "No-show bruto identificado: 96 servicios = $3.394.424/mes (CSV04; 3 servicios con precio PENDIENTE excluidos del total). Recuperación calculada si no-show baja de 11% a 5% con recordatorio automático + política de abono: +$555.451/mes. Fuente: CSV04 escenario base. Sin costo adicional en plan AgendaPro actual."
       },
       {
         "id": 3,
         "icon": "package",
-        "titulo": "Liquidar Kit cuidado color y Aceite argán",
-        "delta_mes": 30000,
+        "titulo": "Rotar dead stock: 128 SKUs = $7.170.000 inmovilizados",
+        "delta_mes": 0,
         "esfuerzo": "Bajo",
-        "plazo_dias": 7,
-        "detalle": "Promo -30% (7 días). Recupera $200.000 de capital atrapado y libera repisa."
+        "plazo_dias": 30,
+        "detalle": "Capital inmovilizado en inventario: $7.170.000 (128 SKUs sin movimiento). Acción: promo -25% en stock detenido + separar inventario venta vs consumo interno (RIESGO: mezcla actual puede inflar margen de productos hasta 8%). No genera ingreso mensual recurrente pero libera $7.170.000 de capital."
       },
       {
         "id": 4,
-        "icon": "sparkles",
-        "titulo": "Lanzar pack Mechas + Tratamiento",
-        "delta_mes": 180000,
-        "esfuerzo": "Medio",
-        "plazo_dias": 30,
-        "detalle": "Promo +$15.000 sobre Mechas, incluye Tratamiento valorado en $25.000. Sube ticket promedio sin canibalizar."
+        "icon": "search",
+        "titulo": "Auditar 'Otros operacionales': $1.741.000 discrepancia",
+        "delta_mes": 0,
+        "esfuerzo": "Bajo",
+        "plazo_dias": 14,
+        "detalle": "Leyla reportó $943.000 en 'Otros operacionales' pero la hoja GASTOS (filas 1-73) registra $2.684.000. Diferencia: $1.741.000 sin clasificar. Acción: revisar las 73 filas junto a Leyla, clasificar cada ítem y determinar si hay gastos recurrentes no registrados."
       },
       {
         "id": 5,
-        "icon": "calendar",
-        "titulo": "Promo lunes-miércoles 11:30-14:00",
-        "delta_mes": 250000,
-        "esfuerzo": "Medio",
+        "icon": "credit-card",
+        "titulo": "Renegociar comisión bancaria (1,33% promedio efectivo)",
+        "delta_mes": 75500,
+        "esfuerzo": "Bajo",
         "plazo_dias": 30,
-        "detalle": "15% off en horario de baja ocupación con código MAÑANA. Levanta capacidad ociosa sin tocar full price."
+        "detalle": "Comisión bancaria efectiva: 1,33% sobre $22.200.410 volumen GetNet/mes = $296.171/mes (CSV03 Cuadratura Banco). Potencial ahorro al renegociar de 1,33% a 0,99%: 0,34% × $22.200.410 = ~$75.500/mes. Contactar ejecutivo de cuenta o evaluar cambio de proveedor POS."
       }
     ],
-    "total_potencial": 575000,
-    "total_potencial_label": "IMPACTO POTENCIAL AGREGADO (30 DÍAS)",
-    "total_potencial_disclaimer": "Estimaciones sobre cifras demo. Valor real depende del mix actual."
+    "total_potencial": 630951,
+    "total_potencial_label": "IMPACTO POTENCIAL INMEDIATO (30 DÍAS)",
+    "total_potencial_disclaimer": "Anti-no-show $555.451 (CSV04) + comisión bancaria $75.500. Excluye optimización remuneraciones ($2.490.000/mes, 6 meses) y liberación dead stock ($7.170.000, único). Datos reales abril 2026."
   },
   "recomendaciones": [
     {
       "id": 1,
-      "titulo": "Subir precio Color completo +5%",
-      "impacto": "Alto",
-      "esfuerzo": "Bajo",
+      "titulo": "Auditar y reducir peso remuneraciones a ≤40%",
+      "impacto": "Crítico",
+      "esfuerzo": "Alto",
       "prioridad": "P1",
-      "delta_utilidad_mensual": 90000,
-      "accion": "Comunicar a clientas frecuentes con 15 días de aviso. Margen sube de 55% a 57,5%."
+      "delta_utilidad_mensual": 2490000,
+      "accion": "Revisar estructura de comisiones (7 personas) y contratos. Meta: peso ≤40% sobre ventas. Potencial: +$2.490.000/mes al régimen. Plazo: 6 meses. PENDIENTE: hoja VALORES con desglose individual."
     },
     {
       "id": 2,
-      "titulo": "Liquidar Kit cuidado color y Aceite argán",
-      "impacto": "Medio",
+      "titulo": "Implementar sistema anti-no-show en AgendaPro",
+      "impacto": "Alto",
       "esfuerzo": "Bajo",
       "prioridad": "P1",
-      "delta_utilidad_mensual": 25000,
-      "accion": "Promo -30% (7 días). Recupera capital y libera espacio físico."
+      "delta_utilidad_mensual": 555451,
+      "accion": "Activar recordatorio automático WhatsApp 24h antes + cobrar abono en cancelaciones tardías. CSV04: reducir no-show de 11% a 5% = +$555.451/mes. Sin costo adicional en plan AgendaPro actual."
     },
     {
       "id": 3,
-      "titulo": "Lanzar pack Mechas + Tratamiento",
-      "impacto": "Alto",
-      "esfuerzo": "Medio",
-      "prioridad": "P2",
-      "delta_utilidad_mensual": 180000,
-      "accion": "Promo +$15.000 sobre Mechas, incluye Tratamiento valorado en $25.000."
+      "titulo": "Auditar 'Otros operacionales': $1.741.000 sin clasificar",
+      "impacto": "Medio",
+      "esfuerzo": "Bajo",
+      "prioridad": "P1",
+      "delta_utilidad_mensual": 0,
+      "accion": "Reunión de 2h con Leyla para revisar filas 1-73 de hoja GASTOS. Clasificar cada ítem. Determinar si hay gastos recurrentes ocultos que reducen el resultado neto real."
     },
     {
       "id": 4,
-      "titulo": "Promo lunes-miércoles AM",
+      "titulo": "Rotar dead stock 128 SKUs ($7.170.000 inmovilizados)",
       "impacto": "Medio",
-      "esfuerzo": "Medio",
+      "esfuerzo": "Bajo",
       "prioridad": "P2",
-      "delta_utilidad_mensual": 250000,
-      "accion": "15% off de 11:30 a 14:00 con código MAÑANA. Levanta ocupación de horario muerto."
+      "delta_utilidad_mensual": 0,
+      "accion": "Promo -25% en SKUs sin movimiento. Separar inventario venta vs consumo interno para limpiar RIESGO de margen inflado. Capital liberado: $7.170.000 (uno-solo)."
     },
     {
       "id": 5,
-      "titulo": "Revisar modalidad contractual Manicurista 1",
+      "titulo": "Ajustar precio Coloraciones L/M y Mechas XL (margen bajo rango sano)",
       "impacto": "Medio",
-      "esfuerzo": "Medio",
-      "prioridad": "P3",
+      "esfuerzo": "Bajo",
+      "prioridad": "P2",
       "delta_utilidad_mensual": 0,
-      "accion": "Boleta variable con horario fijo y exclusivo es figura riesgosa. Conversar formalización."
+      "accion": "Coloración L (48,5%), Coloración M (47,9%) y Mechas XL (45,6%) combinan $2.537.000/mes de contribución con margen bajo el rango sano. Subir precio +8-10% generaría ~$340.000/mes adicional de margen. Evaluar con Leyla impacto en retención de clientas. Fuente: AgendaPro abril 2026."
     }
   ],
   "supuestos": [
     {
       "tipo": "SUPUESTO",
-      "texto": "Factor 1,25 leyes sociales = AFP + salud + seguro + vacaciones promedio CL para contrato indefinido."
+      "texto": "Imposiciones x3 calculadas con promedio Q1 2026 — dato real abril no disponible en planilla. Confirmar con contador."
     },
     {
       "tipo": "SUPUESTO",
-      "texto": "Costos directos por servicio incluyen insumos + comisión profesional."
+      "texto": "IVA débito fiscal calculado con promedio Q1 2026 — dato real abril no disponible. Confirmar con contador."
     },
     {
       "tipo": "SUPUESTO",
-      "texto": "Punto de equilibrio asume mix de venta actual y mismo margen consolidado."
+      "texto": "Factor 1,25 leyes sociales = AFP + salud + seguro + vacaciones promedio CL para contratos indefinidos."
+    },
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Tasa de crecimiento forecast 1,5%/mes — estimación inercial sin histórico real feb/mar confirmado. Validar cuando se cuente con 3 meses de datos."
+    },
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Punto de equilibrio asume mix de venta actual y mismo margen bruto consolidado (62,4%)."
     },
     {
       "tipo": "RIESGO",
-      "texto": "Stock CLOE para venta vs uso interno del salón está mezclado — el margen de productos puede estar inflado en hasta 8%."
+      "texto": "Stock CLOE para venta vs uso interno del salón está mezclado — margen de productos puede estar inflado hasta 8%. Separar inventarios para cálculo limpio."
     },
     {
-      "tipo": "PENDIENTE",
-      "texto": "Histórico de ventas 3-6 meses para validar estacionalidad."
+      "tipo": "RIESGO",
+      "texto": "'Otros operacionales': Leyla ingresó $943.000 en la celda total del campo. Revisión directa de la hoja GASTOS de la planilla Excel original (73 ítems brutos, pre-clasificación) suma $2.684.000. Fuente: análisis bruto hoja GASTOS planilla cliente — no está trazado a ninguno de los CSVs numerados (CSV07 contiene 17 ítems clasificados = $2.300.670, serie diferente). Diferencia $1.741.000 sin clasificar. RIESGO: resultado neto real puede ser hasta $1.741.000 menor al declarado si los gastos están subreportados en la celda total."
+    },
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Histórico ene-mar 2026 = TOTAL_SALON AgendaPro (servicios únicamente, sin productos reventa, CSV05). Histórico abr 2026 = P&L total CSV09 ($31.130.660, incluye servicios + productos + extras). Series mixtas: ene-mar (AgendaPro) no son directamente comparables con abr (P&L total). Para tendencia homogénea usar TOTAL_SALON abr=$29.203.192. P&L feb-mar con margen y utilidad no disponible — requiere planillas equivalentes a la de abril para análisis completo."
+    },
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Titular '$3.394.424/mes de oportunidad identificada (no-show + estructura de costos)': el monto $3.394.424 = no-show bruto CSV04 (96 servicios, 3 con precio PENDIENTE excluidos), valor exacto. La expresión '(no-show + estructura de costos)' enumera DOS CATEGORÍAS de oportunidad distintas — no las suma: (1) recuperar no-show con política recordatorio+abono → CSV04 escenario base $555.451/mes (reducir tasa 11%→5%); (2) optimizar estructura de remuneraciones → potencial $2.490.000/mes a 6 meses. El titular presenta el bruto total identificado como anclaje de magnitud; el impacto recuperable detallado y trazado está en la sección de Oportunidades."
+    },
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Meta de margen bruto 60% = benchmark de gestión estándar para salones de belleza Chile, fijado por consultor como umbral sano de referencia. No proviene de CSV del cliente."
+    },
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Rango sano remuneraciones 35-40% sobre ventas = benchmark industria salones de belleza Chile (fuente: criterio consultor basado en datos de mercado). Límite crítico de intervención: 45%. No proviene de CSV del cliente."
+    },
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Plazos estimados de oportunidades (180/30/14 días) = estimación operativa consultor según complejidad de implementación. Sin respaldo en CSV del cliente. Sujetos a capacidad operativa del equipo de LK Studio."
+    },
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Día 12 de cobertura PE = PE mensual / (ventas diarias promedio) = $11.830.569 / ($31.130.660 / 30 días) = 11,4 días → redondeado a 12. PE $11.830.569 es el valor autoritario de CSV 09_pl_abril.csv. La reconciliación aritmética manual con inputs redondeados produce diferencias menores (~$800) por precisión de punto flotante en el script Python fuente — se acepta el valor CSV sin reingeniería. Asume ingresos diarios lineales constantes."
+    },
+    {
+      "tipo": "SUPUESTO",
+      "texto": "Comisión bancaria GetNet: $296.171/mes real según CSV03 Cuadratura Banco (1,33% efectivo sobre $22.200.410 de volumen). Ahorro estimado si se renegocia a 0,99%: 0,34% × $22.200.410 = $75.481 ≈ $75.500/mes. No incluye costo de cambio de proveedor ni penalidades contractuales si las hubiera."
     }
   ],
   "cta_final": {
-    "eyebrow": "09 · PRÓXIMO PASO · COORDINEMOS UNA REUNIÓN",
-    "headline": "El diagnóstico real, con sus números, en 14 días hábiles.",
-    "subhead": "Coordinemos una reunión de 30 minutos para revisar este formato con sus datos reales y definir alcance.",
-    "agendar_label": "Agendar reunión 30 min",
+    "eyebrow": "09 · SIGUIENTE PASO · ACOMPAÑAMIENTO MENSUAL",
+    "headline": "Diagnóstico completado. Activemos el plan.",
+    "subhead": "Revisemos juntos los hallazgos y definamos el acompañamiento mensual. Planes desde 11,5 UF/mes sin permanencia.",
+    "agendar_label": "Agendar sesión de cierre",
     "whatsapp_label": "+56 9 7883 7430 · WhatsApp",
     "email_label": "contacto@crosspointconsultores.cl"
   },
@@ -806,6 +978,72 @@
     "consultor_linea_1": "Cross Point Consultores",
     "consultor_linea_2": "Asesoría Comercial y Financiera para Pymes",
     "consultor_linea_3": "San Miguel, Santiago · crosspointconsultores.cl",
-    "demo_disclaimer": "Demo · cifras ilustrativas · este formato se replica con sus datos tras el intake."
+    "demo_disclaimer": ""
+  },
+  "historico": [
+    {
+      "mes": "2026-02",
+      "ventas": 29526760,
+      "margen_pct": null,
+      "utilidad": null,
+      "punto_equilibrio": null,
+      "top_servicio": null,
+      "notas": "SUPUESTO: ventas = TOTAL_SALON AgendaPro (servicios únicamente, sin productos reventa). P&L feb 2026 no disponible — margen y utilidad requieren planilla equivalente."
+    },
+    {
+      "mes": "2026-03",
+      "ventas": 27642080,
+      "margen_pct": null,
+      "utilidad": null,
+      "punto_equilibrio": null,
+      "top_servicio": null,
+      "notas": "SUPUESTO: ventas = TOTAL_SALON AgendaPro (servicios únicamente, sin productos reventa). P&L mar 2026 no disponible — margen y utilidad requieren planilla equivalente."
+    },
+    {
+      "mes": "2026-04",
+      "ventas": 31130660,
+      "margen_pct": 0.624,
+      "utilidad": 4533434,
+      "punto_equilibrio": 11830569,
+      "top_servicio": "PENDIENTE: CSV01 AgendaPro",
+      "notas": "Datos reales. Fuente: 09_pl_abril.csv + resumen_kpis.csv. SUPUESTO: imposiciones e IVA = avg Q1."
+    }
+  ],
+  "forecast": {
+    "fecha_calculo": "2026-05-19",
+    "metodologia": "Base: datos reales abril 2026 ($31.130.660). Escenario A: crecimiento inercial 1,5%/mes, margen y estructura de costos sin cambios. Escenario B: A + recuperación anti-no-show desde mayo (CSV04: +$555.451/mes escenario base) + optimización remuneraciones mes 3+. Tasa 1,5%/mes sin respaldo histórico real — SUPUESTO hasta contar con datos feb/mar. Meses del forecast son ilustrativos aproximados.",
+    "escenarios": {
+      "a_mantener_ritmo": {
+        "label": "Mantener ritmo actual",
+        "descripcion": "Sin intervenir las palancas del plan. Crecimiento orgánico inercial desde base real abril.",
+        "supuesto": "SUPUESTO: crecimiento 1,5%/mes (sin histórico real feb/mar para validar). Margen 62,4% constante. Costos fijos estables.",
+        "meses": [
+          {"mes": "2026-05", "ventas": 31600000, "margen_pct": 0.624, "utilidad": 4600000},
+          {"mes": "2026-06", "ventas": 32070000, "margen_pct": 0.624, "utilidad": 4670000},
+          {"mes": "2026-07", "ventas": 32550000, "margen_pct": 0.624, "utilidad": 4740000},
+          {"mes": "2026-08", "ventas": 33040000, "margen_pct": 0.624, "utilidad": 4820000},
+          {"mes": "2026-09", "ventas": 33530000, "margen_pct": 0.624, "utilidad": 4890000},
+          {"mes": "2026-10", "ventas": 34030000, "margen_pct": 0.624, "utilidad": 4960000}
+        ]
+      },
+      "b_intervenir_palancas": {
+        "label": "Activar palancas: anti-no-show + estructura costos",
+        "descripcion": "Escenario A + recuperación anti-no-show desde mayo (+$555.451/mes, CSV04 escenario base). Optimización de remuneraciones (meta 40%) con efecto gradual a partir de mes 3.",
+        "supuesto": "SUPUESTO: reducción no-show 11%→5% con recordatorio + abono = $555.451/mes (CSV04). Remuneraciones reducen 2 pp/mes desde mes 3. Meses de forecast son ilustrativos aproximados — validar con datos reales mayo. Sin garantía sin histórico real feb/mar.",
+        "meses": [
+          {"mes": "2026-05", "ventas": 32600000, "margen_pct": 0.624, "utilidad": 4750000},
+          {"mes": "2026-06", "ventas": 33100000, "margen_pct": 0.624, "utilidad": 4830000},
+          {"mes": "2026-07", "ventas": 33600000, "margen_pct": 0.630, "utilidad": 5040000},
+          {"mes": "2026-08", "ventas": 34100000, "margen_pct": 0.636, "utilidad": 5270000},
+          {"mes": "2026-09", "ventas": 34600000, "margen_pct": 0.640, "utilidad": 5460000},
+          {"mes": "2026-10", "ventas": 35100000, "margen_pct": 0.640, "utilidad": 5540000}
+        ]
+      }
+    },
+    "delta_acumulado_6m": {
+      "ventas": 6280000,
+      "utilidad": 2130000,
+      "narrativa": "Si activas anti-no-show y optimización de remuneraciones, en 6 meses generas +$6.280.000 extra de ventas y +$2.130.000 extra de resultado neto vs mantener el ritmo actual. SUPUESTO: sin histórico real feb/mar para validar tasa base."
+    }
   }
 }
