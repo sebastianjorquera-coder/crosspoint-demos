@@ -1,4 +1,4 @@
-﻿{
+{
   "meta": {
     "cliente_nombre": "LK Studio",
     "cliente_slug": "lk-studio",
@@ -808,7 +808,7 @@
   "oportunidades": {
     "eyebrow": "08 · PLAN DE ACCIÓN · IMPACTO / ESFUERZO / PLAZO",
     "section_title": "Plan de acción priorizado",
-    "section_intro": "Cinco acciones identificadas con base en datos reales abril 2026. Potencial inmediato: +$1.772.712/mes (30 días). Potencial estructural: hasta +$4.262.712/mes.",
+    "section_intro": "Cinco acciones identificadas con base en datos reales abril 2026. Potencial inmediato (30 días): +$630.951/mes. Potencial total (6 meses): hasta +$3.120.951/mes.",
     "items": [
       {
         "id": 1,
@@ -966,7 +966,7 @@
     }
   ],
   "cta_final": {
-    "eyebrow": "09 · SIGUIENTE PASO · ACOMPAÑAMIENTO MENSUAL",
+    "eyebrow": "10 · SIGUIENTE PASO · ACOMPAÑAMIENTO MENSUAL",
     "headline": "Diagnóstico completado. Activemos el plan.",
     "subhead": "Revisemos juntos los hallazgos y definamos el acompañamiento mensual. Planes desde 11,5 UF/mes sin permanencia.",
     "agendar_label": "Agendar sesión de cierre",
