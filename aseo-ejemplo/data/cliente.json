@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "cliente_nombre": "Servicios de Aseo — Ejemplo",
+    "cliente_slug": "aseo-ejemplo",
+    "cliente_rubro": "Aseo y limpieza industrial y comercial",
+    "fecha_corte": "2026-07-01",
+    "mes_corte_label": "período de ejemplo",
+    "es_demo": true,
+    "moneda_simbolo": "$",
+    "moneda_codigo": "CLP",
+    "locale": "es-CL",
+    "consultor_nombre": "Cross Point Consultores",
+    "consultor_lema": "Asesoría Comercial y Financiera para Pymes",
+    "consultor_whatsapp": "+56 9 7883 7430",
+    "consultor_email": "contacto@crosspointconsultores.cl",
+    "consultor_web": "crosspointconsultores.cl"
+  },
+  "branding": {
+    "color_primario": "#028090",
+    "color_primario_dark": "#015d68",
+    "color_secundario": "#C9A84C",
+    "color_secundario_light": "#F0E4BA",
+    "color_neutro_dark": "#1F2937",
+    "color_neutro_mid": "#6B7280",
+    "color_neutro_light": "#F3F4F6",
+    "color_verde": "#16A34A",
+    "color_amarillo": "#EAB308",
+    "color_rojo": "#DC2626",
+    "tipografia_titulares": "Plus Jakarta Sans",
+    "tipografia_cuerpo": "Inter"
+  },
+  "hero": {
+    "titulo": "Servicios de Aseo — Ejemplo",
+    "subtitulo": "Estado del negocio · período de ejemplo",
+    "kpi_principal_label": "Venta del mes",
+    "kpi_principal_valor": 12500000,
+    "kpi_principal_formato": "CLP",
+    "cta_scroll_label": "Recorre el negocio"
+  },
+  "kpis": [
+    {
+      "id": "venta_total",
+      "label": "Venta del mes",
+      "valor": 12500000,
+      "formato": "CLP",
+      "meta": 12000000,
+      "trend": "up",
+      "trend_texto": "+4,2% vs meta",
+      "color_borde": "primario"
+    },
+    {
+      "id": "margen_consolidado",
+      "label": "Margen operacional",
+      "valor": 0.360,
+      "formato": "PCT",
+      "meta": 0.35,
+      "trend": "up",
+      "trend_texto": "+1 pp vs referencia aseo",
+      "color_borde": "secundario"
+    },
+    {
+      "id": "punto_equilibrio",
+      "label": "Punto de equilibrio",
+      "valor": 10976000,
+      "formato": "CLP",
+      "meta": null,
+      "trend": "flat",
+      "trend_texto": "Se cubre recién el día 26",
+      "color_borde": "primario_dark"
+    },
+    {
+      "id": "utilidad",
+      "label": "Utilidad del mes",
+      "valor": 549000,
+      "formato": "CLP",
+      "meta": null,
+      "trend": "flat",
+      "trend_texto": "Apretado (4,4%) · +$716K recuperables",
+      "color_borde": "amarillo"
+    }
+  ],
+  "estado_general": {
+    "semaforo": "amarillo",
+    "titulo": "Rentable, pero apretado",
+    "mensaje": "El negocio cubre sus costos y deja utilidad, pero delgada (4,4%). El punto de equilibrio se alcanza recién el día 26 del mes. Hay 3 fugas concretas que, corregidas, más que duplican la utilidad — sin vender más.",
+    "pe_pct_alcanzado": 0.30,
+    "dias_para_pe": 26,
+    "dias_total_mes": 30
+  },
+  "servicios": [
+    { "id": "contrato-oficinas", "nombre": "Contrato oficinas (mensual)", "precio": 850000, "cantidad_mes": 5, "costo_directo": 520000, "comision_pct": 0, "margen_unitario": 330000, "margen_pct": 0.388, "contribucion": 1650000, "estado": "verde", "accion": "Recurrente sano — es la base del negocio, proteger" },
+    { "id": "contrato-edificios", "nombre": "Contrato edificios / comunidades", "precio": 980000, "cantidad_mes": 3, "costo_directo": 600000, "comision_pct": 0, "margen_unitario": 380000, "margen_pct": 0.388, "contribucion": 1140000, "estado": "verde", "accion": "Ancla mensual sólida" },
+    { "id": "contrato-industrial", "nombre": "Contrato industrial (mensual)", "precio": 1180000, "cantidad_mes": 2, "costo_directo": 970000, "comision_pct": 0, "margen_unitario": 210000, "margen_pct": 0.178, "contribucion": 420000, "estado": "rojo", "accion": "CRÍTICO: margen 18% muy bajo el promedio (36%) — recotizar o soltar" },
+    { "id": "sanitizacion", "nombre": "Sanitización / desinfección (puntual)", "precio": 190000, "cantidad_mes": 8, "costo_directo": 92000, "comision_pct": 0, "margen_unitario": 98000, "margen_pct": 0.516, "contribucion": 784000, "estado": "verde", "accion": "Puntual de alto margen — empujar como adicional a los contratos" },
+    { "id": "post-obra", "nombre": "Limpieza post-obra (puntual)", "precio": 340000, "cantidad_mes": 2, "costo_directo": 205000, "comision_pct": 0, "margen_unitario": 135000, "margen_pct": 0.397, "contribucion": 270000, "estado": "verde", "accion": "Buen margen; agenda variable" },
+    { "id": "vidrios-altura", "nombre": "Limpieza de vidrios en altura (puntual)", "precio": 250000, "cantidad_mes": 3, "costo_directo": 170000, "comision_pct": 0, "margen_unitario": 80000, "margen_pct": 0.320, "contribucion": 240000, "estado": "amarillo", "accion": "Requiere EPP de altura — cuidar el costeo" }
+  ],
+  "productos_cloe": [],
+  "personas": [
+    { "id": "cuadrilla-oficinas", "rol": "Cuadrilla Oficinas (4 auxiliares)", "modalidad": "Contrato indefinido", "sueldo_bruto": 0, "honorario_fijo": 0, "comision_pct": 0, "horas_semana": 45, "antiguedad_anios": 2, "costo_real_mensual": 2032000, "ventas_generadas": 4250000, "productividad_pct": 0.478, "bandera_legal": null },
+    { "id": "cuadrilla-edificios", "rol": "Cuadrilla Edificios (2 auxiliares)", "modalidad": "Contrato indefinido", "sueldo_bruto": 0, "honorario_fijo": 0, "comision_pct": 0, "horas_semana": 45, "antiguedad_anios": 3, "costo_real_mensual": 1016000, "ventas_generadas": 2940000, "productividad_pct": 0.346, "bandera_legal": null },
+    { "id": "cuadrilla-industrial", "rol": "Cuadrilla Industrial (3 auxiliares)", "modalidad": "Contrato indefinido", "sueldo_bruto": 0, "honorario_fijo": 0, "comision_pct": 0, "horas_semana": 45, "antiguedad_anios": 2, "costo_real_mensual": 1524000, "ventas_generadas": 2360000, "productividad_pct": 0.646, "bandera_legal": "Productividad 65% muy sobre el promedio de cuadrillas (35-48%): contrato sobredotado y/o mal cotizado" },
+    { "id": "cuadrilla-puntuales", "rol": "Cuadrilla Puntuales / spot (3 auxiliares)", "modalidad": "Contrato indefinido", "sueldo_bruto": 0, "honorario_fijo": 0, "comision_pct": 0, "horas_semana": 45, "antiguedad_anios": 1, "costo_real_mensual": 1524000, "ventas_generadas": 2950000, "productividad_pct": 0.517, "bandera_legal": null },
+    { "id": "supervisor", "rol": "Supervisor de operaciones", "modalidad": "Contrato indefinido", "sueldo_bruto": 760000, "honorario_fijo": 0, "comision_pct": 0, "horas_semana": 45, "antiguedad_anios": 4, "costo_real_mensual": 950000, "ventas_generadas": 0, "productividad_pct": null, "bandera_legal": null },
+    { "id": "bodeguero", "rol": "Bodeguero", "modalidad": "Contrato indefinido", "sueldo_bruto": 512000, "honorario_fijo": 0, "comision_pct": 0, "horas_semana": 45, "antiguedad_anios": 2, "costo_real_mensual": 640000, "ventas_generadas": 0, "productividad_pct": null, "bandera_legal": null },
+    { "id": "asistente-admin", "rol": "Asistente administrativo", "modalidad": "Contrato indefinido", "sueldo_bruto": 448000, "honorario_fijo": 0, "comision_pct": 0, "horas_semana": 45, "antiguedad_anios": 3, "costo_real_mensual": 560000, "ventas_generadas": 0, "productividad_pct": null, "bandera_legal": null }
+  ],
+  "personas_resumen": {
+    "total_costo_mensual": 8246000,
+    "peso_remuneraciones_pct": 0.660,
+    "semaforo_peso": "amarillo",
+    "mensaje_peso": "Peso remuneraciones / ventas en 66%. En aseo el rango normal es 58-68% (es un rubro intensivo en mano de obra) — estás dentro, pero al límite alto. La palanca es la productividad por cuadrilla, no recortar sueldos."
+  },
+  "costos_fijos": [
+    { "concepto": "Arriendo oficina + bodega", "monto_mensual": 650000, "frecuencia": "mensual", "pct_sobre_ventas": 0.052 },
+    { "concepto": "Sueldos administrativos (supervisor, bodeguero, asistente)", "monto_mensual": 2150000, "frecuencia": "mensual", "pct_sobre_ventas": 0.172 },
+    { "concepto": "Flota (combustible, mantención, seguros vehículos)", "monto_mensual": 470000, "frecuencia": "mensual", "pct_sobre_ventas": 0.038 },
+    { "concepto": "Software control/rutas + telefonía + internet", "monto_mensual": 95000, "frecuencia": "mensual", "pct_sobre_ventas": 0.008 },
+    { "concepto": "Contador externo", "monto_mensual": 130000, "frecuencia": "mensual", "pct_sobre_ventas": 0.010 },
+    { "concepto": "Seguros + patentes municipales", "monto_mensual": 95000, "frecuencia": "mensual", "pct_sobre_ventas": 0.008 },
+    { "concepto": "Reposición maquinaria + herramientas + EPP base", "monto_mensual": 200000, "frecuencia": "mensual", "pct_sobre_ventas": 0.016 },
+    { "concepto": "Otros (banco, capacitación, contingencias)", "monto_mensual": 165000, "frecuencia": "mensual", "pct_sobre_ventas": 0.013 }
+  ],
+  "alertas": [
+    { "titulo": "Contrato industrial con margen 18%", "detalle": "Muy bajo el promedio de contratos (36%). Cuadrilla al 65% de productividad: sobredotado y/o mal cotizado. Recotizar o soltar.", "severidad": "alta" },
+    { "titulo": "Punto de equilibrio recién al día 26", "detalle": "El negocio cubre sus costos casi a fin de mes. Poco colchón si se cae un contrato o viene un mes flojo.", "severidad": "alta" },
+    { "titulo": "Peso remuneraciones al límite alto (66%)", "detalle": "Dentro del rango de aseo, pero al tope. La palanca es productividad por cuadrilla, no recorte de sueldos.", "severidad": "media" }
+  ],
+  "oportunidades": {
+    "total_potencial": 716000,
+    "items": [
+      { "titulo": "Recotizar el contrato industrial", "detalle": "Llevar su margen de 18% al promedio de los contratos recurrentes (36%) vía recotización y ajuste de dotación. Impacto directo a la utilidad.", "delta_mes": 316000 },
+      { "titulo": "Controlar el consumo de insumos por faena", "detalle": "Hoy el químico y material se consume sin control por contrato. Dosis estándar por m² + kardex de bodega recupera ~2 puntos de margen.", "delta_mes": 220000 },
+      { "titulo": "Rebalancear la cuadrilla industrial", "detalle": "Mover 1 auxiliar de la cuadrilla industrial (sobredotada) a servicios puntuales de alto margen como sanitización (52%). Sube productividad sin contratar ni despedir.", "delta_mes": 180000 }
+    ]
+  },
+  "como_funciona": {
+    "eyebrow": "PROCESO · 3 ETAPAS · PLAZOS FIRMES",
+    "section_title": "Cómo funciona el diagnóstico",
+    "section_intro": "Tres pasos claros con plazos firmes. Sin sorpresas.",
+    "steps": [
+      { "numero": "01", "icon": "clipboard-list", "titulo": "Intake", "plazo": "30 min", "detalle": "Llenas la planilla con los números reales de tu empresa: contratos, dotación, insumos y gastos." },
+      { "numero": "02", "icon": "calculator", "titulo": "Análisis", "plazo": "7 días", "detalle": "Calculamos el margen real por contrato, la productividad por cuadrilla, el punto de equilibrio y dónde se te va la plata." },
+      { "numero": "03", "icon": "presentation", "titulo": "Presentación", "plazo": "14 días", "detalle": "Sesión de 60 min con dashboard, plan de acción priorizado y respuestas concretas." }
+    ]
+  },
+  "garantia": {
+    "eyebrow": "GARANTÍA",
+    "icon": "shield-check",
+    "copy": "Si en el diagnóstico real no identificamos al menos $300.000 mensuales de oportunidad concreta, seguimos trabajando contigo sin costo adicional hasta encontrarlas.",
+    "aplicabilidad": "Aplica al Diagnóstico Inicial (12 UF puntual) y a los planes mensuales Esencial (11,5 UF/mes), Activo (16,5 UF/mes) e Integral (24 UF/mes)."
+  },
+  "simulador_precios": {
+    "habilitado": true,
+    "rango_min_pct": -0.05,
+    "rango_max_pct": 0.15,
+    "step_pct": 0.01,
+    "valor_inicial_pct": 0.05,
+    "presets": [
+      { "label": "Conservador", "valor_pct": 0.03 },
+      { "label": "Base", "valor_pct": 0.05 },
+      { "label": "Optimista", "valor_pct": 0.10 }
+    ],
+    "supuesto_elasticidad": "SUPUESTO: precios de contrato ajustables en renovación. Sobre +10% considerar riesgo de rotación del cliente en licitación.",
+    "servicios_aplicables_ids": ["contrato-oficinas", "contrato-edificios", "contrato-industrial"]
+  },
+  "simulador_contratacion": {
+    "habilitado": true,
+    "escenarios": [
+      { "id": "conservador", "label": "Conservador (1 auxiliar part-time)", "n_personas": 1, "sueldo_bruto_uno": 300000, "comision_uno": 0, "venta_esperada_uno": 620000, "factor_leyes_sociales": 1.25 },
+      { "id": "base", "label": "Base (1 auxiliar full-time, contrato oficinas)", "n_personas": 1, "sueldo_bruto_uno": 470000, "comision_uno": 0, "venta_esperada_uno": 850000, "factor_leyes_sociales": 1.25 },
+      { "id": "optimista", "label": "Optimista (1 auxiliar full-time, contrato bien cotizado)", "n_personas": 1, "sueldo_bruto_uno": 520000, "comision_uno": 0, "venta_esperada_uno": 1150000, "factor_leyes_sociales": 1.25 }
+    ],
+    "supuesto_factor": "SUPUESTO: factor 1.25 = leyes sociales (AFP + salud + seguro + vacaciones) promedio CL para contrato indefinido. No incluye insumos ni supervisión, que también suben con el volumen."
+  },
+  "recomendaciones": [
+    { "id": 1, "titulo": "Recotizar el contrato industrial", "impacto": "Alto", "esfuerzo": "Medio", "prioridad": "P1", "delta_utilidad_mensual": 316000, "accion": "Recalcular el precio con la dotación e insumos reales. Margen objetivo 32-36%, como el resto de los contratos recurrentes." },
+    { "id": 2, "titulo": "Control de insumos por faena", "impacto": "Alto", "esfuerzo": "Bajo", "prioridad": "P1", "delta_utilidad_mensual": 220000, "accion": "Kardex simple de bodega + dosis estándar por m². Corta el consumo sin control que hoy diluye el margen." },
+    { "id": 3, "titulo": "Rebalancear la cuadrilla industrial", "impacto": "Medio", "esfuerzo": "Medio", "prioridad": "P2", "delta_utilidad_mensual": 180000, "accion": "Mover 1 auxiliar a servicios puntuales de alto margen (sanitización, post-obra). Sube productividad sin despedir." },
+    { "id": 4, "titulo": "Empujar sanitización como adicional", "impacto": "Medio", "esfuerzo": "Bajo", "prioridad": "P2", "delta_utilidad_mensual": 0, "accion": "La sanitización rinde 52% de margen. Ofrecerla como adicional a los contratos de oficinas y edificios sube el ticket sin captar clientes nuevos." },
+    { "id": 5, "titulo": "Medir la rotación y su costo oculto", "impacto": "Medio", "esfuerzo": "Bajo", "prioridad": "P3", "delta_utilidad_mensual": 0, "accion": "Cada salida de un auxiliar cuesta reclutar, capacitar y baja la productividad las primeras semanas. Medirlo es el primer paso para bajarlo." }
+  ],
+  "supuestos": [
+    { "tipo": "SUPUESTO", "texto": "Todas las cifras son ilustrativas de una empresa de aseo tipo (≈15 personas, Región Metropolitana). No corresponden a datos reales de ningún cliente." },
+    { "tipo": "SUPUESTO", "texto": "Costo directo por contrato = mano de obra de terreno + insumos asignados a esa faena." },
+    { "tipo": "SUPUESTO", "texto": "Factor 1.25 de leyes sociales para personal con contrato indefinido (AFP + salud + seguro + vacaciones)." },
+    { "tipo": "SUPUESTO", "texto": "Los benchmarks de margen y de peso de remuneraciones se refieren al sector aseo / servicios intensivos en mano de obra en Chile." },
+    { "tipo": "RIESGO", "texto": "Si los insumos no se prorratean por contrato, el costo directo de los contratos industriales puede estar subestimado (el margen real sería aún menor)." },
+    { "tipo": "PENDIENTE", "texto": "Rotación de personal y su costo oculto — no cuantificada en este ejemplo." }
+  ],
+  "footer": {
+    "linea_1": "Cross Point Consultores · Asesoría Comercial y Financiera para Pymes",
+    "linea_2": "+56 9 7883 7430 · contacto@crosspointconsultores.cl · crosspointconsultores.cl",
+    "linea_3": "Demo · empresa y cifras ilustrativas · los datos reales se cargan tras el intake del cliente"
+  }
+}

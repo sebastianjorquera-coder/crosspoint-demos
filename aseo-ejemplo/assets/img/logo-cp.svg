@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <!-- Cross Point Consultores · monograma + wordmark -->
+  <!-- Cuadrado teal con CP -->
+  <rect x="0" y="8" width="64" height="64" rx="12" fill="#028090"/>
+  <!-- Acento gold esquina superior derecha -->
+  <path d="M 48 8 L 64 8 L 64 24 Z" fill="#C9A84C"/>
+  <!-- "CP" -->
+  <text x="32" y="52"
+        font-family="Plus Jakarta Sans, system-ui, sans-serif"
+        font-size="28" font-weight="800" fill="#FFFFFF"
+        text-anchor="middle" letter-spacing="-1">CP</text>
+
+  <!-- Wordmark -->
+  <text x="80" y="38"
+        font-family="Plus Jakarta Sans, system-ui, sans-serif"
+        font-size="20" font-weight="800" fill="#1F2937"
+        letter-spacing="-0.5">Cross Point</text>
+  <text x="80" y="58"
+        font-family="Inter, system-ui, sans-serif"
+        font-size="11" font-weight="500" fill="#6B7280"
+        letter-spacing="0.5">CONSULTORES</text>
+</svg>
